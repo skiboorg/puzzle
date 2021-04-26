@@ -1,0 +1,177 @@
+<template>
+  <div class="full-height flex column items-center justify-center">
+    <p class="text-h6 text-bold">{{is_register ? 'REGISTRATION':'LOGIN' }}</p>
+    <q-form
+      v-if="is_register"
+      @submit="onSubmit"
+      style="width: 320px"
+      class="q-gutter-sm form">
+
+      <q-input
+      filled
+      dense
+      v-model="userData.email"
+      label="email *"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      <q-input
+      filled
+      dense
+      v-model="userData.nickname"
+      label="nickname *"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      <q-input
+      filled
+      dense
+      v-model="userData.age"
+      type="number"
+      label="age *"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      <q-select dense v-model="userData.sex" :options="sex_options" label="Sex" />
+
+
+      <q-input
+      filled
+      dense
+      v-model="userData.password1"
+      label="Password *"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      <q-input
+      filled
+      dense
+      v-model="userData.password2"
+      label="Repeat Password *"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+
+      <q-toggle v-model="accept" label="I accept the license and terms" />
+
+      <div>
+        <div class="text-center">
+          <q-btn label="REGISTER"  type="submit" class="q-px-xl q-mb-md" color="primary "/>
+          <p>Уже есть аккаунт? <a href="#" @click.prevent="is_register=false">Войти</a></p>
+        </div>
+
+
+      </div>
+    </q-form>
+    <q-form v-else @submit="userLoginAction" class=" q-gutter-sd q-mb-lg">
+      <q-input
+        filled
+        :dense="!$q.screen.gt.md"
+        v-model="userLogin.email"
+        label="email *"
+
+        style="width: 320px"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Введите номер wechatid']"
+      />
+      <q-input
+        :dense="!$q.screen.gt.md"
+        filled
+        :type="isPwd ? 'password' : 'text'"
+        v-model="userLogin.password"
+        label="Пароль *"
+        lazy-rules
+        :rules="[val => val !== null && val !== '' || 'Введите пароль' ]"
+      >
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
+      <div class="text-center">
+        <q-btn size="md" label="Войти" type="submit" color="primary" class="q-px-xl q-mb-md"/>
+      <p>Нет аккаунта? <a class="text-primary" href="#" @click.prevent="is_register=true">Регистрация</a></p>
+
+        <p @click="$router.push('/game')" class="text-primary flex items-center justify-center"><q-icon size="2rem" name="shutter_speed" class="q-mr-md" /> Попробовать DEMO - версию</p>
+      </div>
+
+    </q-form>
+
+
+  </div>
+
+
+</template>
+
+<script>
+import { mapActions, mapGetters} from 'vuex'
+export default {
+  data () {
+    return {
+      name: null,
+      age: null,
+      accept: false,
+      is_register:false,
+      isPwd: true,
+      lang: this.$i18n.locale,
+      userLogin:{
+        email:'1@1.11',
+        password:'123',
+      },
+      sex_options:[
+        'Male', 'Female'
+      ],
+      userData:{
+       password1:null,
+       password2:null,
+        email:null,
+        age:null,
+        sex:'Male',
+        nickname:null,
+      }
+
+    }
+  },
+  methods: {
+    ... mapActions('auth',['loginUser','logoutUser']),
+    userLoginAction() {
+      this.loginUser(this.userLogin)
+
+    },
+    onSubmit () {
+      console.log('submit')
+        this.completeRegistration()
+    },
+    async completeRegistration() {
+      try {
+        let response = await this.$api.post('/auth/users/', {
+          nickname: this.userData.nickname,
+          email: this.userData.email,
+          age: this.userData.age,
+          sex: this.userData.sex,
+          password: this.userData.password2,
+        })
+        this.$q.notify({
+          message: 'Аккаунт создан',
+          position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
+          color: 'positive',
+          icon: 'announcement'
+        })
+        this.loading = false
+        this.authModalTab = 'loginTab'
+      } catch (e) {
+        this.$q.notify({
+          message: 'Проверьте введеные данные',
+          position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
+          color: 'red',
+          icon: 'announcement'
+        })
+      }
+    }
+  }
+}
+</script>
+<style lang="sass">
+
+.form
+  width: 400px
+
+</style>
