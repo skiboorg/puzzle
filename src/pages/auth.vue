@@ -9,43 +9,61 @@
 
       <q-input
       filled
-      dense
+      :dense="!$q.screen.gt.md"
       v-model="userData.email"
       label="email *"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-input
       filled
-      dense
+      :dense="!$q.screen.gt.md"
       v-model="userData.nickname"
       label="nickname *"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-input
       filled
-      dense
+      :dense="!$q.screen.gt.md"
       v-model="userData.age"
       type="number"
       label="age *"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
-      <q-select dense v-model="userData.sex" :options="sex_options" label="Sex" />
+      <q-select class="q-mb-lg" filled :dense="!$q.screen.gt.md" v-model="userData.sex" :options="sex_options" label="Sex" />
 
 
       <q-input
       filled
-      dense
+      :dense="!$q.screen.gt.md"
       v-model="userData.password1"
       label="Password *"
+      :type="isPwd ? 'password' : 'text'"
       lazy-rules
-      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      :rules="[ val => val && val.length > 0 || 'Please type something']">
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
       <q-input
       filled
-      dense
+      :dense="!$q.screen.gt.md"
       v-model="userData.password2"
+      :type="isPwd ? 'password' : 'text'"
       label="Repeat Password *"
       lazy-rules
-      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      :rules="[ val => val && val===this.userData.password1 || 'Passwords not match']">
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
 
       <q-toggle v-model="accept" label="I accept the license and terms" />
 
@@ -76,8 +94,7 @@
         v-model="userLogin.password"
         label="Пароль *"
         lazy-rules
-        :rules="[val => val !== null && val !== '' || 'Введите пароль' ]"
-      >
+        :rules="[val => val !== null && val !== '' || 'Введите пароль' ]">
         <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"

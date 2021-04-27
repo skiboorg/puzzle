@@ -11,7 +11,7 @@
       <div class="flex items-center justify-center full-width">
         <div @click="gameType=type.type" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
           <img :src="type.img" alt="">
-          <p class="text-white text-uppercase no-margin">{{type.name}}</p>
+
         </div>
 
 
@@ -20,39 +20,44 @@
     <div style="height: 90vh" v-if="gameType && !gameReady" class="flex column items-center justify-center ">
       <p class="text-bold text-h4 text-uppercase q-mb-md">CHOOSE DIFFICULT</p>
       <div class="flex items-center justify-center full-width">
-        <q-card bordered @click="startGame(index)"  class="q-mr-sm cursor-pointer " v-for="(level,index) in levels" :key="level.id">
-          <q-card-section>
-            <p class="">Name:{{level.name}}</p>
-            <p class="">Rating: {{level.rating}}</p>
-            <p class="">Pieces: {{level.pieces}}</p>
-          </q-card-section>
+        <q-card
+          bordered
 
+          @click="startGame(index)"
+          class="q-mr-sm cursor-pointer game-level q-pa-lg"
+          v-for="(level,index) in levels"
+          :key="level.id"
+          :style="{'background-image': 'url('+ level.image +' )'}">
+          <q-card-section class="no-padding full-height">
+            <div class="flex column items-center justify-evenly full-height">
+              <p class="no-margin"><span class="text-weight-medium">Level:</span> {{level.name}}</p>
+              <p class="no-margin"><span class="text-weight-medium">Pieces:</span> {{level.pieces}}</p>
+              <p class="no-margin"><span class="text-weight-medium">Rating:</span> +{{level.rating}}</p>
+            </div>
+          </q-card-section>
         </q-card>
       </div>
     </div>
 
     <div style="position: absolute" id="puzzle_wrapper" class=" full-width ">
-
-
-      <div id="forPuzzle" class=" ">
-      </div>
-
+      <div id="forPuzzle" class=" "></div>
     </div>
-    <q-dialog v-model="showAd" persistent transition-show="scale" transition-hide="scale" @before-show="getAd" @before-hide="closeAd">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <div v-if="gameWin" class="text-h6 text-positive text-uppercase">You WIN</div>
-          <div v-else class="text-h6 text-red text-uppercase">You LOOSE</div>
-
-          <q-space />
-          <q-btn v-if="showClose" icon="close" flat round dense v-close-popup />
-          <span v-else id="time_to_close" class="text-weight-bold">00:{{counter | correct_seconds}}</span>
-
-
-
+    <q-dialog v-model="showAd"
+              persistent
+              transition-show="scale"
+              transition-hide="scale"
+              @before-show="getAd"
+              @before-hide="closeAd">
+       <q-card style="width: 700px; max-width: 80vw;">
+        <q-card-section class="row items-center q-pb-none relative-position">
+          <div v-if="gameWin" class="text-h6 text-positive text-uppercase text-center full-width">You WIN!</div>
+          <div v-else class="text-h6 text-red text-uppercase text-center full-width">You LOOSE!</div>
+            <q-space/>
+          <q-btn v-if="showClose" icon="close" flat round dense v-close-popup class="absolute-top-right" />
+          <span v-else id="time_to_close" class="text-weight-bold absolute-top-right">00:{{counter | correct_seconds}}</span>
         </q-card-section>
-
         <q-card-section>
+          <p style="max-width: 350px;margin: 0 auto 20px" class="text-center">If you close this window before you look ads - we will subtract your rating for the game</p>
           <div v-show="currentAd.image" class="">
             <q-img :src="currentAd.image"/>
           </div>
@@ -60,7 +65,6 @@
             <video ref="video" width="100%" preload="metadata" loop>
               Your browser does not support HTML video.
             </video>
-
           </div>
         </q-card-section>
       </q-card>
@@ -1760,10 +1764,22 @@ export default {
 </script>
 <style lang="sass">
 .game-type
-  background: $accent
-  box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25)
-  padding: 10px 30px
-  height: 100px
+  height: 200px
+  width: 200px
+  transition: all .2s linear
+  img
+    max-width: 100%
+    height: auto
+  &:hover
+    transform: scale(1.05)
+.game-level
+  height: 160px
+  width: 160px
+  transition: all .2s linear
+  background-size: contain !important
+  &:hover
+    transform: scale(1.05)
+
 #puzzle_wrapper
   height: 90vh
 
@@ -1771,4 +1787,12 @@ export default {
   border: none
   left: 0
   top: 0
+
+@media (max-width: 599px)
+  .game-type
+    height: 100px
+    width: 100px
+  //.game-level
+  //  height: 80px
+  //  width: 80px
 </style>

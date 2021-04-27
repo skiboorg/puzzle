@@ -22,19 +22,21 @@ const mutations = {
 }
 
 const actions = {
-  loginUser({dispatch,ssrContext},data){
-    console.log(this._vm.$cook)
-    api.post('/auth/token/login/',data)
-      .then(response=>{
-        this._vm.$cook.set('auth_token',response.data.auth_token)
-        api.defaults.headers.common['Authorization'] = 'Token ' + response.data.auth_token
-        dispatch('getUser')
-        this.$router.push('/game')
+  async loginUser({dispatch,ssrContext},data){
+    try{
+      const response = await api.post('/auth/token/login/',data)
+     this._vm.$cook.set('auth_token',response.data.auth_token)
+       api.defaults.headers.common['Authorization'] = 'Token ' + response.data.auth_token
+       dispatch('getUser')
+       this.$router.push('/game')
+    }catch (e){
+      console.log(e)
+      Notify.create({
+        message:'Unable to log in with provided credentials.',
+        color:'red',
+        position: Screen.lt.sm ? 'bottom' : 'bottom-right',
       })
-      .catch(function (error) {
-        console.log('login error')
-      })
-
+    }
   },
   async getUser ({commit,dispatch}){
     const response = await api.get( '/api/user/me')
