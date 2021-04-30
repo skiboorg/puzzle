@@ -8,6 +8,11 @@ export default async ({ app, router, Vue, store, ssrContext }) => {
     ? Cookies.parseSSR(ssrContext)
     : Cookies
     let token = cookies.get('auth_token')
+  let lang = cookies.get('lang')
+  console.log(lang)
+  if (lang){
+    app.i18n.locale = lang
+  }
   Vue.prototype.$cook = cookies
   if (token) {
    await store.dispatch('auth/getUser')

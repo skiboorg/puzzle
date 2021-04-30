@@ -244,6 +244,7 @@ export default {
   watch: {
     lang(lang) {
       this.$i18n.locale = lang
+      this.$q.cookies.set('lang',lang)
     }
   },
   methods: {
