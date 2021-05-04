@@ -257,11 +257,8 @@ export default {
   position: absolute
 //& .q-toolbar
    //position: absolute
-
 .left-menu
   background: $accent url(~assets/menu-bg.png) no-repeat center
   background-size: cover !important
   height: 100vh
-
-
 </style>

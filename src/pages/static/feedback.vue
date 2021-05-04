@@ -3,16 +3,18 @@
     <h1 class="text-h3 text-weight-bold">FEEDBACK</h1>
     <p class="text-grey-6">Only registred users can send their messenges! We attach the contact details of users so that you can contact them and make sure that these reviews are transparent! When you send your review, it will be published only if we pass moderation for violations of the rules of the service.</p>
 
-    <q-scroll-area style="height: 45vh;padding: 10px">
-    <q-card class="q-mb-lg"  v-for="feedback in feedbacks" :key="feedback.id">
+    <q-scroll-area style="height: 45vh">
+    <q-card class="q-mx-xs q-mb-md"  v-for="feedback in feedbacks" :key="feedback.id">
       <q-item>
         <q-item-section>
         </q-item-section>
         <q-item-section side >
           <q-item-label caption>{{feedback.date |formatDate}}</q-item-label>
         </q-item-section>
+
       </q-item>
-      <q-card-section class="bg-grey-1">
+        <q-separator/>
+      <q-card-section >
         {{feedback.text}}
      </q-card-section>
       <q-card-section horizontal class="justify-between">
@@ -20,9 +22,8 @@
           <q-item-section v-if="feedback.image" thumbnail>
             <img style="object-fit: contain"  :src="feedback.image">
           </q-item-section>
-
         </q-item>
-        <q-item  clickable v-ripple>
+        <q-item  >
           <q-item-section avatar>
             <q-avatar>
               <img v-if="feedback.user.avatar" :src="feedback.user.avatar">
@@ -35,26 +36,32 @@
           </q-item-section>
         </q-item>
       </q-card-section>
-
-
     </q-card>
 
     </q-scroll-area>
-    <q-form  class="q-gutter-sm"    >
-
+    <q-form v-if="$user.loggedIn" class="q-gutter-sm" @submit="formSubmit">
    <q-input
           filled
           v-model="message"
-          class="col-6"
+          name="message"
           label="Write here your message... *"
           type="textarea"
+          autogrow
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
 
-      <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+      <div class="flex items-center justify-between">
+        <q-file
+        name="image"
+        dense
+        v-model="image"
+        style="flex-basis: 20%"
+        filled
+        label="Select image"
+      />
+        <q-btn size="md" label="Submit" type="submit" color="primary"/>
+
       </div>
     </q-form>
   </div>
@@ -65,6 +72,8 @@ export default {
   data () {
     return {
       feedbacks:[],
+      message:null,
+      image:null
     }
   },
   async mounted() {
@@ -90,7 +99,12 @@ export default {
   },
 
   methods: {
-
+    async formSubmit(evt){
+      console.log('submit')
+      const formData = new FormData(evt.target)
+      const response = await this.$api.post('/api/add_fb',formData)
+      console.log(response)
+    }
   }
 }
 </script>
