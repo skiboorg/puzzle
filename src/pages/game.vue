@@ -8,7 +8,13 @@
     <div v-else class="q-mt-sm"></div>
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
       <p class="text-bold text-h4 text-uppercase q-mb-md">CHOOSE GAME</p>
-      <div class="flex items-center justify-center full-width">
+      <div v-if="$user.loggedIn" class="">
+         <p v-if="can_play" class="text-bold text-h5 text-uppercase q-mb-md">You have {{$user.user.games_count}} Games today!</p>
+      <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">Your game limit for today is exhausted!<br> Check back tomorrow</p>
+
+      </div>
+
+      <div v-if="can_play" class="flex items-center justify-center full-width">
         <div @click="gameType=type.type" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
           <img :src="type.img" alt="">
 
@@ -21,7 +27,8 @@
       <p class="text-bold text-h4 text-uppercase q-mb-md">CHOOSE DIFFICULT</p>
       <div class="flex items-center justify-center full-width">
         <q-card
-          bordered
+
+          flat
 
           @click="startGame(index)"
           class="q-mr-sm cursor-pointer game-level q-pa-lg"
@@ -30,9 +37,9 @@
           :style="{'background-image': 'url('+ level.image +' )'}">
           <q-card-section class="no-padding full-height">
             <div class="flex column items-center justify-evenly full-height">
-              <p class="no-margin"><span class="text-weight-medium">Level:</span> {{level.name}}</p>
-              <p class="no-margin"><span class="text-weight-medium">Pieces:</span> {{level.pieces}}</p>
-              <p class="no-margin"><span class="text-weight-medium">Rating:</span> +{{level.rating}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Level:</span> {{level.name}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Pieces:</span> {{level.pieces}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Rating:</span> +{{level.rating}}</p>
             </div>
           </q-card-section>
         </q-card>
@@ -57,7 +64,7 @@
           <span v-else id="time_to_close" class="text-weight-bold absolute-top-right">00:{{counter | correct_seconds}}</span>
         </q-card-section>
         <q-card-section>
-          <p style="max-width: 350px;margin: 0 auto 20px" class="text-center">If you close this window before you look ads - we will subtract your rating for the game</p>
+          <p v-if="$user.loggedIn" style="max-width: 350px;margin: 0 auto 20px" class="text-center">If you close this window before you look ads - we will subtract your rating for the game</p>
           <div v-show="currentAd.image" class="">
             <q-img :src="currentAd.image"/>
           </div>
@@ -97,13 +104,26 @@ export default {
       ],
     }
   },
-  mounted() {
 
+  async mounted() {
     this.fetchLevels()
+    if (this.$user.loggedIn){
+      await this.$api.get('/api/user/game_count')
+      await this.getUser()
+    }
+
 
   },
   computed:{
-    ...mapGetters('game_level',['levels'])
+    ...mapGetters('game_level',['levels']),
+    can_play(){
+      if (this.$user.loggedIn){
+        return this.$user.user.games_count > 0
+      }else {
+        return true
+      }
+
+    }
   },
   filters:{
     correct_seconds(val){
@@ -113,13 +133,18 @@ export default {
   methods:{
     ...mapActions('game_level',['fetchLevels']),
     ...mapActions('auth',['getUser']),
-    resetGame(){
+    async resetGame(){
       //this.$router.go(this.$router.currentRoute)
+      document.getElementById('forPuzzle').innerHTML=''
       this.is_game_stop=true
       this.gameType=null
       this.gameReady=false
       this.gameId=null
       this.gameWin=false
+      if (this.$user.loggedIn){
+      await this.$api.get('/api/user/game_count')
+      await this.getUser()
+    }
     },
     closeAd(){
       clearInterval(this.showCloseInterval)
@@ -150,12 +175,12 @@ export default {
         that.counter-=1
         if (that.counter === 0){
           that.showClose = true
+          if (this.$user.loggedIn){
           await that.$api.post('/api/end_game',{
             game_id:that.gameId,
             request_type:'add_rating',
             game_status:that.gameWin,
           })
-          if (that.$user.loggedIn){
             await that.getUser()
           }
         }
@@ -176,12 +201,12 @@ export default {
       this.showAd = true
     },
     async looseGame(){
-      await this.$api.post('/api/end_game',{
+      if (this.$user.loggedIn){
+        await this.$api.post('/api/end_game',{
             game_id:this.gameId,
             request_type:'remove_rating',
             game_status:this.gameWin,
           })
-      if (this.$user.loggedIn){
         await this.getUser()
       }
       this.showAd = true
