@@ -6,12 +6,12 @@
 
     <h3 class="text-h4 text-weight-bold">YOUR MESSAGE</h3>
     <p class="text-grey-8">We will answer you within 24 hours to your specified mail for your support request, question or suggestion!</p>
-    <q-form  class="q-gutter-sm"    >
+    <q-form  class="q-gutter-sm"  @submit="formSubmit"  >
       <div class="form-grid ">
         <q-input
           class="col-6"
           filled
-          v-model="name"
+          v-model="email"
           label="Enter your mail *"
 
           lazy-rules
@@ -29,7 +29,7 @@
       </div>
    <q-input
           filled
-          v-model="name"
+          v-model="message"
           class="col-6"
           label="Write here your message... *"
           type="textarea"
@@ -60,6 +60,16 @@ export default {
 
     }
   },
+  methods:{
+    formSubmit(){
+      this.$q.notify({
+          message: 'Message sent',
+          position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
+          color: 'positive',
+          icon: 'announcement'
+        })
+    }
+  }
 
 }
 </script>

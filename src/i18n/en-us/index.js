@@ -2,9 +2,52 @@
 // so you can safely delete all default props below
 
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful',
-  test:'ENGLISH TEST',
+  menu_login:'LOGIN',
+  menu_profile:'PROFILE',
+  menu_rating:'RATING',
+  menu_info:'INFO',
+  menu_about:'ABOUT',
+  menu_rules:'RULES',
+  menu_contacts:'CONTACTS',
+  menu_feedback:'FEEDBACK',
+  menu_language:'LANGUAGE',
+  menu_back:'BACK',
+  menu_settings:'SETTINGS',
+  menu_stats:'STATS',
+  menu_balance:'BALANCE',
+  menu_logout:'LOG OUT',
+
+  email:'EMAIL',
+  nickname:'NICKNAME',
+  name:'NAME',
+  age:'AGE',
+  work:'WORK',
+  profession:'PROFESSION',
+  save_btn:'SAVE',
+  login_btn:'LOGIN',
+  register_btn:'REGISTER',
+
+  choose_game:'CHOOSE GAME',
+  choose_difficult:'CHOOSE DIFFICULT',
+  game_limit:'You have reached the limit of games to increase your ranking! You can continue playing, but the rating will not be credited or debited',
+  you_have:'YOU HAVE',
+  games_today:'GAMES TODAY',
+  level:'Level',
+  pieces:'Pieces',
+  rating:'Rating',
+
+  login: 'Login',
+  password: 'Password',
+  password_repeat: 'Repeat password',
+  sign_in:'SIGN IN',
+  sign_up:'Sign up',
+  no_account:'Have no account?',
+  have_account:'Have account?',
+  try_demo:'Try DEMO version',
+  profile_stats_text:'Here you can see your statistics of all games and the results of your games',
+  rating_text:'On this page, you can select the statistics of our portal you are interested in: the total number of games of users, the history of deposits and withdrawals of funds of our users',
+
+
   rulesText:`
   <p><span style="font-size: large;"><span lang="en-US">1. It is necessary to correctly assemble QR-ART Puzzle of one of three levels:</span></span></p>
 <p><span style="font-size: large;"><span lang="en-US">- Choose one of the levels, click on it and get the elements scattered across the field.</span></span></p>

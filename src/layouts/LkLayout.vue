@@ -44,43 +44,43 @@
             <p class="no-margin">Rating: {{$user.user.rating}}</p>
           </q-card-section>
         </q-card>
-      <q-list  dark>
-          <q-item clickable to="/game">
-            <q-item-section avatar >
-              <!--          <q-avatar rounded size="sm">-->
-              <!--            <img src="https://cdn.quasar.dev/img/mountains.jpg">-->
-              <!--          </q-avatar>-->
-              <q-icon color="white" name="west" />
-            </q-item-section>
-            <q-item-section>BACK</q-item-section>
-          </q-item>
-          <q-item clickable to="/lk/profile">
-            <q-item-section avatar>
-              <q-icon color="white" name="manage_accounts" />
-            </q-item-section>
-            <q-item-section>SETTINGS</q-item-section>
-          </q-item>
-          <q-item clickable to="/lk/stats">
-            <q-item-section avatar>
-              <q-icon color="white" name="bar_chart" />
-            </q-item-section>
-            <q-item-section>STATS</q-item-section>
-          </q-item>
-          <q-item clickable to="/lk/balance">
-            <q-item-section avatar>
-              <q-icon color="white" name="account_balance_wallet" />
-            </q-item-section>
-            <q-item-section>BALANCE</q-item-section>
-          </q-item>
-          <q-item clickable @click="logoutUser">
-            <q-item-section avatar>
+       <q-list  dark>
+            <q-item clickable to="/game">
+              <q-item-section avatar >
+                <!--          <q-avatar rounded size="sm">-->
+                <!--            <img src="https://cdn.quasar.dev/img/mountains.jpg">-->
+                <!--          </q-avatar>-->
+                <q-icon color="white" name="west" />
+              </q-item-section>
+              <q-item-section>{{$t('menu_back')}}</q-item-section>
+            </q-item>
+            <q-item clickable to="/lk/profile">
+              <q-item-section avatar>
+                <q-icon color="white" name="manage_accounts" />
+              </q-item-section>
+              <q-item-section>{{$t('menu_settings')}}</q-item-section>
+            </q-item>
+            <q-item clickable to="/lk/stats">
+              <q-item-section avatar>
+                <q-icon color="white" name="bar_chart" />
+              </q-item-section>
+              <q-item-section>{{$t('menu_stats')}}</q-item-section>
+            </q-item>
+            <q-item clickable to="/lk/balance">
+              <q-item-section avatar>
+                <q-icon color="white" name="account_balance_wallet" />
+              </q-item-section>
+              <q-item-section>{{$t('menu_balance')}}</q-item-section>
+            </q-item>
+            <q-item clickable @click="logoutUser">
+              <q-item-section avatar>
 
-              <q-icon color="white" name="logout" />
-            </q-item-section>
-            <q-item-section>LOGOUT</q-item-section>
-          </q-item>
+                <q-icon color="white" name="logout" />
+              </q-item-section>
+              <q-item-section>{{$t('menu_logout')}}</q-item-section>
+            </q-item>
 
-        </q-list>
+          </q-list>
     </q-drawer>
 
     <q-page-container>
@@ -95,32 +95,32 @@
                 <!--          </q-avatar>-->
                 <q-icon color="white" name="west" />
               </q-item-section>
-              <q-item-section>BACK</q-item-section>
+              <q-item-section>{{$t('menu_back')}}</q-item-section>
             </q-item>
             <q-item clickable to="/lk/profile">
               <q-item-section avatar>
                 <q-icon color="white" name="manage_accounts" />
               </q-item-section>
-              <q-item-section>SETTINGS</q-item-section>
+              <q-item-section>{{$t('menu_settings')}}</q-item-section>
             </q-item>
             <q-item clickable to="/lk/stats">
               <q-item-section avatar>
                 <q-icon color="white" name="bar_chart" />
               </q-item-section>
-              <q-item-section>STATS</q-item-section>
+              <q-item-section>{{$t('menu_stats')}}</q-item-section>
             </q-item>
             <q-item clickable to="/lk/balance">
               <q-item-section avatar>
                 <q-icon color="white" name="account_balance_wallet" />
               </q-item-section>
-              <q-item-section>BALANCE</q-item-section>
+              <q-item-section>{{$t('menu_balance')}}</q-item-section>
             </q-item>
             <q-item clickable @click="logoutUser">
               <q-item-section avatar>
 
                 <q-icon color="white" name="logout" />
               </q-item-section>
-              <q-item-section>LOGOUT</q-item-section>
+              <q-item-section>{{$t('menu_logout')}}</q-item-section>
             </q-item>
 
           </q-list>

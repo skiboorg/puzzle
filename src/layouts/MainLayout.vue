@@ -49,56 +49,56 @@
           <q-item-section avatar>
             <q-icon color="white" name="chat" />
           </q-item-section>
-          <q-item-section>PROFILE</q-item-section>
+          <q-item-section>{{$t('menu_profile')}}</q-item-section>
         </q-item>
         <q-item v-if="!$user.loggedIn" clickable to="/auth">
           <q-item-section avatar>
             <q-icon color="white" name="login" />
           </q-item-section>
-          <q-item-section>LOGIN</q-item-section>
+          <q-item-section>{{$t('menu_login')}}</q-item-section>
         </q-item>
         <!--        v-else-->
         <q-item clickable to="rating">
           <q-item-section avatar>
             <q-icon color="white" name="bar_chart" />
           </q-item-section>
-          <q-item-section>RATING</q-item-section>
+          <q-item-section>{{$t('menu_rating')}}</q-item-section>
         </q-item>
         <q-item clickable to="info">
           <q-item-section avatar>
             <q-icon color="white" name="info" />
           </q-item-section>
-          <q-item-section>INFO</q-item-section>
+          <q-item-section>{{$t('menu_info')}}</q-item-section>
         </q-item>
         <q-item clickable to="/about">
           <q-item-section avatar>
             <q-icon color="white" name="help_outline" />
           </q-item-section>
-          <q-item-section>ABOUT</q-item-section>
+          <q-item-section>{{$t('menu_about')}}</q-item-section>
         </q-item>
         <q-item clickable to="/rules">
           <q-item-section avatar>
 
             <q-icon color="white" name="school" />
           </q-item-section>
-          <q-item-section>RULES</q-item-section>
+          <q-item-section>{{$t('menu_rules')}}</q-item-section>
         </q-item>
         <q-item clickable to="/contacts">
           <q-item-section avatar>
 
             <q-icon color="white" name="contacts" />
           </q-item-section>
-          <q-item-section>CONTACTS</q-item-section>
+          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
         </q-item>
         <q-item clickable to="/feedback">
           <q-item-section avatar>
 
             <q-icon color="white" name="feedback" />
           </q-item-section>
-          <q-item-section>FEEDBACK</q-item-section>
+          <q-item-section>{{$t('menu_feedback')}}</q-item-section>
         </q-item>
         <q-separator spaced="md" dark/>
-        <q-btn-dropdown flat unelevated color="white" icon="language" label="LANGUAGE">
+        <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">
           <q-list>
             <q-item clickable v-close-popup @click="lang='en-us'">
               <q-item-section>
@@ -143,80 +143,80 @@
               <p class="no-margin">Rating: {{$user.user.rating}}</p>
             </q-card-section>
           </q-card>
-          <q-list  dark>
-            <!--v-if="$user.loggedIn"-->
-            <q-item v-if="$user.loggedIn" clickable to="/lk/profile">
-              <q-item-section avatar>
-                <q-icon color="white" name="chat" />
-              </q-item-section>
-              <q-item-section>PROFILE</q-item-section>
-            </q-item>
-            <q-item v-if="!$user.loggedIn" clickable to="/auth">
-              <q-item-section avatar>
-                <q-icon color="white" name="login" />
-              </q-item-section>
-              <q-item-section>LOGIN</q-item-section>
-            </q-item>
-            <!--        v-else-->
-            <q-item clickable to="rating">
-              <q-item-section avatar>
-                <q-icon color="white" name="bar_chart" />
-              </q-item-section>
-              <q-item-section>RATING</q-item-section>
-            </q-item>
-            <q-item clickable to="info">
-              <q-item-section avatar>
-                <q-icon color="white" name="info" />
-              </q-item-section>
-              <q-item-section>INFO</q-item-section>
-            </q-item>
-            <q-item clickable to="/about">
-              <q-item-section avatar>
-                <q-icon color="white" name="help_outline" />
-              </q-item-section>
-              <q-item-section>ABOUT</q-item-section>
-            </q-item>
-            <q-item clickable to="/rules">
-              <q-item-section avatar>
+         <q-list  dark>
+        <!--v-if="$user.loggedIn"-->
+        <q-item v-if="$user.loggedIn" clickable to="/lk/profile">
+          <q-item-section avatar>
+            <q-icon color="white" name="chat" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_profile')}}</q-item-section>
+        </q-item>
+        <q-item v-if="!$user.loggedIn" clickable to="/auth">
+          <q-item-section avatar>
+            <q-icon color="white" name="login" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_login')}}</q-item-section>
+        </q-item>
+        <!--        v-else-->
+        <q-item clickable to="rating">
+          <q-item-section avatar>
+            <q-icon color="white" name="bar_chart" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_rating')}}</q-item-section>
+        </q-item>
+        <q-item clickable to="info">
+          <q-item-section avatar>
+            <q-icon color="white" name="info" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_info')}}</q-item-section>
+        </q-item>
+        <q-item clickable to="/about">
+          <q-item-section avatar>
+            <q-icon color="white" name="help_outline" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_about')}}</q-item-section>
+        </q-item>
+        <q-item clickable to="/rules">
+          <q-item-section avatar>
 
-                <q-icon color="white" name="school" />
+            <q-icon color="white" name="school" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_rules')}}</q-item-section>
+        </q-item>
+        <q-item clickable to="/contacts">
+          <q-item-section avatar>
+
+            <q-icon color="white" name="contacts" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
+        </q-item>
+        <q-item clickable to="/feedback">
+          <q-item-section avatar>
+
+            <q-icon color="white" name="feedback" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_feedback')}}</q-item-section>
+        </q-item>
+        <q-separator spaced="md" dark/>
+        <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">
+          <q-list>
+            <q-item clickable v-close-popup @click="lang='en-us'">
+              <q-item-section>
+                <q-item-label>En</q-item-label>
               </q-item-section>
-              <q-item-section>RULES</q-item-section>
             </q-item>
-            <q-item clickable to="/contacts">
-              <q-item-section avatar>
 
-                <q-icon color="white" name="contacts" />
+            <q-item clickable v-close-popup @click="lang='cn'">
+              <q-item-section>
+                <q-item-label>Cn</q-item-label>
               </q-item-section>
-              <q-item-section>CONTACTS</q-item-section>
             </q-item>
-            <q-item clickable to="/feedback">
-              <q-item-section avatar>
 
-                <q-icon color="white" name="feedback" />
-              </q-item-section>
-              <q-item-section>FEEDBACK</q-item-section>
-            </q-item>
-            <q-separator spaced="md" dark/>
-            <q-btn-dropdown flat unelevated color="white" icon="language" label="LANGUAGE">
-              <q-list>
-                <q-item clickable v-close-popup @click="lang='en-us'">
-                  <q-item-section>
-                    <q-item-label>En</q-item-label>
-                  </q-item-section>
-                </q-item>
-
-                <q-item clickable v-close-popup @click="lang='cn'">
-                  <q-item-section>
-                    <q-item-label>Cn</q-item-label>
-                  </q-item-section>
-                </q-item>
-
-
-              </q-list>
-            </q-btn-dropdown>
 
           </q-list>
+        </q-btn-dropdown>
+
+      </q-list>
           <div class="text-grey-6">info@qrpuz.com</div>
         </div>
         <div class="container col-lg-9 col-md-9 col-sm-12 col-xs-12">

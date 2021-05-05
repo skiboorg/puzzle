@@ -2,9 +2,52 @@
 // so you can safely delete all default props below
 
 export default {
-  failed: 'Action failed CN',
-  success: 'Action was successful CN',
-  test:'CHINA TEST',
+    menu_login:'登录',
+  menu_profile:'轮廓',
+  menu_rating:'评分',
+  menu_info:'信息',
+  menu_about:'关于我们',
+  menu_rules:'规则',
+  menu_contacts:'联络人',
+  menu_feedback:'反馈',
+  menu_language:'语',
+  menu_back:'背部',
+  menu_settings:'设定',
+  menu_stats:'统计',
+  menu_balance:'现金余额',
+  menu_logout:'登出',
+
+  email:'电邮',
+  nickname:'昵称',
+  name:'名称',
+  age:'年龄',
+  work:'工作',
+  profession:'职业',
+  save_btn:'保存',
+  login_btn:'登录',
+  register_btn:'登记',
+
+  choose_game:'选择游戏',
+  choose_difficult:'选择困难',
+  game_limit:'您已经达到游戏上限，可以提高排名！ 您可以继续玩，但评分不会记入贷方或借方',
+  you_have:'你今天有',
+  games_today:'场比赛',
+  level:'等级',
+  pieces:'件',
+  rating:'评分',
+
+  login: '登录',
+  password: '密码',
+  password_repeat: '重复输入密码',
+  sign_in:'登入',
+  sign_up:'注册',
+  no_account:'没有帐号？',
+  have_account:'有帐号吗？',
+  try_demo:'T试用DEMO版本',
+  profile_stats_text:'在这里，您可以查看所有游戏的统计信息以及游戏结果',
+  rating_text:'在此页面上，您可以选择感兴趣的门户网站的统计信息：用户，我们用户的资金存入和提取历史',
+
+
   aboutText:`
   <p><span style="font-family: Noto Serif CJK SC;"><span style="font-size: small;"><span lang="zh-CN"><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">关于我</span></span><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">们</span></span></span></span></span></p>
 <p><span style="font-family: Noto Serif CJK SC;"><span style="font-size: small;"><span lang="zh-CN"><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">我</span></span><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">们创建并实现了</span></span></span></span></span><span style="font-family: Microsoft YaHei, serif;"><span style="font-size: large;">PuzPays</span></span><span style="font-family: Noto Serif CJK SC;"><span style="font-size: small;"><span lang="zh-CN"><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">拼</span></span><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">图，它使您能够探索不同国家，年龄和性别的人们之间逻辑思维的水平。</span></span></span></span></span></p>

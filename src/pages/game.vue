@@ -7,10 +7,10 @@
     </div>
     <div v-else class="q-mt-sm"></div>
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
-      <p class="text-bold text-h4 text-uppercase q-mb-md">CHOOSE GAME</p>
+      <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
       <div v-if="$user.loggedIn" class="">
-         <p v-if="can_play" class="text-bold text-h5 text-uppercase q-mb-md">You have {{$user.user.games_count}} Games today!</p>
-      <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">Your game limit for today is exhausted!<br> Check back tomorrow</p>
+         <p v-if="can_play" class="text-bold text-h5 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
+      <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
 
       </div>
 
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div style="height: 90vh" v-if="gameType && !gameReady" class="flex column items-center justify-center ">
-      <p class="text-bold text-h4 text-uppercase q-mb-md">CHOOSE DIFFICULT</p>
+      <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_difficult')}}</p>
       <div class="flex items-center justify-center full-width">
         <q-card
 
@@ -37,9 +37,9 @@
           :style="{'background-image': 'url('+ level.image +' )'}">
           <q-card-section class="no-padding full-height">
             <div class="flex column items-center justify-evenly full-height">
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Level:</span> {{level.name}}</p>
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Pieces:</span> {{level.pieces}}</p>
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">Rating:</span> +{{level.rating}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('level')}}:</span> {{level.name}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('pieces')}}:</span> {{level.pieces}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('rating')}}:</span> +{{level.rating}}</p>
             </div>
           </q-card-section>
         </q-card>

@@ -1,9 +1,15 @@
 <template>
     <div class="static-page-wrapper">
       <h1 class="text-h3 text-weight-bold">Rating</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam expedita magnam omnis pariatur possimus quia repellendus sed voluptates! Ad adipisci asperiores consequatur culpa delectus, distinctio dolores dolorum eligendi ex in incidunt, labore laboriosam maxime molestiae nemo nobis, nostrum odit perspiciatis quam quas quasi quia quibusdam quidem quod tempore voluptas.</p>
-
-      <q-list  class="full-width" >
+      <p>{{$t('rating_text')}}</p>
+      <q-btn-toggle
+      v-model="type"
+      toggle-color="primary"
+      class="q-mb-lg"
+      :options="[
+        {label: 'Rating', value: 'rating'},
+        {label: 'Money', value: 'money'}]"/>
+      <q-list v-if="type==='rating'"  class="full-width" >
 
       <q-item v-for="player in players" :key="player.id">
         <q-item-section avatar>
@@ -36,7 +42,8 @@ import { date } from 'quasar'
 export default {
   data () {
     return {
-      players:[],
+      type:'rating',
+      players:[]
     }
   },
   async mounted() {

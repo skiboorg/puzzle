@@ -1,6 +1,6 @@
 <template>
   <div class="full-height flex column items-center justify-center">
-    <p class="text-h6 text-bold">{{is_register ? 'REGISTRATION':'LOGIN' }}</p>
+    <p class="text-h6 text-bold">{{is_register ? $t('register_btn'):$t('login_btn') }}</p>
     <q-form
       v-if="is_register"
       @submit="onSubmit"
@@ -11,14 +11,14 @@
       filled
       :dense="!$q.screen.gt.md"
       v-model="userData.email"
-      label="email *"
+      :label="$t('email')"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-input
       filled
       :dense="!$q.screen.gt.md"
       v-model="userData.nickname"
-      label="nickname *"
+      :label="$t('nickname')"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-input
@@ -26,7 +26,7 @@
       :dense="!$q.screen.gt.md"
       v-model="userData.age"
       type="number"
-      label="age *"
+      :label="$t('age')"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-select class="q-mb-lg" filled :dense="!$q.screen.gt.md" v-model="userData.sex" :options="sex_options" label="Sex" />
@@ -36,7 +36,7 @@
       filled
       :dense="!$q.screen.gt.md"
       v-model="userData.password1"
-      label="Password *"
+      :label="$t('password')"
       :type="isPwd ? 'password' : 'text'"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']">
@@ -53,7 +53,7 @@
       :dense="!$q.screen.gt.md"
       v-model="userData.password2"
       :type="isPwd ? 'password' : 'text'"
-      label="Repeat Password *"
+      :label="$t('password_repeat')"
       lazy-rules
       :rules="[ val => val && val===this.userData.password1 || 'Passwords not match']">
         <template v-slot:append>
@@ -69,8 +69,8 @@
 
       <div>
         <div class="text-center">
-          <q-btn label="REGISTER"  type="submit" class="q-px-xl q-mb-md" color="primary "/>
-          <p>Уже есть аккаунт? <a href="#" @click.prevent="is_register=false">Войти</a></p>
+          <q-btn :label="$t('register_btn')"  type="submit" class="q-px-xl q-mb-md" color="primary "/>
+          <p>{{$t('have_account')}} <a href="#" @click.prevent="is_register=false">{{$t('sign_in')}}</a></p>
         </div>
 
 
@@ -81,7 +81,7 @@
         filled
         :dense="!$q.screen.gt.md"
         v-model="userLogin.email"
-        label="email *"
+        :label="$t('email')+ '*'"
 
         style="width: 320px"
         lazy-rules
@@ -92,7 +92,7 @@
         filled
         :type="isPwd ? 'password' : 'text'"
         v-model="userLogin.password"
-        label="Пароль *"
+        :label="$t('password')+ '*'"
         lazy-rules
         :rules="[val => val !== null && val !== '' || 'Введите пароль' ]">
         <template v-slot:append>
@@ -104,10 +104,12 @@
         </template>
       </q-input>
       <div class="text-center">
-        <q-btn size="md" label="Войти" type="submit" color="primary" class="q-px-xl q-mb-md"/>
-      <p>Нет аккаунта? <a class="text-primary" href="#" @click.prevent="is_register=true">Регистрация</a></p>
+        <q-btn size="md" :label="$t('login_btn')" type="submit" color="primary" class="q-px-xl q-mb-md"/>
+      <p>{{$t('no_account')}} <a class="text-primary" href="#" @click.prevent="is_register=true">{{$t('sign_up')}}</a></p>
 
-        <p @click="$router.push('/game')" class="text-primary flex items-center justify-center"><q-icon size="2rem" name="shutter_speed" class="q-mr-md" /> Попробовать DEMO - версию</p>
+        <p @click="$router.push('/game')" class="text-primary flex items-center justify-center cursor-pointer">
+          <q-icon size="2rem" name="shutter_speed" class="q-mr-md" /> {{$t('try_demo')}}
+        </p>
       </div>
 
     </q-form>

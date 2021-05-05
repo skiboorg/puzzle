@@ -1,7 +1,8 @@
 <template>
   <div class="static-page-wrapper">
     <h1 class="text-h3 text-weight-bold text-uppercase">stats</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum iste non praesentium sed sit! Deleniti eum eveniet hic nihil tempora.</p>
+    <p>{{$t('profile_stats_text')}}</p>
+   <q-scroll-area style="height: 65vh">
     <q-list   class="rounded-borders full-width" >
 
 
@@ -21,7 +22,9 @@
           <q-icon  :name="game.result ? 'check' : 'close'" :color="game.result ? 'positive' : 'red'" />
         </q-item-section>
       </q-item>
+
     </q-list>
+    </q-scroll-area>
   </div>
 </template>
 <script>
