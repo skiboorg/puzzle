@@ -120,7 +120,7 @@
     </q-drawer>
     <q-page-container>
       <q-page class="row">
-        <div class="col-3 left-menu flex column items-center justify-around gt-sm">
+        <div id="left_menu" class="col-3 left-menu flex column items-center justify-around gt-sm">
           <img @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
             <q-item>

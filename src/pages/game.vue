@@ -1,9 +1,12 @@
 <template>
-  <q-page >
-    <div v-if="gameType" class="flex items-center justify-between q-mt-sm">
-      <div v-if="gameReady" class="text-bold text-h6 text-uppercase" id="timer"></div>
+  <q-page style="overflow: hidden">
+    <div v-if="gameType" class="flex column items-center justify-center q-mt-sm">
+
+        <div v-if="gameReady && gameType" class="text-bold text-h5 text-uppercase q-px-lg" id="timer">00:00</div>
       <div v-else></div>
-      <p class="no-margin text-bold text-h6 text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+      <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+
+
     </div>
     <div v-else class="q-mt-sm"></div>
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
@@ -1228,7 +1231,6 @@ export default {
         let that_local = this
         console.log('begin')
         function checkTimer(){
-          console.log(totalAmount)
           if (totalAmount <= 0){
             that_local.removeAllListeners();
             that_local.endGame();
@@ -1248,12 +1250,12 @@ export default {
 // record offset between mouse coordinates et board origin
 
         let styl = getComputedStyle(this.divGame);
-        console.log()
-        if (that.$q.screen.gt.md){
-          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + 480;
-        }else{
-          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth)
-        }
+
+         let left_menu = document.getElementById('left_menu')
+          console.log(left_menu.getBoundingClientRect().width)
+
+          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + left_menu.getBoundingClientRect().width;
+
         if (that.$q.screen.gt.md){
           this.mouseOffsY = this.divGame.offsetTop + parseFloat(styl.borderTopWidth);
         }else {
@@ -1508,11 +1510,11 @@ export default {
           console.log('touch event')
           let touch = event.changedTouches ? event.changedTouches[0] : false;
           pageX =  touch.clientX;
-          pageY = touch.clientY-50;
+          pageY = touch.clientY-70;
         }else {
           console.log('mouse event')
           pageX =  event.pageX;
-          pageY = event.pageY
+          pageY = event.pageY-70
         }
         let kp, kn, z;
 
@@ -1788,6 +1790,10 @@ export default {
 }
 </script>
 <style lang="sass">
+#timer
+  border: 2px solid #05113D
+  box-sizing: border-box
+  box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25)
 .game-type
   height: 200px
   width: 200px
@@ -1807,6 +1813,7 @@ export default {
 
 #puzzle_wrapper
   height: 90vh
+  overflow-y: hidden
 
 #forPuzzle
   border: none
