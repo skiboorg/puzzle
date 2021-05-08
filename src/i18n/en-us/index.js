@@ -2,6 +2,10 @@
 // so you can safely delete all default props below
 
 export default {
+  index_title:'We work, you collect, we earn together!',
+  index_subtitle:'The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!',
+  index_button:'SIGN IN OR SIGN UP',
+
   menu_login:'LOGIN',
   menu_profile:'PROFILE',
   menu_rating:'RATING',
@@ -16,6 +20,7 @@ export default {
   menu_stats:'STATS',
   menu_balance:'BALANCE',
   menu_logout:'LOG OUT',
+  menu_lang_ch:'中国人',
 
   email:'EMAIL',
   nickname:'NICKNAME',
@@ -47,6 +52,12 @@ export default {
   profile_stats_text:'Here you can see your statistics of all games and the results of your games',
   rating_text:'On this page, you can select the statistics of our portal you are interested in: the total number of games of users, the history of deposits and withdrawals of funds of our users',
 
+  rating_title:'Rating',
+  info_title:'Information',
+  about_title:'About',
+  rules_title:'Rules',
+  contacts_title:'Contacts',
+  feedback_title:'Feedback',
 
   rulesText:`
   <p><span style="font-size: large;"><span lang="en-US">1. It is necessary to correctly assemble QR-ART Puzzle of one of three levels:</span></span></p>

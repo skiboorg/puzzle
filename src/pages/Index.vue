@@ -9,8 +9,8 @@
 
           <div  class="index-left flex column items-start justify-between">
             <div  class=" ">
-              <h1 class="text-white text-h3">We work, you collect, we earn together!</h1>
-              <h3 class="text-grey-6 text-body1 ">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</h3>
+              <h1 class="text-white text-h3">{{$t('index_title')}}</h1>
+              <h3 class="text-grey-6 text-body1 ">{{$t('index_subtitle')}}</h3>
 
             </div>
             <div class="row text-grey-6 q-gutter-xl gt-xs">
@@ -32,7 +32,7 @@
             <path d="M123.139 25.1036C124.301 23.9223 124.285 22.0228 123.104 20.8611L103.853 1.92895C102.672 0.767179 100.773 0.783007 99.6108 1.9643C98.449 3.1456 98.4648 5.04503 99.6461 6.2068L116.758 23.0354L99.929 40.1467C98.7672 41.328 98.783 43.2275 99.9643 44.3892C101.146 45.551 103.045 45.5352 104.207 44.3539L123.139 25.1036ZM1.025 26.9999L121.025 25.9999L120.975 20.0001L0.975001 21.0001L1.025 26.9999Z" fill="white"/>
             </svg>
 
-              <p class="no-margin">SIGN IN OR SIGN UP</p>
+              <p class="no-margin">{{$t('index_button')}}</p>
             </div>
           </div>
           <div class="row text-grey-6 q-gutter-xl lt-sm">
@@ -91,7 +91,7 @@ export default {
     margin-bottom: 0
     svg
       position: absolute
-      left: -80%
+      left: -100%
     p
       color: #ffffff
       font-weight: 700

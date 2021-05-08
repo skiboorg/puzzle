@@ -1,6 +1,6 @@
 <template>
   <div class="static-page-wrapper">
-    <h1 class="text-h3 text-weight-bold">FEEDBACK</h1>
+    <h1 class="text-h3 text-weight-bold">{{$t('feedback_title')}}</h1>
     <p class="text-grey-6">Only registred users can send their messenges! We attach the contact details of users so that you can contact them and make sure that these reviews are transparent! When you send your review, it will be published only if we pass moderation for violations of the rules of the service.</p>
 
     <q-scroll-area style="height: 45vh">

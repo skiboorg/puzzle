@@ -2,6 +2,10 @@
 // so you can safely delete all default props below
 
 export default {
+  index_title:'我们工作，您收集，我们一起赚钱！',
+  index_subtitle:'该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！',
+  index_button:'登录或注册',
+
     menu_login:'登录',
   menu_profile:'轮廓',
   menu_rating:'评分',
@@ -16,6 +20,7 @@ export default {
   menu_stats:'统计',
   menu_balance:'现金余额',
   menu_logout:'登出',
+  menu_lang_ch:'中国人',
 
   email:'电邮',
   nickname:'昵称',
@@ -46,6 +51,13 @@ export default {
   try_demo:'T试用DEMO版本',
   profile_stats_text:'在这里，您可以查看所有游戏的统计信息以及游戏结果',
   rating_text:'在此页面上，您可以选择感兴趣的门户网站的统计信息：用户，我们用户的资金存入和提取历史',
+
+  rating_title:'评分',
+  info_title:'信息',
+  about_title:'关于',
+  rules_title:'规则',
+  contacts_title:'联络人',
+  feedback_title:'反馈',
 
 
   aboutText:`

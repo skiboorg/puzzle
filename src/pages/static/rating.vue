@@ -1,6 +1,6 @@
 <template>
     <div class="static-page-wrapper">
-      <h1 class="text-h3 text-weight-bold">Rating</h1>
+      <h1 class="text-h3 text-weight-bold">{{$t('rating_title')}}</h1>
       <p>{{$t('rating_text')}}</p>
       <q-btn-toggle
       v-model="type"

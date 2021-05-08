@@ -178,7 +178,7 @@ export default {
         that.counter-=1
         if (that.counter === 0){
           that.showClose = true
-          if (this.$user.loggedIn){
+          if (that.$user.loggedIn){
           await that.$api.post('/api/end_game',{
             game_id:that.gameId,
             request_type:'add_rating',

@@ -3,7 +3,8 @@
     <q-no-ssr>
       <q-header  class="bg-accent lt-md"   elevated>
         <q-toolbar>
-          <img @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
+          <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
+          <img v-else @click="$router.push('/auth')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
           <q-toolbar-title>
           </q-toolbar-title>
           <q-btn
@@ -20,8 +21,16 @@
     <q-drawer
       v-model="leftDrawerOpen"
       side="right"
+      :width="200"
       elevated
       content-class="left-menu flex column items-center justify-evenly bg-accent">
+      <q-toolbar class="absolute-top">
+      <q-space/>
+      <q-btn flat round dense color="white" @click="leftDrawerOpen=!leftDrawerOpen">
+        <q-icon name="close" />
+      </q-btn>
+    </q-toolbar>
+
       <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
         <q-item>
           <q-item-section avatar>
@@ -108,7 +117,7 @@
 
             <q-item clickable v-close-popup @click="lang='cn'">
               <q-item-section>
-                <q-item-label>Cn</q-item-label>
+                 <q-item-label>{{$t('menu_lang_ch')}}</q-item-label>
               </q-item-section>
             </q-item>
 
@@ -121,7 +130,8 @@
     <q-page-container>
       <q-page class="row">
         <div id="left_menu" class="col-3 left-menu flex column items-center justify-around gt-sm">
-          <img @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
+         <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
+          <img v-else @click="$router.push('/auth')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
             <q-item>
               <q-item-section avatar>
@@ -208,7 +218,7 @@
 
             <q-item clickable v-close-popup @click="lang='cn'">
               <q-item-section>
-                <q-item-label>Cn</q-item-label>
+                <q-item-label>{{$t('menu_lang_ch')}}</q-item-label>
               </q-item-section>
             </q-item>
 

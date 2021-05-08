@@ -1,6 +1,6 @@
 <template>
   <div class="static-page-wrapper">
-    <h1 class="text-h4 text-weight-bold">CONTACTS</h1>
+    <h1 class="text-h4 text-weight-bold">{{$t('contacts_title')}}</h1>
     <p class="text-grey-8">Company: 为注册YY产品与服务相关账号（以下统称“YY账号”）</p>
     <p>Adress: 为务相关账, 以下统称 32 street</p>
 
