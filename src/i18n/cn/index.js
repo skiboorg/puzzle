@@ -59,6 +59,19 @@ export default {
   contacts_title:'联络人',
   feedback_title:'反馈',
 
+  contacts_text:'contacts_text',
+  contacts_form_title:'你的信息',
+  contacts_form_text:'我们会在24小时内回复您指定的邮件，以获取您的支持请求，问题或建议！',
+  contacts_info:`
+  我们公司:  为注册YY产品与服务相关账号（以下统称“YY账号”）<br>
+  我们的地址: 为务相关账, 以下统称 32 街道<br>
+  我们的邮件: info@puzpays.com<br>
+  我们的微信: +38701249218949 支持24 \ 7
+  `,
+  contacts_form_attach:'附件文件',
+  contacts_form_send:'发送',
+  contacts_form_message:'在这里写下您的留言...',
+
 
   aboutText:`
   <p><span style="font-family: Noto Serif CJK SC;"><span style="font-size: small;"><span lang="zh-CN"><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">关于我</span></span><span style="font-family: Microsoft YaHei;"><span style="font-size: large;">们</span></span></span></span></span></p>

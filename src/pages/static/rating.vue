@@ -8,7 +8,7 @@
       class="q-mb-lg"
       :options="[
         {label: 'Rating', value: 'rating'},
-        {label: 'Money', value: 'money'}]"/>
+        {label: 'WITHDRAW', value: 'money'}]"/>
       <q-list v-if="type==='rating'"  class="full-width" >
 
       <q-item v-for="player in players" :key="player.id">

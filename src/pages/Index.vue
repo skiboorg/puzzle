@@ -9,14 +9,15 @@
 
           <div  class="index-left flex column items-start justify-between">
             <div  class=" ">
-              <h1 class="text-white text-h3">{{$t('index_title')}}</h1>
-              <h3 class="text-grey-6 text-body1 ">{{$t('index_subtitle')}}</h3>
+              <h1 class="text-white text-h3 q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
+              <p class="text-grey-6 text-body1 ">We work, you collect, we earn together!</p>
+              <h3 class="text-white text-h5 ">该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！</h3>
+              <p class="text-grey-6 text-body1 ">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</p>
 
             </div>
             <div class="row text-grey-6 q-gutter-xl gt-xs">
-              <p>info@qrpuz.com</p>
-              <p>info@qrpuz.com</p>
-              <p>info@qrpuz.com</p>
+              <p>用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+
             </div>
           </div>
 
@@ -36,7 +37,7 @@
             </div>
           </div>
           <div class="row text-grey-6 q-gutter-xl lt-sm">
-              <p>info@qrpuz.com</p>
+               <p>用于广告和合作伙伴的邮件： info@puzpayz.com</p>
 
             </div>
 
@@ -68,7 +69,8 @@ export default {
     background: $accent url(~assets/index-bg.png) no-repeat center
     padding-top: 150px
     h1
-      max-width: 530px
+      max-width: 445px
+      line-height: 65px
     h3
       max-width: 530px
 
@@ -105,6 +107,14 @@ export default {
       margin-bottom: 40px
     &-bg
       padding-top: 70px
+    h1
+      font-size: 20px
+      line-height: 25px
+    h3
+      font-size: 18px
+      max-width: 530px
+    & .text-body1
+        font-size: 14px
 
   .logo
     text-align: center

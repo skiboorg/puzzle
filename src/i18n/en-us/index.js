@@ -59,6 +59,19 @@ export default {
   contacts_title:'Contacts',
   feedback_title:'Feedback',
 
+  contacts_text:'contacts_text',
+  contacts_form_title:'YOUR MESSAGE',
+  contacts_form_text:'We will answer you within 24 hours to your specified mail for your support request, question or suggestion!',
+  contacts_info:`
+  Our company:  为注册YY产品与服务相关账号（以下统称“YY账号”）<br>
+  Our address: 为务相关账, 以下统称 32 街道<br>
+  Our mail: info@puzpays.com<br>
+  Our WeChat: +38701249218949 支持24 \ 7
+  `,
+  contacts_form_attach:'ATTACH FILES',
+  contacts_form_send:'SEND',
+  contacts_form_message:'Write here your message... ',
+
   rulesText:`
   <p><span style="font-size: large;"><span lang="en-US">1. It is necessary to correctly assemble QR-ART Puzzle of one of three levels:</span></span></p>
 <p><span style="font-size: large;"><span lang="en-US">- Choose one of the levels, click on it and get the elements scattered across the field.</span></span></p>
