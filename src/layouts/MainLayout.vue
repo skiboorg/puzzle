@@ -31,27 +31,27 @@
       </q-btn>
     </q-toolbar>
 
-      <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
-        <q-item>
-          <q-item-section avatar>
-            <q-avatar>
-              <img v-if="$user.user.avatar" :src="$user.user.avatar">
-              <img v-else src="https://cdn.quasar.dev/img/boy-avatar.png">
-            </q-avatar>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>{{$user.user.nickname}}</q-item-label>
-            <q-item-label caption>
-              {{$user.user.email}}
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-separator />
-        <q-card-section >
-          <p class="q-mb-xs">Balance: {{$user.user.balance + $user.user.add_balance}}</p>
-          <p class="no-margin">Rating: {{$user.user.rating}}</p>
-        </q-card-section>
-      </q-card>
+      <q-card v-if="$user.loggedIn" class="user-card"  >
+            <q-item>
+              <q-item-section avatar>
+                <q-avatar>
+                  <img v-if="$user.user.avatar" :src="$user.user.avatar">
+                  <img v-else src="https://cdn.quasar.dev/img/boy-avatar.png">
+                </q-avatar>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{$user.user.nickname}}</q-item-label>
+                <q-item-label caption class="text-white">
+                  {{$user.user.email}}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-separator />
+            <q-card-section >
+              <p class="q-mb-xs">Balance: {{$user.user.balance + $user.user.add_balance}}</p>
+              <p class="no-margin">Rating: {{$user.user.rating}}</p>
+            </q-card-section>
+          </q-card>
       <q-list  dark>
         <!--v-if="$user.loggedIn"-->
         <q-item v-if="$user.loggedIn" clickable to="/lk/profile">
@@ -67,17 +67,11 @@
           <q-item-section>{{$t('menu_login')}}</q-item-section>
         </q-item>
         <!--        v-else-->
-        <q-item clickable to="rating">
+        <q-item v-if="$user.loggedIn" clickable to="rating">
           <q-item-section avatar>
             <q-icon color="white" name="bar_chart" />
           </q-item-section>
           <q-item-section>{{$t('menu_rating')}}</q-item-section>
-        </q-item>
-        <q-item clickable to="info">
-          <q-item-section avatar>
-            <q-icon color="white" name="info" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_info')}}</q-item-section>
         </q-item>
         <q-item clickable to="/about">
           <q-item-section avatar>
@@ -85,19 +79,18 @@
           </q-item-section>
           <q-item-section>{{$t('menu_about')}}</q-item-section>
         </q-item>
-        <q-item clickable to="/rules">
+         <q-item clickable to="/rules">
           <q-item-section avatar>
 
             <q-icon color="white" name="school" />
           </q-item-section>
           <q-item-section>{{$t('menu_rules')}}</q-item-section>
         </q-item>
-        <q-item clickable to="/contacts">
+        <q-item clickable to="info">
           <q-item-section avatar>
-
-            <q-icon color="white" name="contacts" />
+            <q-icon color="white" name="info" />
           </q-item-section>
-          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
+          <q-item-section>{{$t('menu_info')}}</q-item-section>
         </q-item>
         <q-item clickable to="/feedback">
           <q-item-section avatar>
@@ -106,18 +99,27 @@
           </q-item-section>
           <q-item-section>{{$t('menu_feedback')}}</q-item-section>
         </q-item>
+
+        <q-item clickable to="/contacts">
+          <q-item-section avatar>
+
+            <q-icon color="white" name="contacts" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
+        </q-item>
+
         <q-separator spaced="md" dark/>
         <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">
           <q-list>
             <q-item clickable v-close-popup @click="lang='en-us'">
               <q-item-section>
-                <q-item-label>En</q-item-label>
+                <q-item-label>English</q-item-label>
               </q-item-section>
             </q-item>
 
             <q-item clickable v-close-popup @click="lang='cn'">
               <q-item-section>
-                 <q-item-label>{{$t('menu_lang_ch')}}</q-item-label>
+                <q-item-label>{{$t('menu_lang_ch')}}</q-item-label>
               </q-item-section>
             </q-item>
 
@@ -132,7 +134,7 @@
         <div id="left_menu" class="col-3 left-menu flex column items-center justify-around gt-sm">
          <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <img v-else @click="$router.push('/auth')" class="cursor-pointer" src="~assets/logo.png" alt="">
-          <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
+          <q-card v-if="$user.loggedIn" class="user-card"  >
             <q-item>
               <q-item-section avatar>
                 <q-avatar>
@@ -142,7 +144,7 @@
               </q-item-section>
               <q-item-section>
                 <q-item-label>{{$user.user.nickname}}</q-item-label>
-                <q-item-label caption>
+                <q-item-label caption class="text-white">
                   {{$user.user.email}}
                 </q-item-label>
               </q-item-section>
@@ -168,17 +170,11 @@
           <q-item-section>{{$t('menu_login')}}</q-item-section>
         </q-item>
         <!--        v-else-->
-        <q-item clickable to="rating">
+        <q-item v-if="$user.loggedIn" clickable to="rating">
           <q-item-section avatar>
             <q-icon color="white" name="bar_chart" />
           </q-item-section>
           <q-item-section>{{$t('menu_rating')}}</q-item-section>
-        </q-item>
-        <q-item clickable to="info">
-          <q-item-section avatar>
-            <q-icon color="white" name="info" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_info')}}</q-item-section>
         </q-item>
         <q-item clickable to="/about">
           <q-item-section avatar>
@@ -186,19 +182,18 @@
           </q-item-section>
           <q-item-section>{{$t('menu_about')}}</q-item-section>
         </q-item>
-        <q-item clickable to="/rules">
+         <q-item clickable to="/rules">
           <q-item-section avatar>
 
             <q-icon color="white" name="school" />
           </q-item-section>
           <q-item-section>{{$t('menu_rules')}}</q-item-section>
         </q-item>
-        <q-item clickable to="/contacts">
+        <q-item clickable to="info">
           <q-item-section avatar>
-
-            <q-icon color="white" name="contacts" />
+            <q-icon color="white" name="info" />
           </q-item-section>
-          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
+          <q-item-section>{{$t('menu_info')}}</q-item-section>
         </q-item>
         <q-item clickable to="/feedback">
           <q-item-section avatar>
@@ -207,12 +202,21 @@
           </q-item-section>
           <q-item-section>{{$t('menu_feedback')}}</q-item-section>
         </q-item>
+
+        <q-item clickable to="/contacts">
+          <q-item-section avatar>
+
+            <q-icon color="white" name="contacts" />
+          </q-item-section>
+          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
+        </q-item>
+
         <q-separator spaced="md" dark/>
         <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">
           <q-list>
             <q-item clickable v-close-popup @click="lang='en-us'">
               <q-item-section>
-                <q-item-label>En</q-item-label>
+                <q-item-label>English</q-item-label>
               </q-item-section>
             </q-item>
 

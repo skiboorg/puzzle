@@ -1,6 +1,6 @@
 <template>
     <div class="static-page-wrapper">
-      <h1 class="text-h3 text-weight-bold">CASH FLOW</h1>
+      <h1 class="text-h3 text-weight-bold">{{$t('menu_balance')}}</h1>
       <p class="text-grey-6">In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section</p>
       <q-btn-toggle
       v-model="pay_type"

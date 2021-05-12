@@ -175,7 +175,7 @@ export default {
           icon: 'announcement'
         })
         this.loading = false
-        this.authModalTab = 'loginTab'
+        this.is_register = false
       } catch (e) {
         this.$q.notify({
           message: 'Проверьте введеные данные',

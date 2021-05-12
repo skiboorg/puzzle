@@ -57,7 +57,8 @@
         dense
         v-model="image"
         style="flex-basis: 20%"
-        filled
+        outlined
+        color="primary"
         label="Select image"
       />
         <q-btn size="md" label="Submit" type="submit" color="primary"/>

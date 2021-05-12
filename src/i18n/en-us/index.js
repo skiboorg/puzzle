@@ -28,6 +28,9 @@ export default {
   age:'AGE',
   work:'WORK',
   profession:'PROFESSION',
+  sex:'SEX',
+  study:'STUDY',
+  avatar:'AVATAR',
   save_btn:'SAVE',
   login_btn:'LOGIN',
   register_btn:'REGISTER',
@@ -68,7 +71,7 @@ export default {
   Our mail: info@puzpays.com<br>
   Our WeChat: +38701249218949 支持24 \ 7
   `,
-  contacts_form_attach:'ATTACH FILES',
+  contacts_form_attach:'ATTACH FILE',
   contacts_form_send:'SEND',
   contacts_form_message:'Write here your message... ',
 

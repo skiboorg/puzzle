@@ -40,7 +40,17 @@
 
       <div>
         <div class="flex items-center justify-between">
-          <q-btn :label="$t('contacts_form_attach')" type="submit" outline color="primary"/>
+          <q-file
+        name="image"
+        dense
+        v-model="image"
+        style="flex-basis: 20%"
+        outlined
+        color="primary"
+
+        :label="$t('contacts_form_attach')"
+      />
+
         <q-btn :label="$t('contacts_form_send')" type="submit" color="primary"/>
 
         </div>
@@ -57,6 +67,7 @@ export default {
 
   data () {
     return {
+      image:null,
       name:'',
       email:'',
       message:'',
@@ -71,6 +82,7 @@ export default {
           color: 'positive',
           icon: 'announcement'
         })
+      this.$user.loggedIn ? this.$router.push('/game') : this.$router.push('/auth')
     }
   }
 
