@@ -1,7 +1,6 @@
 <template>
   <div class="static-page-wrapper">
-    <h1 class="text-h3 text-weight-bold">{{$t('menu_settings')}}</h1>
-    <p class="q-mb-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam expedita magnam omnis pariatur possimus quia repellendus sed voluptates! Ad adipisci asperiores consequatur culpa delectus, distinctio dolores dolorum eligendi ex in incidunt, labore laboriosam maxime molestiae nemo nobis, nostrum odit perspiciatis quam quas quasi quia quibusdam quidem quod tempore voluptas.</p>
+    <h1 class="text-h4 q-mb-xl text-weight-bold">{{$t('settings_title')}}</h1>
 
     <q-form
       @submit="onSubmit"
@@ -50,6 +49,7 @@
             dense
             v-model="userData.profession"
             :label="$t('profession')"
+            class="q-mb-lg"
 
           />
            <div class="flex items-center justify-between">

@@ -9,7 +9,7 @@
 
           <div  class="index-left flex column items-start justify-between">
             <div  class=" ">
-              <h1 class="text-white text-h3 q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
+              <h1 class="text-white text-h4  q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
               <p class="text-grey-6 text-body1 ">We work, you collect, we earn together!</p>
               <h3 class="text-white text-h5 ">该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！</h3>
               <p class="text-grey-6 text-body1 ">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</p>

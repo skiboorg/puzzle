@@ -61,6 +61,9 @@ export default {
   rules_title:'规则',
   contacts_title:'联络人',
   feedback_title:'反馈',
+  settings_title:'设定',
+  stats_title:'统计',
+  balance_title:'现金余额',
 
   contacts_text:'contacts_text',
   contacts_form_title:'你的信息',

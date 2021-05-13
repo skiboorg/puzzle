@@ -1,6 +1,6 @@
 <template>
   <div class="static-page-wrapper">
-    <h1 class="text-h3 text-weight-bold text-uppercase">{{$t('menu_stats')}}</h1>
+    <h1 class="text-h4 text-capitalize text-weight-bold ">{{$t('stats_title')}}</h1>
     <p>{{$t('profile_stats_text')}}</p>
    <q-scroll-area style="height: 65vh">
     <q-list   class="rounded-borders full-width" >
