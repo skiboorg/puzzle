@@ -36,7 +36,7 @@
               <q-item-section avatar>
                 <q-avatar>
                   <img v-if="$user.user.avatar" :src="$user.user.avatar">
-                  <img v-else src="https://cdn.quasar.dev/img/boy-avatar.png">
+                  <img v-else src="~assets/ava.png">
                 </q-avatar>
               </q-item-section>
               <q-item-section>

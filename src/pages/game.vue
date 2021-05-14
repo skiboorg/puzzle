@@ -12,13 +12,16 @@
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
       <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
       <div v-if="$user.loggedIn" class="">
-         <p v-if="can_play" class="text-bold text-h5 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
-      <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
+         <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
+
+
+        <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
+        <p style="max-width: 800px; margin: 0 auto 20px" class="text-grey-6 text-center">{{$t('we_give')}}</p>
 
       </div>
 
       <div v-if="can_play" class="flex items-center justify-center full-width">
-        <div @click="gameType=type.type" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
+        <div @click="type.is_active ? gameType=type.type : null" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
           <img :src="type.img" alt="">
 
         </div>
@@ -102,8 +105,9 @@ export default {
       currentAd:{image:'',video:''},
       AdVideo:[],
       gameTypes:[
-        {id:1,name:'qr puzzle',type:'puzzle_qr',img:'game1.png'},
-        {id:2,name:'art puzzle',type:'puzzle_image',img:'game2.png'},
+        {id:1,name:'qr puzzle',type:'puzzle_qr',img:'game1.png',is_active:true},
+        {id:2,name:'art puzzle',type:'puzzle_image',img:'game2.png',is_active:true},
+        {id:3,name:'new puzzle',type:'new_puzzle',img:'game3.png',is_active:false},
       ],
     }
   },

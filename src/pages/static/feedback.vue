@@ -1,7 +1,7 @@
 <template>
   <div class="static-page-wrapper">
     <h1 class="text-h4  text-weight-bold">{{$t('feedback_title')}}</h1>
-    <p class="text-grey-6">Only registred users can send their messenges! We attach the contact details of users so that you can contact them and make sure that these reviews are transparent! When you send your review, it will be published only if we pass moderation for violations of the rules of the service.</p>
+    <p class="text-grey-6">{{$t('feedback_text')}}</p>
 
     <q-scroll-area style="height: 45vh">
     <q-card class="q-mx-xs q-mb-md"  v-for="feedback in feedbacks" :key="feedback.id">

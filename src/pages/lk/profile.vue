@@ -120,6 +120,12 @@ export default {
         url: '/api/user/update',
         data: formData
       })
+      this.$q.notify({
+          message: 'Profile updated',
+          position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
+          color: 'positive',
+          icon: 'announcement'
+        })
       console.log(response.data)
       await this.getUser()
     },

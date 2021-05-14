@@ -40,6 +40,7 @@ export default {
   game_limit:'You have reached the limit of games to increase your ranking! You can continue playing, but the rating will not be credited or debited',
   you_have:'YOU HAVE',
   games_today:'GAMES TODAY',
+  we_give:'We give users 3 games a day. The counter calculates games at 00:00 GMT +8',
   level:'Level',
   pieces:'Pieces',
   rating:'Rating',
@@ -54,6 +55,7 @@ export default {
   try_demo:'Try DEMO version',
   profile_stats_text:'Here you can see your statistics of all games and the results of your games',
   rating_text:'On this page, you can select the statistics of our portal you are interested in: the total number of games of users, the history of deposits and withdrawals of funds of our users',
+  feedback_text:'Only registred users can send their messenges! We attach the contact details of users so that you can contact them and make sure that these reviews are transparent! When you send your review, it will be published only if we pass moderation for violations of the rules of the service.',
 
   rating_title:'Rating',
   info_title:'Information',
@@ -64,6 +66,7 @@ export default {
   settings_title:'Settings',
   stats_title:'Stats',
   balance_title:'Balance',
+  balance_text:'In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section',
 
   contacts_text:'contacts_text',
   contacts_form_title:'Your message',

@@ -40,6 +40,7 @@ export default {
   game_limit:'您已经达到游戏上限，可以提高排名！ 您可以继续玩，但评分不会记入贷方或借方',
   you_have:'你今天有',
   games_today:'场比赛',
+  we_give:'我们每天为用户提供3个游戏。 计数器在格林尼治标准时间00:00 +8计算游戏',
   level:'等级',
   pieces:'件',
   rating:'评分',
@@ -54,7 +55,7 @@ export default {
   try_demo:'T试用DEMO版本',
   profile_stats_text:'在这里，您可以查看所有游戏的统计信息以及游戏结果',
   rating_text:'在此页面上，您可以选择感兴趣的门户网站的统计信息：用户，我们用户的资金存入和提取历史',
-
+  feedback_text:'只有注册用户可以发送其消息！ 我们会附上用户的联系方式，以便您可以与他们联系，并确保这些评论是透明的！ 当您发送评论时，仅当我们通过违反服务规则的审核后，该评论才会发布。',
   rating_title:'评分',
   info_title:'信息',
   about_title:'关于',
@@ -64,7 +65,7 @@ export default {
   settings_title:'设定',
   stats_title:'统计',
   balance_title:'现金余额',
-
+  balance_text:'在此部分中，您可以在提款部分中提取资金，并在存款部分中补充余额 ',
   contacts_text:'contacts_text',
   contacts_form_title:'你的信息',
   contacts_form_text:'我们会在24小时内回复您指定的邮件，以获取您的支持请求，问题或建议！',

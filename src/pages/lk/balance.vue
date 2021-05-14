@@ -1,7 +1,7 @@
 <template>
     <div class="static-page-wrapper">
       <h1 class="text-h4  text-weight-bold">{{$t('balance_title')}}</h1>
-      <p class="text-grey-6">In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section</p>
+      <p class="text-grey-6">{{$t('balance_text')}}</p>
       <q-btn-toggle
       v-model="pay_type"
       toggle-color="primary"

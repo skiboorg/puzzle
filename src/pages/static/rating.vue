@@ -15,7 +15,7 @@
         <q-item-section avatar>
           <q-avatar>
             <img v-if="player.avatar" :src="player.avatar">
-            <img v-else src="https://cdn.quasar.dev/img/avatar2.jpg">
+             <img v-else src="~assets/ava.png">
           </q-avatar>
         </q-item-section>
 
