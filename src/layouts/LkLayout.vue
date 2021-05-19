@@ -85,7 +85,7 @@
 
     <q-page-container>
       <q-page class="row">
-        <div class="col-3 left-menu flex column items-center justify-around gt-sm">
+        <div class="col-2 left-menu flex column items-center justify-around gt-sm">
           <img @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <q-list  dark>
             <q-item clickable to="/game">
@@ -124,9 +124,9 @@
             </q-item>
 
           </q-list>
-          <div class="text-grey-6">info@qrpuz.com</div>
+
         </div>
-        <div class="container col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="container col-lg-10 col-md-9 col-sm-12 col-xs-12">
           <router-view />
         </div>
       </q-page>

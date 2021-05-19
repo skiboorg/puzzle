@@ -11,7 +11,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: 'auth', component: () => import('pages/auth.vue') },
+      { path: 'enter', component: () => import('pages/enter.vue') },
       { path: 'about', component: () => import('pages/static/about.vue') },
       { path: 'rating', component: () => import('pages/static/rating.vue') },
       { path: 'info', component: () => import('pages/static/info.vue') },

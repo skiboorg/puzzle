@@ -1078,11 +1078,13 @@ export default {
           offsy = (he - this.height / scale) / 2; // offset in source picture
         }
 
+
         this.mech =  { scale: scale, offsx: offsx, offsy: offsy }; // informations for scaling
 
 // creation of pieces
 // table of PolyPieces
         this.polyPieces = [];
+
 
         for (ky = 0; ky < this.ny; ky++) {
           for (kx = 0; kx < this.nx; kx++) {
@@ -1782,7 +1784,7 @@ export default {
 
 
       let x = new Puzzle ( {img: image,
-        width: document.getElementById('puzzle_wrapper').clientWidth,
+        width: document.getElementById('puzzle_wrapper').clientWidth ,
         height: document.getElementById('puzzle_wrapper').clientHeight,
         idiv: "forPuzzle" });
 

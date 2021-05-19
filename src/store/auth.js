@@ -53,7 +53,7 @@ const actions = {
         this._vm.$cook.remove('auth_token')
         commit('updateUser', {})
         commit('updateUserStatus', false)
-        this.$router.push('/auth')
+        this.$router.push('/enter')
       })
       .catch(function (error) {
         console.log('logoutUser error')

@@ -9,21 +9,22 @@
 
           <div  class="index-left flex column items-start justify-between">
             <div  class=" ">
-              <h1 class="text-white text-h4  q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
+              <h1 class="text-white  q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
               <p class="text-grey-6 text-body1 ">We work, you collect, we earn together!</p>
-              <h3 class="text-white text-h5 ">该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！</h3>
-              <p class="text-grey-6 text-body1 ">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</p>
+              <h3 class="text-white  ">该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！</h3>
+              <p class="text-grey-6 text-caption">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</p>
 
             </div>
-            <div class="row text-grey-6 q-gutter-xl gt-xs">
-              <p>用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+            <div class="row column index_bottom">
+              <p class="text-white text-body1 q-mb-sm">用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+              <p class="text-grey-6 text-caption">Email for advertisment and partners</p>
 
             </div>
           </div>
 
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 full-height flex column items-center justify-center">
-          <div class="big-button cursor-pointer" @click="$user.loggedIn ? $router.push('/game') : $router.push('/auth')">
+          <div class="big-button cursor-pointer" @click="$user.loggedIn ? $router.push('/game') : $router.push('/enter')">
 
             <div class="big-button__img">
               <img src="~assets/button.png" alt="">
@@ -33,11 +34,15 @@
             <path d="M123.139 25.1036C124.301 23.9223 124.285 22.0228 123.104 20.8611L103.853 1.92895C102.672 0.767179 100.773 0.783007 99.6108 1.9643C98.449 3.1456 98.4648 5.04503 99.6461 6.2068L116.758 23.0354L99.929 40.1467C98.7672 41.328 98.783 43.2275 99.9643 44.3892C101.146 45.551 103.045 45.5352 104.207 44.3539L123.139 25.1036ZM1.025 26.9999L121.025 25.9999L120.975 20.0001L0.975001 21.0001L1.025 26.9999Z" fill="white"/>
             </svg>
 
-              <p class="no-margin">{{$t('index_button')}}</p>
+              <p class="no-margin">登录或注册<br>
+                <span> SIGN IN OR SIGN UP</span>
+
+              </p>
             </div>
           </div>
-          <div class="row text-grey-6 q-gutter-xl lt-sm">
-               <p>用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+          <div class="row text-grey-6 column q-gutter-sm lt-sm">
+                <p class="text-white text-body1 q-mb-sm">用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+              <p class="text-grey-6 text-caption">Email for advertisment and partners</p>
 
             </div>
 
@@ -63,16 +68,20 @@ export default {
   height: 80vh
   &-left
     height: 50vh
+    h1
+      font-size: 50px
   &-bg
     height: 100%
     width: 100%
     background: $accent url(~assets/index-bg.png) no-repeat center
     padding-top: 150px
     h1
-      max-width: 445px
+      max-width: 530px
       line-height: 65px
     h3
-      max-width: 530px
+      font-size: 24px
+      max-width: 590px
+      line-height: 31px
 
 .big-button
   position: relative
@@ -93,15 +102,22 @@ export default {
     margin-bottom: 0
     svg
       position: absolute
-      left: -100%
+      left: -80%
     p
       color: #ffffff
       font-weight: 700
-      font-size: 28px
+      font-size: 36px
+      line-height: 30px
+      span
+        font-size: 18px
+        color: #9394A1
 @media (max-width: 768px)
   .index
     text-align: center
     height: unset
+    &_bottom
+      text-align: center
+      width: 100%
     &-left
       height: unset
       margin-bottom: 40px
@@ -131,5 +147,9 @@ export default {
         height: 20px
       p
         font-size: 16px
+        line-height: 16px
+        span
+          font-size: 8px
+
 
 </style>

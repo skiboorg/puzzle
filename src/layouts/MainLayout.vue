@@ -4,7 +4,7 @@
       <q-header  class="bg-accent lt-md"   elevated>
         <q-toolbar>
           <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
-          <img v-else @click="$router.push('/auth')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
+          <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
           <q-toolbar-title>
           </q-toolbar-title>
           <q-btn
@@ -60,7 +60,7 @@
           </q-item-section>
           <q-item-section>{{$t('menu_profile')}}</q-item-section>
         </q-item>
-        <q-item v-if="!$user.loggedIn" clickable to="/auth">
+        <q-item v-if="!$user.loggedIn" clickable to="/enter">
           <q-item-section avatar>
             <q-icon color="white" name="login" />
           </q-item-section>
@@ -131,9 +131,9 @@
     </q-drawer>
     <q-page-container>
       <q-page class="row">
-        <div id="left_menu" class="col-3 left-menu flex column items-center justify-around gt-sm">
+        <div id="left_menu" class="col-2 left-menu flex column items-center justify-around gt-sm">
          <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
-          <img v-else @click="$router.push('/auth')" class="cursor-pointer" src="~assets/logo.png" alt="">
+          <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <q-card v-if="$user.loggedIn" class="user-card"  >
             <q-item>
               <q-item-section avatar>
@@ -163,7 +163,7 @@
           </q-item-section>
           <q-item-section>{{$t('menu_profile')}}</q-item-section>
         </q-item>
-        <q-item v-if="!$user.loggedIn" clickable to="/auth">
+        <q-item v-if="!$user.loggedIn" clickable to="/enter">
           <q-item-section avatar>
             <q-icon color="white" name="login" />
           </q-item-section>
@@ -231,9 +231,9 @@
         </q-btn-dropdown>
 
       </q-list>
-          <div class="text-grey-6">info@qrpuz.com</div>
+
         </div>
-        <div class="container col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="container col-lg-10 col-md-9 col-sm-12 col-xs-12">
           <router-view />
         </div>
       </q-page>
