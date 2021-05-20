@@ -40,7 +40,7 @@ export default {
   game_limit:'You have reached the limit of games to increase your ranking! You can continue playing, but the rating will not be credited or debited',
   you_have:'YOU HAVE',
   games_today:'GAMES TODAY',
-  we_give:'We give users 3 games a day. The counter calculates games at 00:00 GMT +8',
+  we_give:'We give users 5 games a day. The counter calculates games at 00:00 GMT +8',
   level:'Level',
   pieces:'Pieces',
   rating:'Rating',

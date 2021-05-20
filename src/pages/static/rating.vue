@@ -9,6 +9,7 @@
       :options="[
         {label: 'Rating', value: 'rating'},
         {label: 'WITHDRAW', value: 'money'}]"/>
+       <q-scroll-area style="height: 65vh">
       <q-list v-if="type==='rating'"  class="full-width" >
 
       <q-item v-for="player in players" :key="player.id">
@@ -33,7 +34,7 @@
 
 
     </q-list>
-
+       </q-scroll-area>
     </div>
 </template>
 <script>

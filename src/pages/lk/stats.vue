@@ -15,7 +15,7 @@
           <img class="game-image"  :src="game.image" alt="">
         </q-item-section>
          <q-item-section side>
-          <p class="no-margin">{{game.result ? `+ ${game.level.rating} rating` : ``}}</p>
+          <p class="no-margin" :class="[game.result ? 'text-positve' : 'text-red']">{{game.result ? `WIN + ${game.level.rating} rating` : `LOOSE`}}</p>
         </q-item-section>
 
         <q-item-section side>
