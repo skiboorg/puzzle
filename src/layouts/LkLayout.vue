@@ -87,7 +87,7 @@
       <q-page class="row">
         <div class="col-2 left-menu flex column items-center justify-around gt-sm">
           <img @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
-          <q-list  dark>
+          <q-list style="margin-bottom: 100px" dark>
             <q-item clickable to="/game">
               <q-item-section avatar >
                 <!--          <q-avatar rounded size="sm">-->

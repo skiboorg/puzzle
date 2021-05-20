@@ -34,6 +34,30 @@
 
 
     </q-list>
+      <q-list v-else  class="full-width" >
+
+      <q-item v-for="player in add_money_players" :key="player.id">
+        <q-item-section avatar>
+          <q-avatar>
+            <img v-if="player.avatar" :src="player.avatar">
+             <img v-else src="~assets/ava.png">
+          </q-avatar>
+        </q-item-section>
+
+        <q-item-section>
+          <q-item-label lines="1">{{player.nickname}}</q-item-label>
+          <q-item-label caption lines="2">
+            Games : {{player.games}}
+          </q-item-label>
+        </q-item-section>
+
+        <q-item-section side >
+          Add money : {{player.total_add}}
+        </q-item-section>
+      </q-item>
+
+
+    </q-list>
        </q-scroll-area>
     </div>
 </template>
@@ -44,13 +68,17 @@ export default {
   data () {
     return {
       type:'rating',
-      players:[]
+      players:[],
+      add_money_players:[],
+
     }
   },
   async mounted() {
     const response_players = await this.$api.get('/api/ratings')
     this.players = response_players.data
-    console.log(this.players)
+    const response_add_money_players = await this.$api.get('/api/add_money_ratings')
+    this.add_money_players = response_add_money_players.data
+    console.log(this.add_money_players)
   },
   filters:{
     formatDate(val){

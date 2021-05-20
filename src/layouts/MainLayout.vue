@@ -155,7 +155,7 @@
               <p class="no-margin">Rating: {{$user.user.rating}}</p>
             </q-card-section>
           </q-card>
-         <q-list  dark>
+         <q-list style="margin-bottom: 100px"  dark>
         <!--v-if="$user.loggedIn"-->
         <q-item v-if="$user.loggedIn" clickable to="/lk/profile">
           <q-item-section avatar>
