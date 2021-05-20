@@ -13,7 +13,9 @@
       v-model="userData.email"
       :label="$t('email')"
       lazy-rules
-      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      :rules="[ val => val && val.length > 0 || 'Please type email',
+      val => email_re.test(String(val)) || 'Please type correct email'
+      ]"/>
       <q-input
       filled
       :dense="!$q.screen.gt.md"
@@ -28,7 +30,7 @@
       type="number"
       :label="$t('age')"
       lazy-rules
-      :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+      :rules="[ val => val && val.length > 0 || 'Please type your age']"/>
       <q-select class="q-mb-lg" filled :dense="!$q.screen.gt.md" v-model="userData.sex" :options="sex_options" label="Sex" />
 
 
@@ -39,7 +41,7 @@
       :label="$t('password')"
       :type="isPwd ? 'password' : 'text'"
       lazy-rules
-      :rules="[ val => val && val.length > 0 || 'Please type something']">
+      :rules="[ val => val && val.length >= 4|| 'Password must at least 4 letters']">
         <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -69,7 +71,7 @@
 
       <div>
         <div class="text-center">
-          <q-btn :label="$t('register_btn')"  type="submit" class="q-px-xl q-mb-md" color="primary "/>
+          <q-btn :label="$t('register_btn')" :disable="!accept" type="submit" class="q-px-xl q-mb-md" color="primary "/>
           <p>{{$t('have_account')}} <a href="#" @click.prevent="is_register=false">{{$t('sign_in')}}</a></p>
         </div>
 
@@ -131,6 +133,7 @@ export default {
       is_register:false,
       isPwd: true,
       lang: this.$i18n.locale,
+      email_re:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       userLogin:{
         email:'1@1.11',
         password:'123',
