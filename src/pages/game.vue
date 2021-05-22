@@ -226,6 +226,7 @@ export default {
       let checkTimerInterval;
       let checkGameStopInterval;
       let timeloop = '';
+      let mycoeff = 0.7;
       let autoStart;
       let that=this
 //-----------------------------------------------------------------------------
@@ -706,12 +707,12 @@ export default {
         let wi = this.image.width;  // from original picture
         let he = this.image.height;
 
-        this.reqHeight = params.height; // requested height
-        this.reqWidth = params.width;
+        this.reqHeight = params.height * mycoeff;// requested height
+        this.reqWidth = params.width * mycoeff;
         this.height = this.reqHeight - 2 * Puzzle.MARGIN1; // place left on screen including margin
         this.width = this.reqWidth - 2 * Puzzle.MARGIN1; //
 
-        if (wi / he > this.width / this.height) { // actual picture "more horizontal" than game board
+       if ((wi / he) * mycoeff > this.width / this.height) { // actual picture "more horizontal" than game board
           this.height = this.width * he / wi;
         } else {
           this.width = this.height * wi / he;
@@ -861,12 +862,12 @@ export default {
 // but keep the canvMobile
         this.divBoard.appendChild(this.canvMobile);
 
-        this.canvMobile.width = this.reqWidth;
+        this.canvMobile.width = this.reqWidth * 1/mycoeff - 4 * Puzzle.MARGIN1; //здесь прибавляем для увеличения игровой ширины ПОМЕТКА, я добавил * 1/mycoeff
         this.divGame.style.width
           = this.divBoard.style.width
           = this.canvMobile.width + "px";
 
-        this.canvMobile.height = this.reqHeight;
+        this.canvMobile.height = this.reqHeight * 1/mycoeff - 4 * Puzzle.MARGIN1; //здесь прибавляем для увеличения игровой длины ПОМЕТКА, я добавил * 1/mycoeff
         this.divGame.style.height
           = this.divBoard.style.height
           = this.canvMobile.height + "px";
@@ -1105,9 +1106,9 @@ export default {
 
             this.divBoard.appendChild(pc.theDiv);
             switch(this.freeSpace){
-              case 0 : pc.pTarget = new Point(this.reqWidth - (2.25 + Math.random() / 4) * this.dx, Math.random() * (this.height -  this.dy) - this.dy);break;
-              case 1 : pc.pTarget = new Point(Math.random() * (this.width -  this.dx) - this.dx, this.reqHeight - (2.25 + Math.random() / 4) * this.dy);
-            } // switch
+                 case 0 : pc.pTarget = new Point((this.reqWidth - (2.25 + Math.random() / 4) * this.dx) * 1/mycoeff, Math.random() * (this.height -  this.dy) - this.dy);break; //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
+        case 1 : pc.pTarget = new Point((Math.random() * (this.width -  this.dx) - this.dx) * 1/mycoeff, this.reqHeight - (2.25 + Math.random() / 4) * this.dy); //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
+      } // switch
           } // for kn
         } // for kp
         window.setTimeout((function(obj) {return function() {obj.launchAnimation()}})(this), 1000);
