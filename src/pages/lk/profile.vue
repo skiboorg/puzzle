@@ -7,7 +7,7 @@
 
       class="q-gutter-sm form full-width">
       <div class="row full-width">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-sx-12 q-pr-lg-md q-pr-md-md q-pr-sm-md q-pr-xs-none">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 q-pr-lg-md q-pr-md-md q-pr-sm-md q-pr-xs-none">
           <q-input
             filled
             dense

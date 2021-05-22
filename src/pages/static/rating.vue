@@ -51,8 +51,8 @@
           </q-item-label>
         </q-item-section>
 
-        <q-item-section side >
-          Add money : {{player.total_add}}
+        <q-item-section v-if="player.total_remove>0" side >
+          Withdraw {{player.total_remove}}
         </q-item-section>
       </q-item>
 

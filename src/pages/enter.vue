@@ -87,7 +87,7 @@
 
         style="width: 320px"
         lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Введите номер wechatid']"
+        :rules="[ val => val && val.length > 0 || 'Введите email']"
       />
       <q-input
         :dense="!$q.screen.gt.md"
@@ -108,6 +108,7 @@
       <div class="text-center">
         <q-btn size="md" :label="$t('login_btn')" type="submit" color="primary" class="q-px-xl q-mb-md"/>
       <p>{{$t('no_account')}} <a class="text-primary" href="#" @click.prevent="is_register=true">{{$t('sign_up')}}</a></p>
+      <p>{{$t('lost_password')}} <router-link class="text-primary" to="contacts">{{$t('contact_us')}}</router-link> </p>
 
         <p @click="$router.push('/game')" class="text-primary flex items-center justify-center cursor-pointer">
           <q-icon size="2rem" name="shutter_speed" class="q-mr-md" /> {{$t('try_demo')}}

@@ -194,6 +194,7 @@ export default {
       },1000)
     },
     async startGame(index){
+      this.$q.loading.show()
       this.is_game_stop=false
       this.gameReady = true
       //this.createPuzzle('https://millionstatusov.ru/pic/statpic/all8/5e04c21a52a39.jpg',15,3)
@@ -202,6 +203,7 @@ export default {
       this.gameId = game_info.data.id
       this.gameReady = true
       this.createPuzzle(process.env.API+game_info.data.img,this.levels[index].pieces,this.levels[index].timer)
+      this.$q.loading.hide()
     },
     winGame(){
       this.gameWin = true
@@ -1828,8 +1830,9 @@ export default {
 
 @media (max-width: 599px)
   .game-type
-    height: 100px
-    width: 100px
+    height: 150px
+    width: 150px
+    margin-bottom: 15px
   //.game-level
   //  height: 80px
   //  width: 80px

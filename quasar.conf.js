@@ -113,6 +113,7 @@ module.exports = function (/* ctx */) {
       plugins: [
           'Cookies',
          'Notify',
+        'Loading'
       ]
     },
 

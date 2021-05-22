@@ -81,8 +81,7 @@ export default {
       console.log('submit')
       await this.$api.post('/api/user/remove_money',{amount:this.remove_amount})
       await this.getUser()
-      this.add_amount = null
-      this.remove_amount = null
+
       this.$q.notify({
           message: 'Operation complete',
           position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
@@ -95,8 +94,7 @@ export default {
       console.log('submit')
       await this.$api.post('/api/user/add_money',{amount:this.add_amount})
       await this.getUser()
-      this.add_amount = null
-      this.remove_amount = null
+
       this.$q.notify({
           message: 'Operation complete',
           position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
