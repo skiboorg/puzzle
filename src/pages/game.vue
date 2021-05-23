@@ -219,13 +219,14 @@ export default {
     ...mapActions('auth',['getUser']),
     //slider
     async onPuzzleBoardInit() {
+       this.$q.loading.show()
       console.log('init')
       const game_info = await this.$api.post('/api/start_game',{level_id:1,type:'puzzle_image'})
       console.log(game_info.data)
       this.src = process.env.API + game_info.data.img
 
       this.isGoal = false
-
+      this.$q.loading.hide()
     },
     onPuzzleBoardStart() {
       console.log('start')
