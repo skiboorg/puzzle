@@ -11,14 +11,12 @@
             <div  class=" ">
               <h1 class="text-white  q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
               <p class="text-grey-6 text-body1 ">We work, you collect, we earn together!</p>
-              <h3 class="text-white  ">该系统的工作原理是双方的共同利益-客户赚钱，营销商获得潜在消费者的真实指标！</h3>
-              <p class="text-grey-6 text-caption">The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!</p>
-
+              <h3 class="text-white  q-mb-sm">该系统遵循双方共同利益的原则！</h3>
+              <p class="text-grey-6 text-caption">The system works on the principle of mutual interest of the parties!</p>
             </div>
             <div class="row column index_bottom">
-              <p class="text-white text-body1 q-mb-sm">用于广告和合作伙伴的邮件： info@puzpayz.com</p>
+              <p class="text-white text-body1 q-mb-sm">用于广告和合作伙伴的邮件<br>info@puzpayz.com</p>
               <p class="text-grey-6 text-caption">Email for advertisment and partners</p>
-
             </div>
           </div>
 
@@ -69,15 +67,16 @@ export default {
   &-left
     height: 50vh
     h1
-      font-size: 50px
+      font-size: 40px
+
   &-bg
     height: 100%
     width: 100%
     background: $accent url(~assets/index-bg.png) no-repeat center
     padding-top: 150px
     h1
-      max-width: 530px
-      line-height: 65px
+      max-width: 375px
+      line-height: 50px
     h3
       font-size: 24px
       max-width: 590px
