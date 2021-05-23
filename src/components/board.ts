@@ -10,7 +10,7 @@ class Board {
   private dx: number
   private dy: number
   private blocks: Array<number>
-  private blankpos: number
+  private blankpos?: number
 
   constructor (blocks: Array<Array<number>>) {
     this.dy = blocks.length
