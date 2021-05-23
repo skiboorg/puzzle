@@ -1,6 +1,7 @@
 <template>
   <q-page style="overflow: hidden">
-    <div v-if="gameType" class="flex column items-center justify-center q-mt-sm">
+    <div v-if="game_type==='puzzle'">
+      <div v-if="gameType" class="flex column items-center justify-center q-mt-sm">
 
         <div v-if="gameReady && gameType" class="text-bold text-h5 text-uppercase q-px-lg" id="timer">00:00</div>
       <div v-else></div>
@@ -21,7 +22,7 @@
       </div>
 
       <div v-if="can_play" class="flex items-center justify-center full-width">
-        <div @click="type.is_active ? gameType=type.type : null" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
+        <div @click="selectGame(type)" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
           <img :src="type.img" alt="">
 
         </div>
@@ -55,6 +56,39 @@
     <div style="position: absolute" id="puzzle_wrapper" class=" full-width ">
       <div id="forPuzzle" class=" "></div>
     </div>
+    </div>
+    <div v-else>
+         <div  class="flex column items-center justify-center q-mt-sm">
+          <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+        </div>
+
+         <div class="slider-area mb-50">
+       <div class="slider-container">
+
+      <puzzle-board v-if="show"
+        :autoResize="autoResize"
+        :showNumber="showNumber"
+        :cols="dimensions.x"
+        :rows="dimensions.y"
+        :src="src"
+
+        :animation="animation"
+        :width="width"
+        :height="height"
+        @init="onPuzzleBoardInit"
+        @start="onPuzzleBoardStart"
+        @change="onPuzzleBoardChange"
+        @finish="onPuzzleBoardFinish"
+      />
+
+
+ </div>
+    </div>
+
+    </div>
+
+
+
     <q-dialog v-model="showAd"
               persistent
               transition-show="scale"
@@ -88,14 +122,41 @@
 </template>
 
 <script>
+import PuzzleBoard from 'components/PuzzleBoard.vue';
 import { mapActions, mapGetters} from 'vuex'
+
+const DIMENSIONS = {
+  Easy: { x: 3, y: 3 },
+  Normal: { x: 4, y: 4 },
+  Difficult: { x: 5, y: 5 }
+}
+
 export default {
+  components:{
+    PuzzleBoard
+  },
   data () {
     return {
+      //slider
+      src: null,
+      show: true,
+       gameImg:null,
+      videoTitle: 'Cat',
+      difficulty: 'Normal',
+      distance: null,
+      isGoal: false,
+      //gameWin: false,
+      autoResize: true,
+      width: 300,
+      height: 300,
+      showNumber: true,
+      animation: true,
+      //sources: SOURCEPATHS['Cat'].sources,
+      //slider
       gameType:null,
       gameReady:false,
       gameId:null,
-
+      game_type:'puzzle',
       gameWin:false,
       is_game_stop:false,
       showAd:false,
@@ -105,9 +166,9 @@ export default {
       currentAd:{image:'',video:''},
       AdVideo:[],
       gameTypes:[
-        {id:1,name:'qr puzzle',type:'puzzle_qr',img:'game1.png',is_active:true},
-        {id:2,name:'art puzzle',type:'puzzle_image',img:'game2.png',is_active:true},
-        {id:3,name:'new puzzle',type:'new_puzzle',img:'game3.png',is_active:false},
+        {id:1,name:'qr puzzle',type:'puzzle_qr',img:'game1.png',is_active:true,is_slider:false},
+        {id:2,name:'art puzzle',type:'puzzle_image',img:'game2.png',is_active:true,is_slider:false},
+        {id:3,name:'new puzzle',type:'new_puzzle',img:'game3.png',is_active:false,is_slider:true},
       ],
     }
   },
@@ -129,25 +190,80 @@ export default {
       }else {
         return true
       }
-
+    },
+    dimensions() {
+      return DIMENSIONS[this.difficulty]
     }
+
   },
   filters:{
     correct_seconds(val){
       return val < 10 ? `0${val}` : val
     }
   },
+  watch:{
+    isGoal(isGoal) {
+      if (isGoal) {
+        //this.$confetti.start({
+        //  shape: 'rect'
+        //})
+        this.gameWin=true
+        console.log('slider_win')
+      } else {
+        //this.$confetti.stop()
+      }
+    }
+  },
   methods:{
     ...mapActions('game_level',['fetchLevels']),
     ...mapActions('auth',['getUser']),
+    //slider
+    async onPuzzleBoardInit() {
+      console.log('init')
+      const game_info = await this.$api.post('/api/start_game',{level_id:1,type:'puzzle_image'})
+      console.log(game_info.data)
+      this.src = process.env.API + game_info.data.img
+
+      this.isGoal = false
+
+    },
+    onPuzzleBoardStart() {
+      console.log('start')
+    },
+    onPuzzleBoardFinish() {
+      console.log('finish')
+      this.isGoal = true
+    },
+    onPuzzleBoardChange: function(payload) {
+      console.log('change')
+      this.distance = payload.distance
+    },
+    //slider
+    selectGame(game_type){
+      if (game_type.is_slider){
+        console.log('slider')
+        this.game_type = 'slider'
+      }else {
+        this.game_type = 'puzzle'
+        this.gameType=game_type.type
+
+      }
+
+    },
     async resetGame(){
       //this.$router.go(this.$router.currentRoute)
-      document.getElementById('forPuzzle').innerHTML=''
+      if (this.game_type==='slider'){
+        this.game_type='puzzle'
+      }else{
+        document.getElementById('forPuzzle').innerHTML=''
       this.is_game_stop=true
       this.gameType=null
       this.gameReady=false
       this.gameId=null
       this.gameWin=false
+      }
+
+
       if (this.$user.loggedIn){
       await this.$api.get('/api/user/game_count')
       await this.getUser()
@@ -226,7 +342,8 @@ export default {
       let checkTimerInterval;
       let checkGameStopInterval;
       let timeloop = '';
-      let mycoeff = 0.7;
+      let mycoeff = this.$q.screen.gt.xs ? 0.7 : 1;
+      console.log(mycoeff)
       let autoStart;
       let that=this
 //-----------------------------------------------------------------------------
@@ -1519,11 +1636,11 @@ export default {
           console.log('touch event')
           let touch = event.changedTouches ? event.changedTouches[0] : false;
           pageX =  touch.clientX;
-          pageY = touch.clientY-70;
+          pageY = touch.clientY-120;
         }else {
           console.log('mouse event')
           pageX =  event.pageX;
-          pageY = event.pageY-70
+          pageY = event.pageY-120
         }
         let kp, kn, z;
 
@@ -1799,6 +1916,31 @@ export default {
 }
 </script>
 <style lang="sass">
+//slider
+.slider-area
+  position: relative
+  border-radius: 20px
+  height: 700px
+
+.slider-container
+  position: absolute
+  top:  50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+  width: 90%
+  height: calc(90% - 60px)
+  margin: 0px
+  padding: 0px
+  z-index: 1
+  background-color: #DDD
+  max-width: 600px
+  max-height: 600px
+
+.puzzle-board:focus
+  outline: none
+
+//slider
 #timer
   border: 2px solid #05113D
   box-sizing: border-box
@@ -1837,4 +1979,5 @@ export default {
   //.game-level
   //  height: 80px
   //  width: 80px
+
 </style>
