@@ -9,9 +9,9 @@
 
           <div  class="index-left flex column items-start justify-between">
             <div  class=" ">
-              <h1 class="text-white  q-mb-sm">我们工作，您收集，我们一起赚钱！</h1>
-              <p class="text-grey-6 text-body1 ">We work, you collect, we earn together!</p>
+              <h1 class="text-white">我们一起赚钱！</h1>
               <h3 class="text-white  q-mb-sm">该系统遵循双方共同利益的原则！</h3>
+              <p class="text-grey-6 text-body1 no-margin">We work, you collect, we earn together!</p>
               <p class="text-grey-6 text-caption">The system works on the principle of mutual interest of the parties!</p>
             </div>
             <div class="row column index_bottom">
@@ -66,8 +66,6 @@ export default {
   height: 80vh
   &-left
     height: 50vh
-    h1
-      font-size: 40px
 
   &-bg
     height: 100%
@@ -76,11 +74,16 @@ export default {
     padding-top: 150px
     h1
       max-width: 375px
-      line-height: 50px
+      line-height: 54px
+      font-size: 42px
+      margin: 0
+      margin-bottom: 10px
     h3
       font-size: 24px
       max-width: 590px
       line-height: 31px
+      margin: 0
+      margin-bottom: 25px
 
 .big-button
   position: relative

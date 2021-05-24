@@ -6,8 +6,16 @@
     <q-scroll-area style="height: 45vh">
     <q-card class="q-mx-xs q-mb-md"  v-for="feedback in feedbacks" :key="feedback.id">
       <q-item>
+          <q-item-section avatar>
+            <q-avatar>
+              <img v-if="feedback.user.avatar" :src="feedback.user.avatar">
+               <img v-else src="~assets/ava.png">
+            </q-avatar>
+          </q-item-section>
         <q-item-section>
-        </q-item-section>
+            <q-item-label>{{feedback.user.nickname}}</q-item-label>
+            <q-item-label caption lines="1">{{feedback.user.email}}</q-item-label>
+          </q-item-section>
         <q-item-section side >
           <q-item-label caption>{{feedback.date |formatDate}}</q-item-label>
         </q-item-section>
@@ -20,19 +28,7 @@
       <q-card-section horizontal class="justify-between">
         <q-item>
           <q-item-section v-if="feedback.image" thumbnail>
-            <img style="object-fit: contain"  :src="feedback.image">
-          </q-item-section>
-        </q-item>
-        <q-item  >
-          <q-item-section avatar>
-            <q-avatar>
-              <img v-if="feedback.user.avatar" :src="feedback.user.avatar">
-              <img v-else src="https://cdn.quasar.dev/img/avatar6.jpg">
-            </q-avatar>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>{{feedback.user.nickname}}</q-item-label>
-            <q-item-label caption lines="1">{{feedback.user.email}}</q-item-label>
+            <img @click="curImage=feedback.image,imgModal=true" class="cursor-pointer" style="object-fit: contain"  :src="feedback.image">
           </q-item-section>
         </q-item>
       </q-card-section>
@@ -65,6 +61,19 @@
 
       </div>
     </q-form>
+    <q-dialog v-model="imgModal">
+      <q-card style="width: 700px; max-width: 80vw;">
+        <q-card-section class="row items-center q-pb-none">
+          <div class="text-h6"></div>
+          <q-space />
+          <q-btn icon="close" flat round dense v-close-popup />
+        </q-card-section>
+
+        <q-card-section>
+          <q-img :ratio="1" :src="curImage"/>
+       </q-card-section>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 <script>
@@ -74,7 +83,9 @@ export default {
     return {
       feedbacks:[],
       message:null,
-      image:null
+      image:null,
+      curImage:'',
+      imgModal:false
     }
   },
   async mounted() {
