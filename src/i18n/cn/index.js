@@ -43,6 +43,9 @@ export default {
   you_have:'你今天有',
   games_today:'场比赛',
   we_give:'我们每天为用户提供5个游戏。 计数器在格林尼治标准时间00:00 +8计算游戏',
+
+   timer:'时间',
+  minutes:'分钟',
   level:'等级',
   pieces:'件',
   rating:'评分',

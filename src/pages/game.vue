@@ -34,11 +34,9 @@
       <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_difficult')}}</p>
       <div class="flex items-center justify-center full-width">
         <q-card
-
           flat
-
           @click="startGame(index)"
-          class="q-mr-sm cursor-pointer game-level q-pa-lg"
+          class="q-mr-sm cursor-pointer game-level q-pa-lg q-mb-sm"
           v-for="(level,index) in levels"
           :key="level.id"
           :style="{'background-image': 'url('+ level.image +' )'}">
@@ -47,6 +45,7 @@
               <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('level')}}:</span> {{level.name}}</p>
               <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('pieces')}}:</span> {{level.pieces}}</p>
               <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('rating')}}:</span> +{{level.rating}}</p>
+              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('timer')}}:</span> {{level.timer}} {{$t('minutes')}}</p>
             </div>
           </q-card-section>
         </q-card>
@@ -343,7 +342,7 @@ export default {
       let checkTimerInterval;
       let checkGameStopInterval;
       let timeloop = '';
-      let mycoeff = this.$q.screen.gt.xs ? 0.7 : 1;
+      let mycoeff = this.$q.screen.gt.md ? 0.7 : 1;
       console.log(mycoeff)
       let autoStart;
       let that=this

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf" class="fullscreen" style="user-select: none">
     <q-no-ssr>
-      <q-header  class="bg-accent lt-md"   elevated>
+      <q-header  class="bg-accent lt-lg"   elevated>
         <q-toolbar>
           <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
           <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
@@ -20,6 +20,7 @@
     </q-no-ssr>
     <q-drawer
       v-model="leftDrawerOpen"
+      overlay
       side="right"
       :width="200"
       elevated
@@ -131,7 +132,7 @@
     </q-drawer>
     <q-page-container>
       <q-page class="row">
-        <div id="left_menu" class="col-2 left-menu flex column items-center justify-around gt-sm">
+        <div id="left_menu" class="col-2 left-menu flex column items-center justify-around gt-md">
          <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo.png" alt="">
           <q-card v-if="$user.loggedIn" class="user-card"  >
@@ -233,7 +234,7 @@
       </q-list>
 
         </div>
-        <div class="container col-lg-10 col-md-9 col-sm-12 col-xs-12">
+        <div class="container col-lg-10 col-md-12 col-sm-12 col-xs-12">
           <router-view />
         </div>
       </q-page>

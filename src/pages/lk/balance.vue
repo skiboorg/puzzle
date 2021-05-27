@@ -71,6 +71,8 @@ export default {
       pay_options: [
         { label: 'VISA', value: 'visa' },
         { label: 'MASTER CARD', value: 'mc' },
+        { label: 'AliPay', value: 'alipay' },
+        { label: 'WeChatPay', value: 'wechat' },
 
       ]
     }
