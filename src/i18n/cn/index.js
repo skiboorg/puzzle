@@ -86,7 +86,7 @@ export default {
 
 
   aboutText:`
-  <p><span ><span lang="en-US"><span >关于我</span><span >们</span></span></span></p>
+
 <p><span ><span lang="en-US"><span >我</span><span >们创建并实现了</span></span></span>PuzPays<span ><span lang="en-US"><span >拼</span><span >图，它使您能够探索不同国家，年龄和性别的人们之间逻辑思维的水平。</span></span></span></p>
 <p><span ><span lang="en-US"><span >我</span><span >们项目的目标是研究逻辑思维与</span></span></span>BNCI<span ><span lang="en-US"><span >技</span><span >术的相互作用，并向市场营销公司提供统计数据。我们将活动重点放在了一系列高级黑客马拉松上</span><span >，</span><span >并提供了一个支持研究人员和客户的计划。</span></span></span></p>
 <p><span lang="en-US">PuzPays</span><span ><span lang="en-US"><span >是一款益智游</span><span >戏</span><span >，</span><span >需要能够快速解决逻辑难题的能力。该程序对于逻辑思维的发展是一个极好的刺激。我们将所有工作进行分析</span><span >，</span><span >系统化</span><span >，</span><span >并根据这些数据得出关于不同地区和不同类型的人逻辑思维发展的一般情况。</span></span></span></p>
@@ -96,16 +96,18 @@ export default {
 <p><span ><span lang="en-US"><span >乍一看</span><span >，</span><span >所有事情看起来都很复</span><span >杂</span><span >，</span><span >但是凭借耐心和经验</span><span >，</span><span >这些任务得以解决</span><span >，</span><span >并为您提供了赚钱的机会。</span></span></span></p>
 <p><span ><span lang="en-US"><span >祝你好运</span><span >！</span></span></span></p>
 <p lang="en-US"><br /><br /></p>
-<p><a name="_GoBack"></a> <span ><span lang="en-US"><span ><strong>我</strong></span><span ><strong>们的文件</strong></span><span ><strong>：</strong></span></span></span></p>
-<p><span lang="en-US">1.</span><span ><span lang="en-US"><span >营业执照</span></span></span><span lang="en-US">-PDF</span></p>
-<p><span lang="en-US">2.</span><span ><span lang="en-US"><span >银行详细信息</span></span></span><span lang="en-US">-PDF</span></p>
-<p><span lang="en-US">3.</span><span ><span lang="en-US"><span >联系人</span></span></span><span lang="en-US">-PDF</span></p>
-<p><span lang="en-US">4.</span><span ><span lang="en-US"><span >报价协议</span></span></span><span lang="en-US">-PDF</span></p>
-<p>5.<span ><span lang="en-US"><span >用</span><span >户协议</span></span></span>-PDF</p>
-<p>6.<span ><span lang="en-US"><span >隐私权政策</span></span></span>-PDF</p>
+<p><strong>们的文件</strong>
+
+<a href="#" style="color:inherit"> 1。 营业执照-PDF </a>
+<a href="#" style="color:inherit"> 2。 银行详细信息-PDF </a>
+<a href="#" style="color:inherit"> 3。 联系人-PDF </a>
+<a href="#" style="color:inherit"> 4。 报价协议-PDF </a>
+<a href="#" style="color:inherit"> 5。 用户协议-PDF </a>
+<a href="#" style="color:inherit"> 6。 隐私权政策-PDF </a>
+</p>
  `,
   infoText:`
-  <p><span ><span lang="en-US"><span >信息</span></span></span>-<span ><span lang="en-US"><span >给我们的问题：</span></span></span></p>
+
 <p><strong>1.&ldquo;</strong><span ><span lang="en-US"><span ><strong>您从哪里</strong></span><span ><strong>获得资金来支付客户的费用？</strong></span><strong>&rdquo;</strong></span></span></p>
 <p>-<span ><span lang="en-US"><span >收集的有关客</span><span >户工作的统计信息，我们出售给有兴趣的公司，</span></span></span></p>
 <p>-<span ><span lang="en-US"><span >您不断关注的在我</span><span >们网站上投放的广告带来了可观的收入，</span></span></span></p>
@@ -126,7 +128,7 @@ export default {
 <p><span ><span lang="en-US"><span >如果您</span><span >还有问题，请给我们写信，我们将发布最重要和最受欢迎的答案！</span></span></span></p>
  `,
   rulesText:`
-  <p>QR<span ><span lang="en-US"><span >拼</span><span >图规则</span></span></span></p>
+
 <p>1.<span ><span lang="en-US"><span >必</span><span >须正确组装以下三个级别之一的</span></span></span>QR-ART Puzzle<span ><span lang="en-US"><span >：</span></span></span></p>
 <p>-<span ><span lang="en-US"><span >选择一个关卡，单击它，将元素散布在整个字段中。</span></span></span></p>
 <p>-<span ><span lang="en-US"><span >将光</span><span >标移到任何元素上，抓住它，并在按住它的同时将其移到任何其他元素上，如果这些元素的任一侧重合，则它们将彼此连接。</span></span></span></p>

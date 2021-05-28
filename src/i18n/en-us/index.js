@@ -86,7 +86,7 @@ export default {
   contacts_form_message:'Write here your message... ',
 
   rulesText:`
- <p><span lang="en-US">QR PUZZLE RULES</span></p>
+
 <p><span lang="en-US">1. It is necessary to correctly assemble QR-ART Puzzle of one of three levels:</span></p>
 <p><span lang="en-US">- Choose one of the levels, click on it and get the elements scattered across the field.</span></p>
 <p><span lang="en-US">- Move the cursor over any element, grab it and, while holding it, bring it to any other element, if any of the sides of these elements coincide, then they will connect to each other.</span></p>
@@ -107,7 +107,7 @@ export default {
  `,
 
   aboutText:`
-  <p><span lang="en-US">ABOUT US</span></p>
+
 <p><span lang="en-US">We have created and implemented the PuzPays puzzle, which allows you to explore the level of logical thinking among people of different nations, ages and genders.</span></p>
 <p><span lang="en-US">The goal of our project is to study the interaction of logical thinking with BNCI technologies and provide statistical data to marketing companies. We have focused our activities around a series of advanced hackathons with a program to support researchers and clients.</span></p>
 <p><a name="_GoBack"></a> <span lang="en-US">PuzPays is a puzzle game that requires the ability to quickly solve logic puzzles. The program is an excellent stimulator for the development of logical thinking. All our work is analyzed, systematized, and on the basis of these data a general picture is drawn up about the development of logical thinking in different regions and types of people.</span></p>
@@ -117,16 +117,16 @@ export default {
 <p><span lang="en-US">At first glance, everything will seem complicated, but with patience and experience, these tasks are solved and give you the opportunity to earn good money.</span></p>
 <p><span lang="en-US">Good luck!</span></p>
 <p lang="en-US"><br /><br /></p>
-<p><span lang="en-US"><strong>OUR DOCUMENTS:</strong></span></p>
-<p><span lang="en-US">1. Business License - PDF</span></p>
-<p><span lang="en-US">2. Bank details - PDF</span></p>
-<p><span lang="en-US">3. Contacts - PDF</span></p>
-<p><span lang="en-US">4. Offer Agreement - PDF</span></p>
-<p><span lang="en-US">5. User Agreement - PDF</span></p>
-<p><span lang="en-US">6. Privacy Policy - PDF</span></p>
+<p><strong>OUR DOCUMENTS:</strong>
+<a href="#" style="color: inherit">1. Business License - PDF</a>
+<a href="#" style="color: inherit">2. Bank details - PDF</a>
+<a href="#" style="color: inherit">3. Contacts - PDF</a>
+<a href="#" style="color: inherit">4. Offer Agreement - PDF</a>
+<a href="#" style="color: inherit">5. User Agreement - PDF</a>
+<a href="#" style="color: inherit">6. Privacy Policy - PDF</a>
 `,
   infoText:`
-<p><span lang="en-US">INFORMATION</span></p>
+
 <p><span lang="en-US"><strong>1. "Where did you get the funds to pay for Clients?"</strong></span></p>
 <p><span lang="en-US">- the collected statistical information about the work of our clients, we sell to interested companies,</span></p>
 <p><span lang="en-US">- advertising on our website, which you constantly watch, brings good income,</span></p>

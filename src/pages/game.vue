@@ -58,6 +58,8 @@
     </div>
     <div v-else>
          <div  class="flex column items-center justify-center q-mt-sm">
+           <div v-if="sliderStart" class="text-bold text-h5 text-uppercase q-px-lg" id="timer_slider">00:00</div>
+      <div v-else></div>
           <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
         </div>
 
@@ -141,9 +143,10 @@ export default {
       show: true,
        gameImg:null,
       videoTitle: 'Cat',
-      difficulty: 'Normal',
+      difficulty: 'Easy',
       distance: null,
       isGoal: false,
+      sliderStart: false,
       //gameWin: false,
       autoResize: true,
       width: 300,
@@ -161,7 +164,10 @@ export default {
       showAd:false,
       showClose:false,
       counter: 0,
+      counterSlideTime: 600,
+      counterSlide: 10,
       showCloseInterval:null,
+      sliderTimerRef:null,
       currentAd:{image:'',video:''},
       AdVideo:[],
       gameTypes:[
@@ -200,39 +206,59 @@ export default {
       return val < 10 ? `0${val}` : val
     }
   },
-  watch:{
-    isGoal(isGoal) {
-      if (isGoal) {
-        //this.$confetti.start({
-        //  shape: 'rect'
-        //})
-        this.gameWin=true
-        console.log('slider_win')
-      } else {
-        //this.$confetti.stop()
-      }
-    }
-  },
+
   methods:{
     ...mapActions('game_level',['fetchLevels']),
     ...mapActions('auth',['getUser']),
     //slider
     async onPuzzleBoardInit() {
+      this.counterSlide = this.counterSlideTime
        this.$q.loading.show()
       console.log('init')
       const game_info = await this.$api.post('/api/start_game',{level_id:1,type:'puzzle_image'})
       console.log(game_info.data)
+      this.gameId = game_info.data.id
       this.src = process.env.API + game_info.data.img
-
       this.isGoal = false
+      this.sliderStart = true
       this.$q.loading.hide()
+
+
     },
     onPuzzleBoardStart() {
       console.log('start')
+
+      let that=this
+      this.sliderTimerRef = setInterval(async function(){
+        that.counterSlide-=1
+        if (that.counterSlide === 0){
+          console.log('time out')
+          clearInterval(that.sliderTimerRef)
+          that.gameWin = false
+          that.showAd = true
+        }
+        let minutes = parseInt(that.counterSlide/60);
+        let seconds = parseInt(that.counterSlide%60);
+
+
+        if(minutes < 10)
+          minutes = "0"+minutes;
+
+        if(seconds < 10)
+          seconds = "0"+seconds;
+
+        document.getElementById('timer_slider').innerText = minutes + ":" + seconds;
+
+
+      },1000)
     },
-    onPuzzleBoardFinish() {
+    async onPuzzleBoardFinish() {
       console.log('finish')
-      this.isGoal = true
+      clearInterval(this.sliderTimerRef)
+      this.gameWin = true
+      this.showAd = true
+      const response = await this.$api.post('/api/slider_win',{game_id:this.gameId})
+      console.log(response.data)
     },
     onPuzzleBoardChange: function(payload) {
       console.log('change')
@@ -254,6 +280,7 @@ export default {
       //this.$router.go(this.$router.currentRoute)
       if (this.game_type==='slider'){
         this.game_type='puzzle'
+        clearInterval(this.sliderTimerRef)
       }else{
         document.getElementById('forPuzzle').innerHTML=''
       this.is_game_stop=true
