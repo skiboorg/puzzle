@@ -22,7 +22,7 @@
       v-model="leftDrawerOpen"
       overlay
       side="right"
-      :width="200"
+      :width="375"
       elevated
       content-class="left-menu flex column items-center justify-evenly bg-accent">
       <q-toolbar class="absolute-top">

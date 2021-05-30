@@ -21,6 +21,7 @@
     <q-drawer
       v-model="leftDrawerOpen"
       side="right"
+      :width="375"
       elevated
       content-class="left-menu flex column items-center justify-evenly bg-accent"    >
       <q-card v-if="$user.loggedIn" class="bg-grey-4"  >
