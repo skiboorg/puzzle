@@ -49,7 +49,7 @@
             </q-item>
             <q-separator />
             <q-card-section >
-              <p class="q-mb-xs">Balance: {{$user.user.balance + $user.user.add_balance}}</p>
+             <p class="q-mb-xs flex items-center">Balance: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
               <p class="no-margin">Rating: {{$user.user.rating}}</p>
             </q-card-section>
           </q-card>
@@ -152,7 +152,7 @@
             </q-item>
             <q-separator />
             <q-card-section >
-              <p class="q-mb-xs">Balance: {{$user.user.balance + $user.user.add_balance}}</p>
+              <p class="q-mb-xs flex items-center">Balance: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
               <p class="no-margin">Rating: {{$user.user.rating}}</p>
             </q-card-section>
           </q-card>

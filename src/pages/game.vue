@@ -59,8 +59,9 @@
     <div v-else>
          <div  class="flex column items-center justify-center q-mt-sm">
            <div v-if="sliderStart" class="text-bold text-h5 text-uppercase q-px-lg" id="timer_slider">00:00</div>
-      <div v-else></div>
+          <div v-else></div>
           <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+           <p v-if="sliderStart" class="no-margin text-bold text-caption text-uppercase ">+10 к Рейтингу</p>
         </div>
 
          <div class="slider-area mb-50">
@@ -143,7 +144,7 @@ export default {
       show: true,
        gameImg:null,
       videoTitle: 'Cat',
-      difficulty: 'Easy',
+      difficulty: 'Normal',
       distance: null,
       isGoal: false,
       sliderStart: false,
@@ -1973,8 +1974,8 @@ export default {
   box-sizing: border-box
   box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25)
 .game-type
-  height: 200px
-  width: 200px
+  height: 170px
+  width: 170px
   transition: all .2s linear
   img
     max-width: 100%

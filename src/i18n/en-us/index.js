@@ -37,7 +37,7 @@ export default {
   login_btn:'Login',
   register_btn:'Register',
 
-  choose_game:'CHOOSE GAME',
+  choose_game:'CHOOSE',
   choose_difficult:'CHOOSE DIFFICULT',
   game_limit:'You have reached the limit of games to increase your ranking! You can continue playing, but the rating will not be credited or debited',
   you_have:'YOU HAVE',

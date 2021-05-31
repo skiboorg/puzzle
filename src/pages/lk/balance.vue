@@ -9,7 +9,7 @@
       :options="[
         {label: 'WITHDRAW', value: 'WITHDRAW'},
         {label: 'DEPOSIT', value: 'DEPOSIT'}]"/>
-      <p class="text-grey-6">ATTENTION! 1 QR = 1 YUAN</p>
+      <p class="text-grey-6">ATTENTION! 1 QR = 1 COIN</p>
       <q-form v-if="pay_type==='WITHDRAW'" @submit="formWithDrawSubmit" class=" q-gutter-sd q-mb-lg">
           <q-input
             filled
