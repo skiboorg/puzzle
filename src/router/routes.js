@@ -18,6 +18,7 @@ const routes = [
       { path: 'rules', component: () => import('pages/static/rules.vue') },
       { path: 'contacts', component: () => import('pages/static/contacts.vue') },
       { path: 'feedback', component: () => import('pages/static/feedback.vue') },
+      { path: 'documents', component: () => import('pages/static/docs.vue') },
       { path: 'game', component: () => import('pages/game.vue') },
 
     ]

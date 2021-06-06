@@ -61,7 +61,7 @@
            <div v-if="sliderStart" class="text-bold text-h5 text-uppercase q-px-lg" id="timer_slider">00:00</div>
           <div v-else></div>
           <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
-           <p v-if="sliderStart" class="no-margin text-bold text-caption text-uppercase ">+10 к Рейтингу</p>
+           <p v-if="sliderStart" class="no-margin text-bold text-caption text-uppercase ">+10 {{$t('rating_title')}}</p>
         </div>
 
          <div class="slider-area mb-50">

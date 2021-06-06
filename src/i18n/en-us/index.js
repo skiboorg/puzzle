@@ -71,7 +71,7 @@ export default {
   stats_title:'Stats',
   balance_title:'Balance',
   balance_text:'In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section',
-
+  documents_title:'Documents',
   contacts_text:'contacts_text',
   contacts_form_title:'Your message',
   contacts_form_text:'We will answer you within 24 hours to your specified mail for your support request, question or suggestion!',
@@ -116,14 +116,7 @@ export default {
 <p><span lang="en-US">We offer our clients work in the form of PuzPays Puzzle solution, collecting statistical data and viewing advertisements. We are ready to pay for your work from the funds received for our activities.</span></p>
 <p><span lang="en-US">At first glance, everything will seem complicated, but with patience and experience, these tasks are solved and give you the opportunity to earn good money.</span></p>
 <p><span lang="en-US">Good luck!</span></p>
-<p lang="en-US"><br /><br /></p>
-<p><strong>OUR DOCUMENTS:</strong>
-<a href="#" style="color: inherit">1. Business License - PDF</a>
-<a href="#" style="color: inherit">2. Bank details - PDF</a>
-<a href="#" style="color: inherit">3. Contacts - PDF</a>
-<a href="#" style="color: inherit">4. Offer Agreement - PDF</a>
-<a href="#" style="color: inherit">5. User Agreement - PDF</a>
-<a href="#" style="color: inherit">6. Privacy Policy - PDF</a>
+
 `,
   infoText:`
 
@@ -140,9 +133,9 @@ export default {
 <p><span lang="en-US"><strong>4. "How many accounts can I open?"</strong></span></p>
 <p><span lang="en-US">- we have no restrictions on opening new accounts, we only limit the amount on each account, it must be from 500 to 50,000 YUAN (from 70 to 7000 USD).</span></p>
 <p><span lang="en-US"><strong>5. "How many fees do you need to make at LEVEL to have 200 points per month?"</strong></span></p>
-<p><span lang="en-US">- LEVEL 1 - 2 points per collection (200 points / 2) = 100 collections per month, 5 collections per day.</span></p>
-<p><span lang="en-US">- LEVEL 2 - 4 points per collection (200 points / 4) = 50 fees per month, 5 fees per day.</span></p>
-<p><span lang="en-US">- LEVEL 3 - 6 points per collection (200 points / 6) = 34 collections per month, 5 collections per day.</span></p>
+<p><span lang="en-US">- LEVEL Easy - 2 points per collection (200 points / 2) = 100 collections per month, 5 collections per day.</span></p>
+<p><span lang="en-US">- LEVEL Medium - 4 points per collection (200 points / 4) = 50 fees per month, 5 fees per day.</span></p>
+<p><span lang="en-US">- LEVEL Hard - 6 points per collection (200 points / 6) = 34 collections per month, 5 collections per day.</span></p>
 <p><a name="_GoBack"></a> <span lang="en-US">You can work at any Level and combine points. Everything in your Rating will be recorded and taken into account (see in your Personal Account).</span></p>
 <p><span lang="en-US">If you still have questions - write to us, we will publish the most important and popular answers!</span></p>
 `,

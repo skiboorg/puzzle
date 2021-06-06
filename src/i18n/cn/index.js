@@ -71,6 +71,7 @@ export default {
   stats_title:'统计',
   balance_title:'现金余额',
   balance_text:'在此部分中，您可以在提款部分中提取资金，并在存款部分中补充余额 ',
+  documents_title:'关于',
   contacts_text:'contacts_text',
   contacts_form_title:'你的信息',
   contacts_form_text:'我们会在24小时内回复您指定的邮件，以获取您的支持请求，问题或建议！',
@@ -95,16 +96,7 @@ export default {
 <p><span ><span lang="en-US"><span >我</span><span >们以</span></span></span><span lang="en-US">PuzPays Puzzle</span><span ><span lang="en-US"><span >解决方案的形式</span><span >为客户提供工作</span><span >，</span><span >收集统计数据并查看广告。我们准备从收到的活动资金中支付您的工作费用。</span></span></span></p>
 <p><span ><span lang="en-US"><span >乍一看</span><span >，</span><span >所有事情看起来都很复</span><span >杂</span><span >，</span><span >但是凭借耐心和经验</span><span >，</span><span >这些任务得以解决</span><span >，</span><span >并为您提供了赚钱的机会。</span></span></span></p>
 <p><span ><span lang="en-US"><span >祝你好运</span><span >！</span></span></span></p>
-<p lang="en-US"><br /><br /></p>
-<p><strong>们的文件</strong>
 
-<a href="#" style="color:inherit"> 1。 营业执照-PDF </a>
-<a href="#" style="color:inherit"> 2。 银行详细信息-PDF </a>
-<a href="#" style="color:inherit"> 3。 联系人-PDF </a>
-<a href="#" style="color:inherit"> 4。 报价协议-PDF </a>
-<a href="#" style="color:inherit"> 5。 用户协议-PDF </a>
-<a href="#" style="color:inherit"> 6。 隐私权政策-PDF </a>
-</p>
  `,
   infoText:`
 
