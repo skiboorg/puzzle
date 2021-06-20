@@ -49,8 +49,8 @@
             </q-item>
             <q-separator />
             <q-card-section >
-             <p class="q-mb-xs flex items-center">Balance: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
-              <p class="no-margin">Rating: {{$user.user.rating}}</p>
+             <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
+              <p class="no-margin">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
             </q-card-section>
           </q-card>
       <q-list  dark>
@@ -158,8 +158,8 @@
             </q-item>
             <q-separator />
             <q-card-section >
-              <p class="q-mb-xs flex items-center">Balance: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
-              <p class="no-margin">Rating: {{$user.user.rating}}</p>
+              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
+              <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
             </q-card-section>
           </q-card>
          <q-list style="margin-bottom: 100px"  dark>

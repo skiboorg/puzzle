@@ -30,7 +30,7 @@
           filled
           v-model="message"
           class="col-6"
-          :label="$t('contacts_form_message')"
+          :label="$t('write_message')"
           type="textarea"
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"

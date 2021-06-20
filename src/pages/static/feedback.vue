@@ -3,7 +3,7 @@
     <h1 class="text-h4  text-weight-bold">{{$t('feedback_title')}}</h1>
     <p class="text-grey-6">{{$t('feedback_text')}}</p>
 
-    <q-scroll-area style="height: 45vh">
+    <q-scroll-area class="q-mb-lg" style="height: 50vh">
     <q-card class="q-mx-xs q-mb-md"  v-for="feedback in feedbacks" :key="feedback.id">
       <q-item>
           <q-item-section avatar>
@@ -40,7 +40,7 @@
           filled
           v-model="message"
           name="message"
-          label="Write here your message... *"
+          :label="$t('write_message')"
           type="textarea"
           autogrow
           lazy-rules
@@ -55,9 +55,9 @@
         style="flex-basis: 20%"
         outlined
         color="primary"
-        label="Select image"
+        :label="$t('contacts_form_attach')"
       />
-        <q-btn size="md" label="Submit" type="submit" color="primary"/>
+        <q-btn size="md" :label="$t('contacts_form_send')" type="submit" color="primary"/>
 
       </div>
     </q-form>

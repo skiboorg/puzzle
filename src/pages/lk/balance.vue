@@ -9,13 +9,14 @@
       :options="[
         {label: 'WITHDRAW', value: 'WITHDRAW'},
         {label: 'DEPOSIT', value: 'DEPOSIT'}]"/>
-      <p class="text-grey-6">ATTENTION! 1 QR = 1 COIN</p>
+      <p class="text-grey-6">ATTENTION! 1 PUZ COIN = 1 YUAN</p>
       <q-form v-if="pay_type==='WITHDRAW'" @submit="formWithDrawSubmit" class=" q-gutter-sd q-mb-lg">
           <q-input
             filled
             v-model="remove_amount"
             :label="`Amount * (max. ${$user.user.add_balance})`"
             type="number"
+            max="10000"
             style="width: 320px"
             lazy-rules
             :rules="[ val => val && val.length > 0 || 'Input amount',

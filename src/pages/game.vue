@@ -12,7 +12,8 @@
     <div v-else class="q-mt-sm"></div>
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
       <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
-      <div v-if="$user.loggedIn" class="">
+<!--      $user.loggedIn-->
+      <div v-if="false" class="">
          <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
 
 
@@ -181,21 +182,22 @@ export default {
 
   async mounted() {
     this.fetchLevels()
-    if (this.$user.loggedIn){
-      await this.$api.get('/api/user/game_count')
-      await this.getUser()
-    }
+    // if (this.$user.loggedIn){
+    //   await this.$api.get('/api/user/game_count')
+    //   await this.getUser()
+    // }
 
 
   },
   computed:{
     ...mapGetters('game_level',['levels']),
     can_play(){
-      if (this.$user.loggedIn){
-        return this.$user.user.games_count > 0
-      }else {
-        return true
-      }
+      return true
+      // if (this.$user.loggedIn){
+      //   return this.$user.user.games_count > 0
+      // }else {
+      //   return true
+      // }
     },
     dimensions() {
       return DIMENSIONS[this.difficulty]
@@ -292,10 +294,10 @@ export default {
       }
 
 
-      if (this.$user.loggedIn){
-      await this.$api.get('/api/user/game_count')
-      await this.getUser()
-    }
+    //   if (this.$user.loggedIn){
+    //   await this.$api.get('/api/user/game_count')
+    //   await this.getUser()
+    // }
     },
     closeAd(){
       clearInterval(this.showCloseInterval)
