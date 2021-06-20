@@ -7,6 +7,9 @@ export default {
   index_title:'We work, you collect, we earn together!',
   index_subtitle:'The system works on the principle of mutual interest of the parties - clients earn, marketers get a real metric of potential consumers!',
   index_button:'SIGN IN OR SIGN UP',
+  withwraw_button:'WITHDRAW',
+  deposit_button:'DEPOSIT',
+  amount:'amount',
 
   menu_login:'LOGIN',
   menu_profile:'PROFILE',
@@ -71,7 +74,9 @@ export default {
   settings_title:'Settings',
   stats_title:'Stats',
   balance_title:'Balance',
-  balance_text:'In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section. Daily Limit for withdrawal and replenishment of balance 10,000 RMB',
+  balance_text:`In this section, you can withdraw funds in the withdrawal section and replenish your balance in the deposit section.' +
+    ' Daily Limit for withdrawal and replenishment of balance 10,000 RMB. Withdrawal of funds is possible only after the complete filling
+     of the questionnaire <a style="color: inherit" href="/lk/profile">in your profile</a>`,
   documents_title:'Documents',
   contacts_text:'contacts_text',
   contacts_form_title:'Your message',
@@ -107,7 +112,7 @@ export default {
 <p><span lang="en-US">- from 500 to 50,000 YUAN (from 70 to 7000 USD) for each correct collection of QR-ART Puzzle, your RATING will receive from 2 to 6 points, and upon reaching 100 points, your BALANCE will increase by 3%.</span></p>
 <p lang="en-US"><a name="_GoBack"></a> </p>
 <p><span lang="en-US">6. The number of fees is not limited, the number of points in RATING is not limited.</span></p>
-<p><span lang="en-US">Every 100 points in RATING = BALANCE + 3%</span></p>
+<p><span lang="en-US">Every 100 points in RATING = BALANCE + 1%</span></p>
 <p><span lang="en-US">The client can withdraw from BALANCE no more than 10,000 YUAN per day (24 hours), the requirement of the bank security service.</span></p>
  `,
 
@@ -129,8 +134,8 @@ export default {
 <p><span lang="en-US">- advertising on our website, which you constantly watch, brings good income,</span></p>
 <p><span lang="en-US">- we produce Internet products that are highly profitable, we use the income from them for payments.</span></p>
 <p><span lang="en-US"><strong>2. "How much will I get if I get 100 points in the Rating, and how often can I do it?"</strong></span></p>
-<p><span lang="en-US">- every time you gain 100 points in the Rating, you will be automatically credited + 3% to the amount on your Balance,</span></p>
-<p><span lang="en-US">- You can do this as many times as you like, and every time, with a Rating of more than 100 points, + 3% will be credited.</span></p>
+<p><span lang="en-US">- every time you gain 100 points in the Rating, you will be automatically credited + 1% to the amount on your Balance,</span></p>
+<p><span lang="en-US">- You can do this as many times as you like, and every time, with a Rating of more than 100 points, + 1% will be credited.</span></p>
 <p><span lang="en-US"><strong>3. "Why should the Client refill the Balance?"</strong></span></p>
 <p><span lang="en-US">- to stimulate Clients to take more active actions on our website, the more often the Client comes to us, the more he watches advertising videos, and the more we have ad views, for which advertisers pay us</span></p>
 <p><span lang="en-US">- the more we are paid for advertising and for statistical data about Clients, the more we all earn</span></p>

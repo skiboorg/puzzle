@@ -11,7 +11,7 @@
     </div>
     <div v-else class="q-mt-sm"></div>
     <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
-      <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
+      <p style="margin-left: -6px" class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
 <!--      $user.loggedIn-->
       <div v-if="false" class="">
          <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>

@@ -2,7 +2,7 @@
   <q-page class="index-bg">
     <div  class="container">
       <div  class="row index">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  full-height flex column items-start justify-between">
+        <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12 offset-lg-0 offset-md-1 offset-sm-1 offset-xs-0 full-height flex column items-start justify-between">
           <div class="logo">
             <img src="~assets/logo.png" alt="">
           </div>

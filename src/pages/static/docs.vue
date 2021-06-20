@@ -17,15 +17,12 @@
     </p>
          <div class="q-mb-lg">
            <p class="text-bold ">Our main documents:</p>
-         <a href="/contract_offer.docx">license and terms</a><br>
-         <a href="/user_agreement.docx">user agreement</a>
+         <a class="doc-link q-mr-md q-mb-md" href="/contract_offer.docx">license and terms</a>
+         <a class="doc-link q-mr-md q-mb-md" href="/user_agreement.docx">user agreement</a>
+           <a class="doc-link" href="/privacy_policy.docx">privacy policy</a>
          </div>
 
 
-            <div class="flex ">
-               <img  style="width:500px;height: 400px; object-fit: contain"  src="~assets/a1.jpg"  >
-            <img  style="width:500px;height: 400px; object-fit: contain" src="~assets/a2.jpg" >
-            </div>
 
 
 
@@ -41,3 +38,13 @@ export default {
   name: 'Error404'
 }
 </script>
+<style lang="sass">
+.doc-link
+  color: inherit
+  display: inline-block
+  text-decoration: none
+  text-transform: uppercase
+  border: 1px solid black
+  padding: 10px 15px
+  font-weight: bold
+</style>

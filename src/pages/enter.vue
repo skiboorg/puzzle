@@ -75,12 +75,16 @@
          <q-toggle v-model="accept1"  />
         <p class="no-margin">I accept the <a href="/user_agreement.docx">user agreement</a></p>
       </div>
+      <div class="flex items-center">
+         <q-toggle v-model="accept2"  />
+        <p class="no-margin">I accept the <a href="/privacy_policy.docx">privacy policy</a></p>
+      </div>
 
 
 
       <div>
         <div class="text-center">
-          <q-btn :label="$t('register_btn')" :disable="!accept || !accept1" type="submit" class="q-px-xl q-mb-md" color="primary "/>
+          <q-btn :label="$t('register_btn')" :disable="!accept || !accept1 || !accept2" type="submit" class="q-px-xl q-mb-md" color="primary "/>
           <p>{{$t('have_account')}} <a href="#" @click.prevent="is_register=false">{{$t('sign_in')}}</a></p>
         </div>
 
@@ -141,6 +145,7 @@ export default {
       age: null,
       accept: false,
       accept1: false,
+      accept2: false,
       is_register:false,
       isPwd: true,
       lang: this.$i18n.locale,
