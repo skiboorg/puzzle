@@ -49,7 +49,9 @@
             </q-item>
             <q-separator />
             <q-card-section >
-             <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
+             <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
+             <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
+             </p>
               <p class="no-margin">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
             </q-card-section>
           </q-card>
@@ -158,7 +160,9 @@
             </q-item>
             <q-separator />
             <q-card-section >
-              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}} <img style="width: 15px;height: 15px;object-fit: contain" class="q-ml-sm" src="~assets/coin.png" alt=""></p>
+              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
+                <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
+              </p>
               <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
             </q-card-section>
           </q-card>
