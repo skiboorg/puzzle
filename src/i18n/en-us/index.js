@@ -106,13 +106,13 @@ export default {
 <p><span lang="en-US">- you can train at all three levels in DEMO, but if you collect correctly, QR-ART Puzzle RATING and BALANCE will not be replenished.</span></p>
 <p lang="en-US"></p>
 <p><span lang="en-US">4. At registration, but without replenishment of BALANCE:</span></p>
-<p><span lang="en-US">- we give to your BALANCE 1000 YUAN = 1000 PZ, which you cannot withdraw, but you can transfer all the funds earned on them to your account if there are more than 100 points in RATING.</span></p>
+<p><span lang="en-US">- we give to your BALANCE 1000 YUAN = 1000 PZ, which you cannot withdraw, but you can transfer all the funds earned on them to your account if there are more than 200 points in RATING.</span></p>
 <p lang="en-US"></p>
 <p><span lang="en-US">5. When registering and replenishing BALANCE:</span></p>
-<p><span lang="en-US">- from 500 to 50,000 YUAN (from 70 to 7000 USD) for each correct collection of QR-ART Puzzle, your RATING will receive from 2 to 6 points, and upon reaching 100 points, your BALANCE will increase by 3%.</span></p>
+<p><span lang="en-US">- from 500 to 50,000 YUAN (from 70 to 7000 USD) for each correct collection of QR-ART Puzzle, your RATING will receive from 2 to 6 points, and upon reaching 200 points, your BALANCE will increase by 3%.</span></p>
 <p lang="en-US"><a name="_GoBack"></a> </p>
 <p><span lang="en-US">6. The number of fees is not limited, the number of points in RATING is not limited.</span></p>
-<p><span lang="en-US">Every 100 points in RATING = BALANCE + 1%</span></p>
+<p><span lang="en-US">Every 200 points in RATING = BALANCE + 2%</span></p>
 <p><span lang="en-US">The client can withdraw from BALANCE no more than 10,000 YUAN per day (24 hours), the requirement of the bank security service.</span></p>
  `,
 
@@ -133,9 +133,9 @@ export default {
 <p><span lang="en-US">- the collected statistical information about the work of our clients, we sell to interested companies,</span></p>
 <p><span lang="en-US">- advertising on our website, which you constantly watch, brings good income,</span></p>
 <p><span lang="en-US">- we produce Internet products that are highly profitable, we use the income from them for payments.</span></p>
-<p><span lang="en-US"><strong>2. "How much will I get if I get 100 points in the Rating, and how often can I do it?"</strong></span></p>
-<p><span lang="en-US">- every time you gain 100 points in the Rating, you will be automatically credited + 1% to the amount on your Balance,</span></p>
-<p><span lang="en-US">- You can do this as many times as you like, and every time, with a Rating of more than 100 points, + 1% will be credited.</span></p>
+<p><span lang="en-US"><strong>2. "How much will I get if I get 200 points in the Rating, and how often can I do it?"</strong></span></p>
+<p><span lang="en-US">- every time you gain 200 points in the Rating, you will be automatically credited + 2% to the amount on your Balance,</span></p>
+<p><span lang="en-US">- You can do this as many times as you like, and every time, with a Rating of more than 200 points, + 2% will be credited.</span></p>
 <p><span lang="en-US"><strong>3. "Why should the Client refill the Balance?"</strong></span></p>
 <p><span lang="en-US">- to stimulate Clients to take more active actions on our website, the more often the Client comes to us, the more he watches advertising videos, and the more we have ad views, for which advertisers pay us</span></p>
 <p><span lang="en-US">- the more we are paid for advertising and for statistical data about Clients, the more we all earn</span></p>
@@ -148,10 +148,10 @@ export default {
 <p><span lang="en-US">- submit an application in your personal account for withdrawal of funds, the only requirement for the Client is that he should not withdraw more than 10,000 YUAN within a day (24 hours), this is a requirement of the bank's security service.</span></p>
 <p><span lang="en-US"><strong>6. "How many accounts can I open?"</strong></span></p>
 <p><span lang="en-US">- we have no restrictions on opening new accounts, we only limit the amount on each account, it must be from 500 to 50,000 YUAN (from 70 to 7000 USD), our 1000 YUAN gift boxes are not counted, you can only earn money on them.</span></p>
-<p><span lang="en-US"><strong>7. "How many fees do you need to get 100 points?"</strong></span></p>
-<p><span lang="en-US">- LEVEL EASY - 2 points per collection (100 points / 2) = 50 fees.</span></p>
-<p><span lang="en-US">- LEVEL MEDIUM - 4 points per collection (100 points / 4) = 25 fees.</span></p>
-<p><span lang="en-US">- LEVEL HARD - 6 points per collection (100 points / 6) = 17 fees.</span></p>
+<p><span lang="en-US"><strong>7. "How many fees do you need to get 200 points?"</strong></span></p>
+<p><span lang="en-US">- LEVEL EASY - 2 points per collection (200 points / 2) = 50 fees.</span></p>
+<p><span lang="en-US">- LEVEL MEDIUM - 4 points per collection (200 points / 4) = 25 fees.</span></p>
+<p><span lang="en-US">- LEVEL HARD - 6 points per collection (200 points / 6) = 17 fees.</span></p>
 <p><span lang="en-US">You can work at any Level and combine points. Everything in your Rating will be recorded and taken into account (see Personal Account).</span></p>
 <p><span lang="en-US">If you have any questions, write to us, and we will publish the most important ones</span><span style="font-family: Microsoft JhengHei, serif;"><span lang="en-US">!</span></span></p>
 `,
