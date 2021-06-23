@@ -154,5 +154,8 @@ export default {
 <p><span lang="en-US">- LEVEL HARD - 6 points per collection (200 points / 6) = 17 fees.</span></p>
 <p><span lang="en-US">You can work at any Level and combine points. Everything in your Rating will be recorded and taken into account (see Personal Account).</span></p>
 <p><span lang="en-US">If you have any questions, write to us, and we will publish the most important ones</span><span style="font-family: Microsoft JhengHei, serif;"><span lang="en-US">!</span></span></p>
+<p><span lang="en-US"><strong>8 "I understood correctly that if I collect 200 points in the Rating per day and receive 2% each, then I can earn more than 50% on my Balance per month?"</strong></span></p>
+<p><span lang="en-US">- Yes, you calculated everything correctly, but forgot to mention that then in a month you will need to make about 1500 fees and spend more than 130 hours on it.
+According to our statistical observations, on average, our Client spends 2 hours of his time per day to work on our website, and this brings him about 25% per month.</span></p>
 `,
 }

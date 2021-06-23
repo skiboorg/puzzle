@@ -3,7 +3,9 @@
       <h1 class="text-h4  text-weight-bold">{{$t('documents_title')}}</h1>
        <q-scroll-area style="height: 70vh; max-width: 100%;">
 
-       <p class="q-mb-lg">
+         <div class="flex items-start ">
+           <div class="">
+               <p class="q-mb-lg">
 公司地址：上海市松江区荣乐东路301号<br>
 阿尤布（Ayub）电话：13262863703<br>
 我们公司的微信：<br>
@@ -21,6 +23,13 @@
          <a class="doc-link q-mr-md q-mb-md" href="/user_agreement.docx">user agreement</a>
            <a class="doc-link" href="/privacy_policy.docx">privacy policy</a>
          </div>
+           </div>
+           <div style="flex-basis: 50%" class="text-center ">
+             <img src="~assets/QR.png" alt="">
+           </div>
+         </div>
+
+
 
 
 

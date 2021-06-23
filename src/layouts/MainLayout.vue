@@ -52,7 +52,7 @@
              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
              <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
              </p>
-              <p class="no-margin">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
+              <p class="no-margin">{{$t('menu_rating')}}: {{$user.user.rating}} out of 200</p>
             </q-card-section>
           </q-card>
       <q-list  dark>
@@ -163,7 +163,7 @@
               <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
                 <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
               </p>
-              <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 100</p>
+              <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 200</p>
             </q-card-section>
           </q-card>
          <q-list style="margin-bottom: 100px"  dark>
