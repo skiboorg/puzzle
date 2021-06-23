@@ -109,7 +109,7 @@ export default {
 <p><span lang="en-US">- we give to your BALANCE 1000 YUAN = 1000 PZ, which you cannot withdraw, but you can transfer all the funds earned on them to your account if there are more than 200 points in RATING.</span></p>
 <p lang="en-US"></p>
 <p><span lang="en-US">5. When registering and replenishing BALANCE:</span></p>
-<p><span lang="en-US">- from 500 to 50,000 YUAN (from 70 to 7000 USD) for each correct collection of QR-ART Puzzle, your RATING will receive from 2 to 6 points, and upon reaching 200 points, your BALANCE will increase by 3%.</span></p>
+<p><span lang="en-US">- from 500 to 50,000 YUAN (from 70 to 7000 USD) for each correct collection of QR-ART Puzzle, your RATING will receive from 2 to 6 points, and upon reaching 200 points, your BALANCE will increase by 2%.</span></p>
 <p lang="en-US"><a name="_GoBack"></a> </p>
 <p><span lang="en-US">6. The number of fees is not limited, the number of points in RATING is not limited.</span></p>
 <p><span lang="en-US">Every 200 points in RATING = BALANCE + 2%</span></p>
@@ -153,9 +153,11 @@ export default {
 <p><span lang="en-US">- LEVEL MEDIUM - 4 points per collection (200 points / 4) = 25 fees.</span></p>
 <p><span lang="en-US">- LEVEL HARD - 6 points per collection (200 points / 6) = 17 fees.</span></p>
 <p><span lang="en-US">You can work at any Level and combine points. Everything in your Rating will be recorded and taken into account (see Personal Account).</span></p>
-<p><span lang="en-US">If you have any questions, write to us, and we will publish the most important ones</span><span style="font-family: Microsoft JhengHei, serif;"><span lang="en-US">!</span></span></p>
 <p><span lang="en-US"><strong>8 "I understood correctly that if I collect 200 points in the Rating per day and receive 2% each, then I can earn more than 50% on my Balance per month?"</strong></span></p>
 <p><span lang="en-US">- Yes, you calculated everything correctly, but forgot to mention that then in a month you will need to make about 1500 fees and spend more than 130 hours on it.
 According to our statistical observations, on average, our Client spends 2 hours of his time per day to work on our website, and this brings him about 25% per month.</span></p>
-`,
+<p><span lang="en-US">If you have any questions, write to us, and we will publish the most important ones</span><span style="font-family: Microsoft JhengHei, serif;"><span lang="en-US">!</span></span></p>
+
+`
+  ,
 }
