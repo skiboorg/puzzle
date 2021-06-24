@@ -149,9 +149,9 @@ export default {
 <p><span lang="en-US"><strong>6. "How many accounts can I open?"</strong></span></p>
 <p><span lang="en-US">- we have no restrictions on opening new accounts, we only limit the amount on each account, it must be from 500 to 50,000 YUAN (from 70 to 7000 USD), our 1000 YUAN gift boxes are not counted, you can only earn money on them.</span></p>
 <p><span lang="en-US"><strong>7. "How many fees do you need to get 200 points?"</strong></span></p>
-<p><span lang="en-US">- LEVEL EASY - 2 points per collection (200 points / 2) = 50 fees.</span></p>
-<p><span lang="en-US">- LEVEL MEDIUM - 4 points per collection (200 points / 4) = 25 fees.</span></p>
-<p><span lang="en-US">- LEVEL HARD - 6 points per collection (200 points / 6) = 17 fees.</span></p>
+<p><span lang="en-US">- LEVEL EASY - 2 points per collection (200 points / 2) = 100 fees.</span></p>
+<p><span lang="en-US">- LEVEL MEDIUM - 4 points per collection (200 points / 4) = 50 fees.</span></p>
+<p><span lang="en-US">- LEVEL HARD - 6 points per collection (200 points / 6) = 34 fees.</span></p>
 <p><span lang="en-US">You can work at any Level and combine points. Everything in your Rating will be recorded and taken into account (see Personal Account).</span></p>
 <p><span lang="en-US"><strong>8 "I understood correctly that if I collect 200 points in the Rating per day and receive 2% each, then I can earn more than 50% on my Balance per month?"</strong></span></p>
 <p><span lang="en-US">- Yes, you calculated everything correctly, but forgot to mention that then in a month you will need to make about 1500 fees and spend more than 130 hours on it.
