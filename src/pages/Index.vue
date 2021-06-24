@@ -14,7 +14,7 @@
               <p class="text-grey-6 text-body1 no-margin">We work, you collect, we earn together!</p>
               <p class="text-grey-6 text-caption">The system works on the principle of mutual interest of the parties!</p>
             </div>
-            <div class="row column index_bottom">
+            <div class="row column index_bottom gt-sm">
               <p class="text-white text-body1 q-mb-sm">用于广告和合作伙伴的邮件<br>info@puzpayz.com</p>
               <p class="text-grey-6 text-caption">Email for advertisment and partners</p>
             </div>

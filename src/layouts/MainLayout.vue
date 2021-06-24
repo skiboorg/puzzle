@@ -106,7 +106,7 @@
           <q-item-section avatar>
             <q-icon color="white" name="description" />
           </q-item-section>
-          <q-item-section>{{$t('documents_title')}}</q-item-section>
+          <q-item-section class="text-uppercase">{{$t('documents_title')}}</q-item-section>
         </q-item>
 
         <q-item clickable to="/contacts">
