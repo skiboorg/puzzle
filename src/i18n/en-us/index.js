@@ -123,6 +123,9 @@ export default {
 <p>PuzPays is a puzzle game that requires the ability to quickly solve logic puzzles. The program is an excellent stimulator for the development of logical thinking. All our work is analyzed, systematized and, on the basis of these data, a general picture is drawn up about the development of logical thinking in different regions and types of people.</p>
 <p>For us, this is a research activity, on the basis of which marketers, economists, manufacturers will draw conclusions about the advisability of introducing certain technologies in working with consumers.</p>
 <p>The logical thinking of people is the fundamental mechanism for choosing one or another product. Our PuzPays platform and analysis of its results simplifies the work of professionals in the field of marketing, promotion of goods and services. By selling this data to interested companies, we are able to attract large numbers of potential customers and encourage them to solve puzzles.</p>
+
+<p>In our work, we use the company's CPA resource -  https://www.ga-net.com/ and its network. CPA ("cost per action" in translation from English "payment for action") is a way of making money in which the advertiser pays for some specific target user action. A CPA network is a platform where many advertisers are located who pay for a certain user action - purchase, registration, filling out questionnaires, and others.</p>
+
 <p>We offer our clients work in the form of PuzPays Puzzle solution, collecting statistical data and viewing advertisements. We are ready to pay for your work from the funds received for our activities.</p>
 <p>At first glance, everything will seem complicated, but with patience and experience, these tasks are solved and give us the opportunity to make good money together.</p>
 <p>Good luck!</p>
