@@ -3,106 +3,96 @@
     <div v-if="game_type==='puzzle'">
       <div v-if="gameType" class="flex column items-center justify-center q-mt-sm">
 
-        <div v-if="gameReady && gameType" class="text-bold text-h5 text-uppercase q-px-lg" id="timer">00:00</div>
-      <div v-else></div>
-      <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+        <div v-if="gameReady && gameType" class="text-bold text-h5 text-uppercase q-px-lg"
+             id="timer">00:00</div>
+        <div v-else></div>
+        <p class="no-margin text-bold text-caption text-uppercase cursor-pointer"
+           @click="resetGame">back to games</p>
 
-
-    </div>
-    <div v-else class="q-mt-sm"></div>
-    <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
-      <p style="margin-left: -6px" class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
-<!--      $user.loggedIn-->
-      <div v-if="false" class="">
-         <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">{{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
-
-
-        <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
-        <p style="max-width: 800px; margin: 0 auto 20px" class="text-grey-6 text-center">{{$t('we_give')}}</p>
 
       </div>
+      <div v-else class="q-mt-sm"></div>
+      <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
 
-      <div v-if="can_play" class="flex items-center justify-center full-width">
-        <div @click="selectGame(type)" class="game-type flex column items-center justify-between q-mr-md cursor-pointer" v-for="type in gameTypes" :key="type.id">
-          <img :src="type.img" alt="">
 
+        <p style="margin-left: -6px" class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
+        <!--      $user.loggedIn-->
+        <div v-if="false" class="">
+          <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">
+            {{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
+          <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
+          <p style="max-width: 800px; margin: 0 auto 20px" class="text-grey-6 text-center">{{$t('we_give')}}</p>
         </div>
-
-
+        <div v-if="can_play" class="flex items-center justify-center full-width">
+          <div @click="selectGame(type)" class="game-type flex column items-center justify-between q-mr-md cursor-pointer"
+               v-for="type in gameTypes" :key="type.id">
+            <img :src="type.img" alt="">
+          </div>
+        </div>
       </div>
-    </div>
-    <div style="height: 90vh" v-if="gameType && !gameReady" class="flex column items-center justify-center ">
-      <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_difficult')}}</p>
-      <div class="flex items-center justify-center full-width">
-        <q-card
-          flat
-          @click="startGame(index)"
-          class="q-mr-sm cursor-pointer game-level q-pa-lg q-mb-sm"
-          v-for="(level,index) in levels"
-          :key="level.id"
-          :style="{'background-image': 'url('+ level.image +' )'}">
-          <q-card-section class="no-padding full-height">
-            <div class="flex column items-center justify-evenly full-height">
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('level')}}:</span> {{level.name}}</p>
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('pieces')}}:</span> {{level.pieces}}</p>
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('rating')}}:</span> +{{level.rating}}</p>
-              <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('timer')}}:</span> {{level.timer}} {{$t('minutes')}}</p>
-            </div>
-          </q-card-section>
-        </q-card>
+      <div style="height: 90vh" v-if="gameType && !gameReady" class="flex column items-center justify-center ">
+        <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_difficult')}}</p>
+        <div class="flex items-center justify-center full-width">
+          <q-card
+            flat
+            @click="startGame(index)"
+            class="q-mr-sm cursor-pointer game-level q-pa-lg q-mb-sm"
+            v-for="(level,index) in levels"
+            :key="level.id"
+            :style="{'background-image': 'url('+ level.image +' )'}">
+            <q-card-section class="no-padding full-height">
+              <div class="flex column items-center justify-evenly full-height">
+                <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('level')}}:</span> {{level.name}}</p>
+                <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('pieces')}}:</span> {{level.pieces}}</p>
+                <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('rating')}}:</span> +{{level.rating}}</p>
+                <p class="no-margin text-uppercase text-white"><span class="text-weight-medium">{{$t('timer')}}:</span> {{level.timer}} {{$t('minutes')}}</p>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
-    </div>
-
-    <div style="position: absolute" id="puzzle_wrapper" class=" full-width ">
-      <div id="forPuzzle" class=" "></div>
-    </div>
+      <div style="position: absolute" id="puzzle_wrapper" class=" full-width ">
+        <div id="forPuzzle" class=" "></div>
+      </div>
     </div>
     <div v-else>
-         <div  class="flex column items-center justify-center q-mt-sm">
-           <div v-if="sliderStart" class="text-bold text-h5 text-uppercase q-px-lg" id="timer_slider">00:00</div>
-          <div v-else></div>
-          <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
-           <p v-if="sliderStart" class="no-margin text-bold text-caption text-uppercase ">+10 {{$t('rating_title')}}</p>
+      <div  class="flex column items-center justify-center q-mt-sm">
+        <div v-if="sliderStart" class="text-bold text-h5 text-uppercase q-px-lg" id="timer_slider">00:00</div>
+        <div v-else></div>
+        <p class="no-margin text-bold text-caption text-uppercase cursor-pointer" @click="resetGame">back to games</p>
+        <p v-if="sliderStart" class="no-margin text-bold text-caption text-uppercase ">+10 {{$t('rating_title')}}</p>
+      </div>
+      <div class="slider-area mb-50">
+        <div class="slider-container">
+          <puzzle-board v-if="show"
+                        :autoResize="autoResize"
+                        :showNumber="showNumber"
+                        :cols="dimensions.x"
+                        :rows="dimensions.y"
+                        :src="src"
+
+                        :animation="animation"
+                        :width="width"
+                        :height="height"
+                        @init="onPuzzleBoardInit"
+                        @start="onPuzzleBoardStart"
+                        @change="onPuzzleBoardChange"
+                        @finish="onPuzzleBoardFinish"
+          />
         </div>
-
-         <div class="slider-area mb-50">
-       <div class="slider-container">
-
-      <puzzle-board v-if="show"
-        :autoResize="autoResize"
-        :showNumber="showNumber"
-        :cols="dimensions.x"
-        :rows="dimensions.y"
-        :src="src"
-
-        :animation="animation"
-        :width="width"
-        :height="height"
-        @init="onPuzzleBoardInit"
-        @start="onPuzzleBoardStart"
-        @change="onPuzzleBoardChange"
-        @finish="onPuzzleBoardFinish"
-      />
-
-
- </div>
+      </div>
     </div>
-
-    </div>
-
-
-
     <q-dialog v-model="showAd"
               persistent
               transition-show="scale"
               transition-hide="scale"
               @before-show="getAd"
               @before-hide="closeAd">
-       <q-card style="width: 700px; max-width: 80vw;">
+      <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section class="row items-center q-pb-none relative-position">
           <div v-if="gameWin" class="text-h6 text-positive text-uppercase text-center full-width">You WIN!</div>
           <div v-else class="text-h6 text-red text-uppercase text-center full-width">You LOOSE!</div>
-            <q-space/>
+          <q-space/>
           <q-btn v-if="showClose" icon="close" flat round dense v-close-popup class="absolute-top-right" />
           <span v-else id="time_to_close" class="text-weight-bold absolute-top-right">00:{{counter | correct_seconds}}</span>
         </q-card-section>
@@ -119,11 +109,8 @@
         </q-card-section>
       </q-card>
     </q-dialog>
-
   </q-page>
-
 </template>
-
 <script>
 import PuzzleBoard from 'components/PuzzleBoard.vue';
 import { mapActions, mapGetters} from 'vuex'
@@ -143,7 +130,7 @@ export default {
       //slider
       src: null,
       show: true,
-       gameImg:null,
+      gameImg:null,
       videoTitle: 'Cat',
       difficulty: 'Normal',
       distance: null,
@@ -216,7 +203,7 @@ export default {
     //slider
     async onPuzzleBoardInit() {
       this.counterSlide = this.counterSlideTime
-       this.$q.loading.show()
+      this.$q.loading.show()
       console.log('init')
       const game_info = await this.$api.post('/api/start_game',{level_id:1,type:'puzzle_image'})
       console.log(game_info.data)
@@ -286,18 +273,18 @@ export default {
         clearInterval(this.sliderTimerRef)
       }else{
         document.getElementById('forPuzzle').innerHTML=''
-      this.is_game_stop=true
-      this.gameType=null
-      this.gameReady=false
-      this.gameId=null
-      this.gameWin=false
+        this.is_game_stop=true
+        this.gameType=null
+        this.gameReady=false
+        this.gameId=null
+        this.gameWin=false
       }
 
 
-    //   if (this.$user.loggedIn){
-    //   await this.$api.get('/api/user/game_count')
-    //   await this.getUser()
-    // }
+      //   if (this.$user.loggedIn){
+      //   await this.$api.get('/api/user/game_count')
+      //   await this.getUser()
+      // }
     },
     closeAd(){
       clearInterval(this.showCloseInterval)
@@ -329,11 +316,11 @@ export default {
         if (that.counter === 0){
           that.showClose = true
           if (that.$user.loggedIn){
-          await that.$api.post('/api/end_game',{
-            game_id:that.gameId,
-            request_type:'add_rating',
-            game_status:that.gameWin,
-          })
+            await that.$api.post('/api/end_game',{
+              game_id:that.gameId,
+              request_type:'add_rating',
+              game_status:that.gameWin,
+            })
             await that.getUser()
           }
         }
@@ -358,10 +345,10 @@ export default {
     async looseGame(){
       if (this.$user.loggedIn){
         await this.$api.post('/api/end_game',{
-            game_id:this.gameId,
-            request_type:'remove_rating',
-            game_status:this.gameWin,
-          })
+          game_id:this.gameId,
+          request_type:'remove_rating',
+          game_status:this.gameWin,
+        })
         await this.getUser()
       }
       this.showAd = true
@@ -373,9 +360,14 @@ export default {
       let checkGameStopInterval;
       let timeloop = '';
       let mycoeff = this.$q.screen.gt.md ? 0.7 : 1;
-      console.log(mycoeff)
+
       let autoStart;
       let that=this
+       let mycoeff1 = 0; //добавил новый коэффициент, по умолчанию он равен нулю
+
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { //если пользователь с телефона
+    mycoeff1 = 0.001; //то меняем коэффициент
+      }
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -854,12 +846,12 @@ export default {
         let wi = this.image.width;  // from original picture
         let he = this.image.height;
 
-        this.reqHeight = params.height * mycoeff;// requested height
+        this.reqHeight = params.height * (mycoeff + mycoeff1);// requested height
         this.reqWidth = params.width * mycoeff;
         this.height = this.reqHeight - 2 * Puzzle.MARGIN1; // place left on screen including margin
         this.width = this.reqWidth - 2 * Puzzle.MARGIN1; //
 
-       if ((wi / he) * mycoeff > this.width / this.height) { // actual picture "more horizontal" than game board
+        if ((wi / he) * mycoeff > this.width / this.height) { // actual picture "more horizontal" than game board
           this.height = this.width * he / wi;
         } else {
           this.width = this.height * wi / he;
@@ -1014,7 +1006,7 @@ export default {
           = this.divBoard.style.width
           = this.canvMobile.width + "px";
 
-        this.canvMobile.height = this.reqHeight * 1/mycoeff - 4 * Puzzle.MARGIN1; //здесь прибавляем для увеличения игровой длины ПОМЕТКА, я добавил * 1/mycoeff
+        this.canvMobile.height = this.reqHeight * 1/(mycoeff + mycoeff1) - 4 * Puzzle.MARGIN1; //здесь прибавляем для увеличения игровой длины ПОМЕТКА, я добавил * 1/mycoeff
         this.divGame.style.height
           = this.divBoard.style.height
           = this.canvMobile.height + "px";
@@ -1253,9 +1245,9 @@ export default {
 
             this.divBoard.appendChild(pc.theDiv);
             switch(this.freeSpace){
-                 case 0 : pc.pTarget = new Point((this.reqWidth - (2.25 + Math.random() / 4) * this.dx) * 1/mycoeff, Math.random() * (this.height -  this.dy) - this.dy);break; //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
-        case 1 : pc.pTarget = new Point((Math.random() * (this.width -  this.dx) - this.dx) * 1/mycoeff, this.reqHeight - (2.25 + Math.random() / 4) * this.dy); //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
-      } // switch
+              case 0 : pc.pTarget = new Point((this.reqWidth - (2.25 + Math.random() / 4) * this.dx) * 1/mycoeff, Math.random() * (this.height -  this.dy) - this.dy);break; //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
+              case 1 : pc.pTarget = new Point((Math.random() * (this.width -  this.dx) - this.dx) * 1/mycoeff, this.reqHeight - (2.25 + Math.random() / 4) * this.dy); //здесь указываем чтобы элементы паззла в начале игры ушли подальше в правую сторону ПОМЕТКА
+            } // switch
           } // for kn
         } // for kp
         window.setTimeout((function(obj) {return function() {obj.launchAnimation()}})(this), 1000);
@@ -1407,10 +1399,10 @@ export default {
 
         let styl = getComputedStyle(this.divGame);
 
-         let left_menu = document.getElementById('left_menu')
-          console.log(left_menu.getBoundingClientRect().width)
+        let left_menu = document.getElementById('left_menu')
+        console.log(left_menu.getBoundingClientRect().width)
 
-          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + left_menu.getBoundingClientRect().width;
+        this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + left_menu.getBoundingClientRect().width;
 
         if (that.$q.screen.gt.md){
           this.mouseOffsY = this.divGame.offsetTop + parseFloat(styl.borderTopWidth);
@@ -2006,8 +1998,8 @@ export default {
     height: 150px
     width: 150px
     margin-bottom: 15px
-  //.game-level
-  //  height: 80px
-  //  width: 80px
+//.game-level
+//  height: 80px
+//  width: 80px
 
 </style>

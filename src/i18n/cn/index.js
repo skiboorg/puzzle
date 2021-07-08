@@ -130,9 +130,11 @@ export default {
 <p><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">- </span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">难度级别</span> </span></span><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">- </span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">每个收藏</span> </span></span><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">6 </span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">分（</span></span></span><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">200 </span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">分</span> </span></span><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">/ 6</span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">）</span></span></span><span style="font-family: Microsoft YaHei, serif;"><span lang="en-US">= 34 </span></span><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">费用。</span></span></span></p>
 <p><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">您可以在任何</span><span style="font-family: Microsoft YaHei;">级别工作并结合积分。您评分中的所有内容都将被记录并考虑在内（参见个人账户）。</span></span></span></p>
 
-<p><span lang="en-US"><strong>8 "我理解正确的是，如果我每天在评级中收集 200 点并获得 2%，那么我每月可以赚取超过 50% 的余额？"</strong></span></p>
+<p><span lang="en-US"><strong>8. "我理解正确的是，如果我每天在评级中收集 200 点并获得 2%，那么我每月可以赚取超过 50% 的余额？"</strong></span></p>
 <p><span lang="en-US">- 是的，你计算的一切都正确，但忘了说，一个月后你将需要支付大约 1500 美元的费用并花费 130 多个小时。
 根据我们的统计观察，我们的客户平均每天花费 2 小时在我们的网站上工作，这给他带来了每月 25% 的时间。</span></p>
+<p><span lang="en-US"><strong>9.“谁管理我余额上的资金？”</strong></span></p>
+<p><span lang="en-US">- 只有我们可以管理它们，然后只有在我们与您的共同利益中，即：开发这个项目，并不断宣传它，以便许多人了解它并来找我们。 更多的客户，更多的发展机会，更多的广告，更多的收入。</span></p>
 <p><span style="font-family: Calibri;"><span lang="en-US"><span style="font-family: Microsoft YaHei;">如果您有任何</span><span style="font-family: Microsoft YaHei;">问题，请写信给我们，我们将发布最重要的问题！</span></span></span></p>
  `,
   rulesText:`
