@@ -359,7 +359,7 @@ export default {
       let checkTimerInterval;
       let checkGameStopInterval;
       let timeloop = '';
-      let mycoeff = this.$q.screen.gt.md ? 0.7 : 1;
+      let mycoeff = this.$q.screen.gt.md ? 0.7 : .9;
 
       let autoStart;
       let that=this
