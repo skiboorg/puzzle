@@ -91,7 +91,7 @@
       <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section class="row items-center q-pb-none relative-position">
           <div v-if="gameWin" class="text-h6 text-positive text-uppercase text-center full-width">You WIN!</div>
-          <div v-else class="text-h6 text-red text-uppercase text-center full-width">You LOOSE!</div>
+          <div v-else class="text-h6 text-red text-uppercase text-center full-width">TRY AGAIN!</div>
           <q-space/>
           <q-btn v-if="showClose" icon="close" flat round dense v-close-popup class="absolute-top-right" />
           <span v-else id="time_to_close" class="text-weight-bold absolute-top-right">00:{{counter | correct_seconds}}</span>
