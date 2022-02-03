@@ -49,8 +49,8 @@
             </q-item>
             <q-separator />
             <q-card-section >
-             <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
-             <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
+             <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance}}
+             <span class="inline-block q-ml-xs text-yellow text-bold">SOL</span>
              </p>
               <p class="no-margin">{{$t('menu_rating')}}: {{$user.user.rating}} out of 200</p>
             </q-card-section>
@@ -109,13 +109,13 @@
 <!--          <q-item-section class="text-uppercase">{{$t('documents_title')}}</q-item-section>-->
 <!--        </q-item>-->
 
-        <q-item clickable to="/contacts">
-          <q-item-section avatar>
+<!--        <q-item clickable to="/contacts">-->
+<!--          <q-item-section avatar>-->
 
-            <q-icon color="white" name="contacts" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
-        </q-item>
+<!--            <q-icon color="white" name="contacts" />-->
+<!--          </q-item-section>-->
+<!--          <q-item-section>{{$t('menu_contacts')}}</q-item-section>-->
+<!--        </q-item>-->
 
 <!--        <q-separator spaced="md" dark/>-->
 <!--        <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">-->
@@ -160,8 +160,8 @@
             </q-item>
             <q-separator />
             <q-card-section >
-              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance + $user.user.add_balance}}
-                <span class="inline-block q-ml-xs text-yellow text-bold">PZ</span>
+              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance}}
+                <span class="inline-block q-ml-xs text-yellow text-bold">SOL</span>
               </p>
               <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 200</p>
             </q-card-section>
@@ -219,13 +219,13 @@
 <!--          </q-item-section>-->
 <!--          <q-item-section class="text-uppercase">{{$t('documents_title')}}</q-item-section>-->
 <!--        </q-item>-->
-        <q-item clickable to="/contacts">
-          <q-item-section avatar>
+<!--        <q-item clickable to="/contacts">-->
+<!--          <q-item-section avatar>-->
 
-            <q-icon color="white" name="contacts" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_contacts')}}</q-item-section>
-        </q-item>
+<!--            <q-icon color="white" name="contacts" />-->
+<!--          </q-item-section>-->
+<!--          <q-item-section>{{$t('menu_contacts')}}</q-item-section>-->
+<!--        </q-item>-->
 
 <!--        <q-separator spaced="md" dark/>-->
 <!--        <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">-->
