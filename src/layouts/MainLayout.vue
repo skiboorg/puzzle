@@ -1,21 +1,58 @@
 <template>
   <q-layout view="hHh lpR fFf" class="fullscreen" style="user-select: none">
     <q-no-ssr>
-      <q-header  class="bg-accent lt-lg"   elevated>
-        <q-toolbar>
-          <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
-          <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo-h.png" alt="">
-          <q-toolbar-title>
-          </q-toolbar-title>
+      <q-header  class="bg-accent q-py-lg"   elevated>
+        <div class="container">
+           <div class="flex items-center justify-between">
+              <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo_new.svg" alt="">
+          <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo_new.svg" alt="">
+             <div style="width: 300px" class="flex items-center justify-between gt-sm">
+               <div @click="$router.push('/lk/profile')" v-if="$user.loggedIn" class="text-center cursor-pointer">
+               <q-icon size="20px" name="account_circle"/>
+               <p class="no-margin">Profile</p>
+             </div>
+               <div @click="$router.push('/rating')" class="text-center cursor-pointer">
+               <q-icon size="20px" name="trending_up"/>
+               <p class="no-margin">Rating</p>
+             </div>
+               <div @click="$router.push('/rules')" class="text-center cursor-pointer">
+               <q-icon size="20px" name="school"/>
+               <p class="no-margin">Rules</p>
+             </div>
+               <div @click="$router.push('/about')" class="text-center cursor-pointer">
+               <q-icon size="20px" name="help_outline"/>
+               <p class="no-margin">About</p>
+             </div>
+             </div>
+   <q-btn v-if="!$user.loggedIn" @click="$router.push('/enter')" class="gt-sm" no-caps outline label="Login"/>
+             <div v-if="$user.loggedIn" class="flex items-center gt-sm">
+               <div class="q-mr-lg">
+                 <p class="no-margin">{{$user.user.nickname}}</p>
+                 <p class="no-margin">Rating: {{$user.user.rating}}</p>
+               </div>
+                <q-avatar>
+                  <img v-if="$user.user.avatar" :src="$user.user.avatar">
+                  <img v-else src="~assets/ava.png">
+                </q-avatar>
+
+             </div>
           <q-btn
             flat
+            class="lt-md"
             dense
             round
             icon="menu"
             aria-label="Menu"
             @click="leftDrawerOpen = !leftDrawerOpen"
           />
-        </q-toolbar>
+           </div>
+
+
+
+
+
+        </div>
+
       </q-header>
     </q-no-ssr>
     <q-drawer
@@ -139,119 +176,12 @@
       </q-list>
     </q-drawer>
     <q-page-container>
-      <q-page class="row">
-        <div id="left_menu" class="col-2 left-menu flex column items-center justify-around gt-md">
-         <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo.png" alt="">
-          <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo.png" alt="">
-          <q-card v-if="$user.loggedIn" class="user-card"  >
-            <q-item>
-              <q-item-section avatar>
-                <q-avatar>
-                  <img v-if="$user.user.avatar" :src="$user.user.avatar">
-                  <img v-else src="~assets/ava.png">
-                </q-avatar>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{$user.user.nickname}}</q-item-label>
-                <q-item-label caption class="text-white">
-                  {{$user.user.email}}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-separator />
-            <q-card-section >
-              <p class="q-mb-xs flex items-center">{{$t('menu_balance')}}: {{$user.user.balance}}
-                <span class="inline-block q-ml-xs text-yellow text-bold">SOL</span>
-              </p>
-              <p class="no-margin ">{{$t('menu_rating')}}: {{$user.user.rating}} out of 200</p>
-            </q-card-section>
-          </q-card>
-         <q-list style="margin-bottom: 100px"  dark>
-        <!--v-if="$user.loggedIn"-->
-        <q-item v-if="$user.loggedIn" clickable to="/lk/profile">
-          <q-item-section avatar>
-            <q-icon color="white" name="chat" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_profile')}}</q-item-section>
-        </q-item>
-        <q-item v-if="!$user.loggedIn" clickable to="/enter">
-          <q-item-section avatar>
-            <q-icon color="white" name="login" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_login')}}</q-item-section>
-        </q-item>
-        <!--        v-else-->
-        <q-item v-if="$user.loggedIn" clickable to="rating">
-          <q-item-section avatar>
-            <q-icon color="white" name="bar_chart" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_rating')}}</q-item-section>
-        </q-item>
-        <q-item clickable to="/about">
-          <q-item-section avatar>
-            <q-icon color="white" name="help_outline" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_about')}}</q-item-section>
-        </q-item>
-         <q-item clickable to="/rules">
-          <q-item-section avatar>
-
-            <q-icon color="white" name="school" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_rules')}}</q-item-section>
-        </q-item>
-        <q-item clickable to="info">
-          <q-item-section avatar>
-            <q-icon color="white" name="info" />
-          </q-item-section>
-          <q-item-section>{{$t('menu_info')}}</q-item-section>
-        </q-item>
-<!--        <q-item clickable to="/feedback">-->
-<!--          <q-item-section avatar>-->
-
-<!--            <q-icon color="white" name="feedback" />-->
-<!--          </q-item-section>-->
-<!--          <q-item-section>{{$t('menu_feedback')}}</q-item-section>-->
-<!--        </q-item>-->
-<!--         <q-item clickable to="/documents">-->
-<!--          <q-item-section avatar>-->
-<!--            <q-icon color="white" name="description" />-->
-<!--          </q-item-section>-->
-<!--          <q-item-section class="text-uppercase">{{$t('documents_title')}}</q-item-section>-->
-<!--        </q-item>-->
-<!--        <q-item clickable to="/contacts">-->
-<!--          <q-item-section avatar>-->
-
-<!--            <q-icon color="white" name="contacts" />-->
-<!--          </q-item-section>-->
-<!--          <q-item-section>{{$t('menu_contacts')}}</q-item-section>-->
-<!--        </q-item>-->
-
-<!--        <q-separator spaced="md" dark/>-->
-<!--        <q-btn-dropdown flat unelevated color="white" icon="language" :label="$t('menu_language')">-->
-<!--          <q-list>-->
-<!--            <q-item clickable v-close-popup @click="lang='en-us'">-->
-<!--              <q-item-section>-->
-<!--                <q-item-label>English</q-item-label>-->
-<!--              </q-item-section>-->
-<!--            </q-item>-->
-
-<!--            <q-item clickable v-close-popup @click="lang='cn'">-->
-<!--              <q-item-section>-->
-<!--                <q-item-label>{{$t('menu_lang_ch')}}</q-item-label>-->
-<!--              </q-item-section>-->
-<!--            </q-item>-->
-
-
-<!--          </q-list>-->
-<!--        </q-btn-dropdown>-->
-
-      </q-list>
-
+      <q-page >
+        <div class="container full-height">
+            <router-view />
         </div>
-        <div class="container col-lg-10 col-md-12 col-sm-12 col-xs-12">
-          <router-view />
-        </div>
+
+
       </q-page>
     </q-page-container>
   </q-layout>

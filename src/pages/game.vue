@@ -1399,14 +1399,16 @@ export default {
 
         let styl = getComputedStyle(this.divGame);
 
-        let left_menu = document.getElementById('left_menu')
-        console.log(left_menu.getBoundingClientRect().width)
+        // let left_menu = document.getElementById('left_menu')
+        // console.log(left_menu.getBoundingClientRect().width)
 
-        this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + left_menu.getBoundingClientRect().width;
+
 
         if (that.$q.screen.gt.md){
           this.mouseOffsY = this.divGame.offsetTop + parseFloat(styl.borderTopWidth);
+          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth) + 400 //+ left_menu.getBoundingClientRect().width;
         }else {
+          this.mouseOffsX = this.divGame.offsetLeft + parseFloat(styl.borderLeftWidth)  //+ left_menu.getBoundingClientRect().width;
           this.mouseOffsY = this.divGame.offsetTop + parseFloat(styl.borderTopWidth) - 100;
         }
         this.mouseOffsY = this.divGame.offsetTop + parseFloat(styl.borderTopWidth);

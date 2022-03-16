@@ -1,5 +1,6 @@
 <template>
-  <div class="full-height flex column items-center justify-center">
+
+    <div style="height: 100vh" class="flex column items-center justify-center">
     <p class="text-h6 text-bold">{{is_register ? $t('register_btn'):$t('login_btn') }}</p>
     <q-form
       v-if="is_register"
@@ -132,6 +133,8 @@
 
 
   </div>
+
+
 
 
 </template>
