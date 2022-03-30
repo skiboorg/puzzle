@@ -9,36 +9,40 @@
       class="q-gutter-sm form">
 
       <q-input
-      filled
+      outlined
       :dense="!$q.screen.gt.md"
       v-model="userData.email"
       :label="$t('email')"
+      dark
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type email',
       val => email_re.test(String(val)) || 'Please type correct email'
       ]"/>
       <q-input
-      filled
+      outlined
+      dark
       :dense="!$q.screen.gt.md"
       v-model="userData.nickname"
       :label="$t('nickname')"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type something']"/>
       <q-input
-      filled
+      outlined
       :dense="!$q.screen.gt.md"
       v-model="userData.age"
+      dark
       type="number"
       :label="$t('age')"
       lazy-rules
       :rules="[ val => val && val.length > 0 || 'Please type your age']"/>
-      <q-select class="q-mb-lg" filled :dense="!$q.screen.gt.md" v-model="userData.sex" :options="sex_options" label="Sex" />
+      <q-select class="q-mb-lg" dark outlined :dense="!$q.screen.gt.md" v-model="userData.sex" :options="sex_options" label="Sex" />
 
 
       <q-input
-      filled
+      outlined
       :dense="!$q.screen.gt.md"
       v-model="userData.password1"
+      dark
       :label="$t('password')"
       :type="isPwd ? 'password' : 'text'"
       lazy-rules
@@ -52,7 +56,8 @@
         </template>
       </q-input>
       <q-input
-      filled
+      outlined
+      dark
       :dense="!$q.screen.gt.md"
       v-model="userData.password2"
       :type="isPwd ? 'password' : 'text'"
@@ -70,23 +75,23 @@
 
       <div class="flex items-center">
          <q-toggle v-model="accept"  />
-        <p class="no-margin">I accept the <a href="/contract_offer.docx">license and terms</a></p>
+        <p class="no-margin ">I accept the <a class="text-lime" href="/contract_offer.docx">license and terms</a></p>
       </div>
       <div class="flex items-center">
          <q-toggle v-model="accept1"  />
-        <p class="no-margin">I accept the <a href="/user_agreement.docx">user agreement</a></p>
+        <p class="no-margin ">I accept the <a class="text-lime" href="/user_agreement.docx">user agreement</a></p>
       </div>
       <div class="flex items-center">
          <q-toggle v-model="accept2"  />
-        <p class="no-margin">I accept the <a href="/privacy_policy.docx">privacy policy</a></p>
+        <p class="no-margin ">I accept the <a class="text-lime" href="/privacy_policy.docx">privacy policy</a></p>
       </div>
 
 
 
       <div>
         <div class="text-center">
-          <q-btn :label="$t('register_btn')" :disable="!accept || !accept1 || !accept2" type="submit" class="q-px-xl q-mb-md" color="primary "/>
-          <p>{{$t('have_account')}} <a href="#" @click.prevent="is_register=false">{{$t('sign_in')}}</a></p>
+          <q-btn :label="$t('register_btn')" :disable="!accept || !accept1 || !accept2" type="submit" class="q-px-xl q-mb-md text-mira" outline />
+          <p>{{$t('have_account')}} <a class="text-lime" href="#" @click.prevent="is_register=false">{{$t('sign_in')}}</a></p>
         </div>
 
 
@@ -94,21 +99,22 @@
     </q-form>
     <q-form v-else @submit="userLoginAction" class=" q-gutter-sd q-mb-lg">
       <q-input
-        filled
+        outlined
         :dense="!$q.screen.gt.md"
         v-model="userLogin.email"
         :label="$t('email')+ '*'"
-
+        dark
         style="width: 320px"
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Введите email']"
       />
       <q-input
         :dense="!$q.screen.gt.md"
-        filled
+        outlined
         :type="isPwd ? 'password' : 'text'"
         v-model="userLogin.password"
         :label="$t('password')+ '*'"
+        dark
         lazy-rules
         :rules="[val => val !== null && val !== '' || 'Введите пароль' ]">
         <template v-slot:append>
@@ -120,11 +126,11 @@
         </template>
       </q-input>
       <div class="text-center">
-        <q-btn size="md" :label="$t('login_btn')" type="submit" color="primary" class="q-px-xl q-mb-md"/>
-      <p>{{$t('no_account')}} <a class="text-primary" href="#" @click.prevent="is_register=true">{{$t('sign_up')}}</a></p>
-      <p>{{$t('lost_password')}} <router-link class="text-primary" to="contacts">{{$t('contact_us')}}</router-link> </p>
+        <q-btn  :label="$t('login_btn')" type="submit" outline  class="q-px-xl q-mb-md text-mira"/>
+      <p>{{$t('no_account')}} <a class="text-lime " href="#" @click.prevent="is_register=true">{{$t('sign_up')}}</a></p>
+      <p>{{$t('lost_password')}} <router-link class="text-lime" to="contacts">{{$t('contact_us')}}</router-link> </p>
 
-        <p @click="$router.push('/game')" class="text-primary flex items-center justify-center cursor-pointer">
+        <p @click="$router.push('/game')" class="text-lime flex items-center justify-center cursor-pointer">
           <q-icon size="2rem" name="shutter_speed" class="q-mr-md" /> {{$t('try_demo')}}
         </p>
       </div>

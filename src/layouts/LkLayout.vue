@@ -1,37 +1,31 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-no-ssr>
-      <q-header  class="bg-accent q-py-lg"   elevated>
+      <q-header  class="header q-py-md"   >
         <div class="container">
           <div class="full-width flex items-center justify-between">
-            <img v-if="$user.loggedIn" @click="$router.push('/game')" class="cursor-pointer" src="~assets/logo_new.svg" alt="">
-            <img v-else @click="$router.push('/enter')" class="cursor-pointer" src="~assets/logo_new.svg" alt="">
+           <img  @click="$router.push('/game')" class="cursor-pointer" src="~assets/index/logo.png" alt="">
             <div  class=" flex items-center justify-evenly gt-sm">
 
               <div style="width: 300px" class="flex items-center justify-between">
-                 <div @click="$router.push('/game')"  class="text-center cursor-pointer">
-                <q-icon size="20px" name="west"/>
-                <p class="no-margin">Back</p>
-              </div>
-                <div @click="$router.push('/lk/profile')"  class="text-center cursor-pointer">
-                  <q-icon size="20px" name="manage_accounts"/>
-                  <p class="no-margin">Settings</p>
-                </div>
-                <div @click="$router.push('/lk/stats')" class="text-center cursor-pointer">
-                  <q-icon size="20px" name="bar_chart"/>
-                  <p class="no-margin">Stats</p>
-                </div>
-                <div @click="$router.push('/lk/balance')" class="text-center cursor-pointer">
-                  <q-icon size="20px" name="account_balance_wallet"/>
-                  <p class="no-margin">Balance</p>
-                </div>
+                <q-btn flat dense round to="/game" icon="west"/>
+                <q-btn flat dense round to="/lk/profile" icon="manage_accounts"/>
+                <q-btn flat dense round to="/lk/stats" icon="bar_chart"/>
+                <q-btn flat dense round to="/lk/balance" icon="account_balance_wallet"/>
+
+
 
               </div>
 
             </div>
+            <div class="flex items-center gt-sm user-stats">
+              <img class="q-mr-sm" src="~assets/sol-logo.svg" alt="">
+              <p class="q-mb-none q-mr-md">{{$user.user.balance}}</p>
+              <q-btn  class=" text-mira" no-caps outline label="withdraw"/>
+            </div>
             <div class="gt-sm">
-               <q-btn v-if="!$user.loggedIn" @click="$router.push('/enter')" no-caps outline label="Login"/>
-              <div v-if="$user.loggedIn" class="flex items-center">
+
+              <div  class="flex items-center">
                 <div class="q-mr-lg">
                   <p class="no-margin">{{$user.user.nickname}}</p>
                   <p class="no-margin">Rating: {{$user.user.rating}}</p>

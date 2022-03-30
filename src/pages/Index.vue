@@ -18,11 +18,12 @@
       <div class="container">
         <div class="row ">
           <div class="col-12 col-md-7">
-            <p class="text-mira text-lime offer-title">
-              Launch date:
+            <p class="text-mira  offer-title">
+              Launch date: <span class="text-lime">TBA</span>
             </p>
-            <p class="text-h5 mb-80">Мы представляем вам уникальную NFT игру, которая
-              позволяет развивать нейросети для решения капчи и развития искуственого интеллекта</p>
+            <p class="text-h5 mb-80">
+              We present you a unique NFT game aimed at developing the logic of artificial intelligence by collecting and processing analytical data on tens of thousands of passed tests
+                          </p>
             <div class="q-gutter-md">
               <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="EXPLORE"/>
               <q-btn size="24px" class="text-mira no-border-radius q-px-lg" outline text-color="white"  label="Start demo"/>
@@ -50,8 +51,10 @@
               </svg>
             </div>
             <div >
-              <p class="text-mira text-lime text-h4 q-mb-lg">Sign up</p>
-              <p class="q-mb-none text-body2">Выбираете NFT на одном из плейсов абалалалал и получаете доступ к нашей системе Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="text-mira text-lime text-h4 q-mb-lg">JOIN</p>
+              <p class="q-mb-none text-body2">
+                Become one of the members of our progressive community and step into the future with us!
+              </p>
             </div>
 
           </div>
@@ -75,8 +78,8 @@
               </svg>
             </div>
             <div >
-              <p class="text-mira text-lime text-h4 q-mb-lg">Join</p>
-              <p class="q-mb-none text-body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="text-mira text-lime text-h4 q-mb-lg">DECIDE</p>
+              <p class="q-mb-none text-body2">You will be offered a series of tests aimed at teaching and developing the logic of our artificial intelligence.</p>
             </div>
 
           </div>
@@ -90,25 +93,68 @@
 
             </div>
             <div >
-              <p class="text-mira text-lime text-h4 q-mb-lg">WIN</p>
-              <p class="q-mb-none text-body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="text-mira text-lime text-h4 q-mb-lg">EARN</p>
+              <p class="q-mb-none text-body2">Earn by passing the proposed tests, Each solved problem is your honestly earned money.</p>
             </div>
 
           </div>
 
+        </div>
+
+      </div>
+    </section>
+    <section class="nft">
+      <div class="container">
+             <p class="section-title text-lime text-mira text-center q-mb-xl">ACCESS CARD</p>
+        <p class=" text-mira text-h4 text-weight-medium q-mb-none">
+          Total DROP: <span class="text-lime">6000 NFTS ON SOLANART</span>
+        </p>
+        <p class=" text-mira text-h4 text-weight-medium q-mb-none">
+          WHITE LIST:  <span class="text-lime">4500</span>
+        </p>
+        <p class=" text-mira text-h4 text-weight-medium">
+          PRICE: <span class="text-lime">1,2 SOL</span>
+        </p>
+        <p style="max-width: 912px;line-height: 32px" class="text-body1 q-mb-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At iaculis ut dolor pellentesque consectetur. Dolor, mattis in at a porta adipiscing turpis. Cras odio eu maecenas quis. Id ac, lacus nec eget varius.</p>
+        <div class="row q-col-gutter-lg">
+          <div class="col-12 col-md-4">
+            <div class="">
+              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">
+              <p class="text-red-5 text-mira text-h4">250 NFTS</p>
+              <p class="text-vela q-mb-none text-weight-medium text-h5">20 tasks per day</p>
+            </div>
+
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="">
+              <img class="img q-mb-lg" src="~assets/index/2.jpg" alt="">
+              <p class="text-orange-5 text-mira text-h4">750 NFTS</p>
+              <p class="text-vela q-mb-none text-weight-medium text-h5">10 tasks per day</p>
+            </div>
+
+          </div>
+            <div class="col-12 col-md-4">
+            <div class="">
+              <img class="img q-mb-lg" src="~assets/index/3.jpg" alt="">
+              <p class="text-lime text-mira text-h4">5250 NFTS</p>
+              <p class="text-vela q-mb-none text-weight-medium text-h5">5 tasks per day</p>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
 
     <section class="grid">
       <div class="container">
-        <div class="row q-col-gutter-xl q-mb-xl">
+        <p class="section-title text-lime text-mira  q-mb-xl">Our achievements</p>
+        <div class="row q-col-gutter-xl">
           <div class="col-12 col-md-6">
             <div class="bordered flex q-pa-lg grid-item">
               <img  src="~assets/index/b1.png" alt="">
               <div class="grid-text" >
-                <p class="text-bold text-white text-h5 q-mb-lg">Развитие ИИ алгоритмов</p>
-                <p class="text-body2 q-mb-lg">Мы сотрудничаем с центральным инстутом Венгрии по вопросам компьютерной инженирии и блаблабала</p>
+                <p class="text-bold text-white text-h5 q-mb-lg">Development of AI algorithms</p>
+                <p class="text-body2 q-mb-lg">One of the main features of our AI is the possibility of complete self-learning based on the previously proposed logical algorithms.</p>
                 <div class="grid-link">
                   <p class="q-mb-sm">Lorem ipsum.</p>
                   <div class="grid-link__bottom">
@@ -125,8 +171,8 @@
             <div class="bordered flex q-pa-lg grid-item">
               <img  src="~assets/index/b3.png" alt="">
               <div class="grid-text" >
-                <p class="text-bold text-white text-h5 q-mb-lg">Развитие ИИ алгоритмов</p>
-                <p class="text-body2 q-mb-lg">Мы сотрудничаем с центральным инстутом Венгрии по вопросам компьютерной инженирии и блаблабала</p>
+                <p class="text-bold text-white text-h5 q-mb-lg">The Captcha Solution</p>
+                <p class="text-body2 q-mb-lg">Our experience in the field of systemic neurophysiology has allowed us to create a unique model of deep machine interaction.</p>
                 <div class="grid-link">
                   <p class="q-mb-sm">Lorem ipsum.</p>
                   <div class="grid-link__bottom">
@@ -143,8 +189,15 @@
             <div class="bordered flex q-pa-lg grid-item">
               <img  src="~assets/index/b2.png" alt="">
               <div class="grid-text" >
-                <p class="text-bold text-white text-h5 q-mb-lg">Развитие ИИ алгоритмов</p>
-                <p class="text-body2 q-mb-lg">Мы сотрудничаем с центральным инстутом Венгрии по вопросам компьютерной инженирии и блаблабала</p>
+                <p class="text-bold text-white text-h5 q-mb-lg">New challenges of the future</p>
+                <p class="text-body2 q-mb-lg">The program is based on a new hybrid technology that combines technologies of Hierarchical Temporal Memory and Recursive Cortical Network.</p>
+                <div class="grid-link q-mb-lg">
+                  <p class="q-mb-sm">Lorem ipsum.</p>
+                  <div class="grid-link__bottom">
+                    <p class="no-margin ellipsis">https://iconscout.com/icons/linknknkhttps://iconscout.com/icons/linknknk</p>
+                    <q-icon size="24px" name="link"/>
+                  </div>
+                </div>
                 <div class="grid-link">
                   <p class="q-mb-sm">Lorem ipsum.</p>
                   <div class="grid-link__bottom">
@@ -161,8 +214,9 @@
             <div class="bordered flex q-pa-lg grid-item">
               <img  src="~assets/index/b4.png" alt="">
               <div class="grid-text" >
-                <p class="text-bold text-white text-h5 q-mb-lg">Развитие ИИ алгоритмов</p>
-                <p class="text-body2 q-mb-lg">Мы сотрудничаем с центральным инстутом Венгрии по вопросам компьютерной инженирии и блаблабала</p>
+                <p class="text-bold text-white text-h5 q-mb-lg">Selling intelligence development data</p>
+                <p class="text-body2 q-mb-lg">The mind of our Artificial Intelligence is developed on the basis of the Singularity NET blockchain, which is an open platform for creating a decentralized AI services market.
+The famous humanoid "Sofia" works on the basis of the same blockchain.</p>
                 <div class="grid-link">
                   <p class="q-mb-sm">Lorem ipsum.</p>
                   <div class="grid-link__bottom">
@@ -176,11 +230,13 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
     <section class="roadmap">
       <div class="container">
-        <p class="section-title text-lime text-mira q-mb-xl">Roadmap</p>
+        <p class="section-title text-lime text-mira q-mb-xl ">Roadmap</p>
         <div class="roadmap-buttons">
 
           <svg @click="$refs.carousel.previous()" class="q-mr-lg prev-btn" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -206,82 +262,45 @@
             <div class="row  q-col-gutter-lg ">
               <div class="col-12 col-md-4 ">
                 <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
+                  <p class="no-margin text-mira q-pa-lg text-lime text-h4">Q3 2021</p>
                   <q-separator color="white"/>
                   <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
+                    <li>Search and selection of future team members</li>
+                    <li>Analysis and selection of a suitable network</li>
+                    <li>Site layout and test development</li>
+                    <li>Creating your own community</li>
                   </ul>
 
                 </div>
               </div>
               <div class="col-12 col-md-4  ">
                 <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
+                  <p class="no-margin text-mira q-pa-lg text-h4">Q4 2021</p>
                   <q-separator color="white"/>
                   <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
+                    <li>Development of a working AI model</li>
+                    <li>Completion and presentation of the website</li>
+                    <li>Search for investors</li>
+                    <li>Development of social networks and community</li>
                   </ul>
 
                 </div>
               </div>
               <div class="col-12 col-md-4  ">
                 <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
+                  <p class="no-margin text-mira q-pa-lg text-h4">Q1 2022</p>
                   <q-separator color="white"/>
                   <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
+                    <li>Receiving the Horizons 2021 Grant</li>
+                    <li>Development of the Whitelist system</li>
+                    <li>Launching a working model of a solve-catcher</li>
                   </ul>
 
                 </div>
               </div>
             </div>
           </q-carousel-slide>
-          <q-carousel-slide :name="2" class="column no-wrap">
-            <div class="row  q-col-gutter-lg ">
-              <div class="col-12 col-md-4  ">
-                <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
-                  <q-separator color="white"/>
-                  <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                  </ul>
 
-                </div>
-              </div>
-              <div class="col-12 col-md-4  ">
-                <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
-                  <q-separator color="white"/>
-                  <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                  </ul>
-
-                </div>
-              </div>
-              <div class="col-12 col-md-4  ">
-                <div class="bordered">
-                  <p class="no-margin text-mira q-pa-lg text-h4">Q3 2021</p>
-                  <q-separator color="white"/>
-                  <ul class="slider-list">
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                    <li>Получение гранта “Горизонты 2021”</li>
-                  </ul>
-
-                </div>
-              </div>
-            </div>
-          </q-carousel-slide>
 
         </q-carousel>
       </div>
@@ -291,9 +310,13 @@
         <div class="row q-col-gutter-xl items-center">
           <div class="col-12 col-md-6">
             <p class="section-title text-lime text-mira">OUR IDEA</p>
-            <p class="mb-80">Мы получение грант европейской программы “Горизонты 2021” (ссылка) на развитие ИИ в разлитчных сферах жизни, благодаря нашему институту развития ИИ в Венгрии им. Браунинга.
-              <br><br>
-              Мы уже подписались на сотрудничество с сервисом RE:Capcha для усиления их позиций и защиты, и планируем совместно разработать с Google IT Softwork новые альтернативные методы капчи и интеграции нашего сервиса.
+            <p class="mb-80 text-body1">
+              The main disadvantage of all existing neural networks and artificial intelligence systems today is that they are not capable of self-learning.
+It is necessary to process terabytes of data so that the machine understands how it should act in a given situation.
+<br><br>
+Using the experience of systems neurophysiology, we have created a new model of machine interaction that recognizes graphical tasks better than deep neural networks do.
+<br><br>
+The program is based on new hybrid technologies capable of simulating the work of the cerebral cortex, thanks to which completely new horizons in the field of machine logic are opening up to us.
             </p>
             <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="See trading pairs"/>
           </div>
@@ -308,20 +331,22 @@
         <div class="text-center mb-80">
           <img  src="~assets/index/token.png" alt="">
         </div>
-        <p class="text-lime text-mira text-h2 q-mb-xl">Наш токен будет<br>в Q2 2022</p>
-        <p class="text-h5 mb-80">Свой жесткий курс токена, мы планируем продавать за<br>
-          него доступы на семинары и на научные исследования<br>
-          <span class="text-lime">платные курсы по програмированию</span><br>
-          <span class="text-lime">криптонейрообучению</span>мерч, но вы всегда<br>
-
-
-          сможете его обменять на SOL.</p>
+        <p class="text-lime text-mira text-h2 q-mb-xl">WE ARE THE FUTURE</p>
+        <p style="max-width: 800px; margin: 0 auto 80px" class="text-h5 ">
+          "DFKI” is the leading, near-business research institution in Germany in the field of artificial intelligence with branches in Kaiserslautern, Saarbrücken and Bremen.
+<br><br>
+ We launched the project with the support of Cyber Valley, whose partners include major companies such as Daimler, Bosch, Amazon, and Facebook.
+<br><br>
+Thanks to this symbiosis, we have access to the most advanced technologies in the field of machine learning, and we can truly claim that our product is the first and unique of its kind
+        </p>
         <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="See trading pairs"/>
       </div>
     </section>
     <section class="team">
       <div class="container">
-        <p class="section-title text-lime text-mira text-center mb-80">OUR GREAT TEAM</p>
+        <p class="section-title text-lime text-mira text-center q-mb-xl">OUR GREAT TEAM</p>
+        <p style="max-width: 800px; margin: 0 auto 60px" class="text-body1 text-center">
+          We are a team of computer engineers from the university "Deutsches Forschungszentrum für Künstliche Intelligenz" and our main focus is the training and development of AI.</p>
         <div class="row q-col-gutter-lg">
           <div class="col-12 col-md-4 ">
             <div class="team-item bordered">
@@ -455,11 +480,12 @@ export default {
     return{
       slide:1,
       faqItems:[
-        {question:'What are pazpays tokens',answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Posuere morbi nisl elementum metus quam vehicula purus. Nec etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.'},
-        {question:'What are pazpays tokens',answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Posuere morbi nisl elementum metus quam vehicula purus. Nec etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.'},
-        {question:'What are pazpays tokens',answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Posuere morbi nisl elementum metus quam vehicula purus. Nec etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.'},
-        {question:'What are pazpays tokens',answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Posuere morbi nisl elementum metus quam vehicula purus. Nec etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.etiam leo id nisl tristique tortor, sit. A magna tellus quis arcu. Posuere varius lacinia semper velit fermentum a.'},
-      ],
+        {question:'What is the essence of your project?',answer:'1. The goal of our project is to train neural networks to generate, interact and solve problems existing in the digital environment. Based on the data obtained, new methods of machine identification will be developed in the future, as well as their further training.\n'},
+        {question:'What are the rewards and what are they given for?',answer:'2. You work - we pay. Data collection and further training occur due to the fact that the user performs a series of simple graphical tests, after which we receive valid captcha tokens and analytical data from you, and the user, in turn, receives a monetary reward. The payout amount depends on the complexity of the test selected by the user, as well as the number of tests passed (from 3 to 10, depending on the status of your game pass.\n'},
+        {question:'Can I withdraw my earned funds?',answer:'3. You can easily withdraw the earned funds to your wallet on the SOL network. Withdrawal is available from 1.5 SOL, the service commission is 9.5%.'},
+        {question:'I failed the test, what should I do?',answer:'4. If you have not coped with the complexity of the selected test, the payment will not be credited, but you will be asked to choose a less difficult task.'},
+        {question:'Are you planning to have your own token?',answer:'5. The token is scheduled to be listed on April 23 on such exchanges as: FTX, KuCoin, Coinbase. Subsequently, the entire payment system will switch from SOL to our token, in the same equivalent.'},
+     ],
     }
   }
 }
@@ -513,12 +539,17 @@ $color-lg: #C3C4D1
   padding-bottom: 220px
   &-title
     font-size: 96px
+    line-height: 100%
   & .text-h5
     max-width: 700px
 .bordered
   border: 1px solid #FFFFFF
 .features
   margin-bottom: 260px
+.img
+  max-width: 100%
+  height: auto
+  object-fit: contain
 .grid
   margin-bottom: 290px
   &-item
@@ -535,6 +566,8 @@ $color-lg: #C3C4D1
       padding: 7px 24px
       p
         max-width: 200px
+.nft
+  margin-bottom: 290px
 .slider
   background: transparent
   height: fit-content

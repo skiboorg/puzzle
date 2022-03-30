@@ -1,34 +1,61 @@
 <template>
-  <q-page style="overflow: hidden">
+  <q-page style="overflow: hidden" class="bg-main ">
     <div v-if="game_type==='puzzle'">
-      <div v-if="gameType" class="flex column items-center justify-center q-mt-sm">
 
-        <div v-if="gameReady && gameType" class="text-bold text-h5 text-uppercase q-px-lg"
-             id="timer">00:00</div>
+      <div v-if="gameType" class="flex  items-center justify-between q-mt-md q-px-lg">
+
+        <q-btn class="text-mira" icon="west" unelevated outline label="back" @click="resetGame"/>
+        <div v-if="gameReady && gameType" class=" text-h5 text-weight-regular text-uppercase q-px-lg timer">
+          <svg class="q-mr-sm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.6176 5.968L19.0706 4.515L20.4846 5.929L19.0316 7.382C20.4673 9.17917 21.1605 11.4579 20.9687 13.7501C20.7768 16.0424 19.7146 18.1742 18.0001 19.7077C16.2856 21.2412 14.0489 22.0601 11.7496 21.9961C9.45018 21.9321 7.26258 20.9901 5.63604 19.3635C4.00951 17.737 3.0675 15.5494 3.00349 13.25C2.93948 10.9506 3.75832 8.71402 5.29185 6.99951C6.82538 5.285 8.95718 4.22275 11.2494 4.03092C13.5417 3.83909 15.8204 4.53223 17.6176 5.968ZM11.9996 20C12.9188 20 13.8291 19.8189 14.6784 19.4672C15.5276 19.1154 16.2993 18.5998 16.9493 17.9497C17.5993 17.2997 18.1149 16.5281 18.4667 15.6788C18.8185 14.8295 18.9996 13.9193 18.9996 13C18.9996 12.0807 18.8185 11.1705 18.4667 10.3212C18.1149 9.47194 17.5993 8.70026 16.9493 8.05025C16.2993 7.40024 15.5276 6.88463 14.6784 6.53284C13.8291 6.18106 12.9188 6 11.9996 6C10.1431 6 8.36258 6.7375 7.04982 8.05025C5.73707 9.36301 4.99957 11.1435 4.99957 13C4.99957 14.8565 5.73707 16.637 7.04982 17.9497C8.36258 19.2625 10.1431 20 11.9996 20ZM10.9996 8H12.9996V14H10.9996V8ZM7.99957 1H15.9996V3H7.99957V1Z" fill="#0F1549"/>
+          </svg>
+          <p id="timer" class="q-mb-none">00:00</p></div>
         <div v-else></div>
-        <p class="no-margin text-bold text-caption text-uppercase cursor-pointer"
-           @click="resetGame">back to games</p>
 
 
       </div>
       <div v-else class="q-mt-sm"></div>
-      <div style="height: 90vh" v-if="!gameType && !gameReady" class="flex column items-center justify-center ">
+      <div style="height: 60vh" v-if="!gameType && !gameReady" >
+        <h1 class="text-h4  text-weight-bold text-vela q-pt-lg q-pl-xl q-mb-xl">Tasks</h1>
+        <div class="container-inner ">
+          <p  class="text-bold text-h5  q-mb-lg text-center" >Choose a game</p>
+          <div class="box q-mb-lg">
+            <p class="text-caption text-bold q-mb-none">You have 5 tasks left for today</p>
+            <div class="flex items-center justify-between">
+              <p class="q-mb-none  text-bold"><span class="text-lime">5</span> / 10</p>
+              <q-linear-progress style="flex-basis: 85%" :value="0.4" color="lime-13"  />
+              <q-btn unelevated class="tooltip">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="40" height="40" rx="5" fill="#2B1861"/>
+                  <path d="M20 30C25.5228 30 30 25.5228 30 20C30 14.4772 25.5228 10 20 10C14.4772 10 10 14.4772 10 20C10 25.5228 14.4772 30 20 30Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.0898 17.0006C17.3249 16.3322 17.789 15.7687 18.3998 15.4097C19.0106 15.0507 19.7287 14.9195 20.427 15.0393C21.1253 15.1591 21.7587 15.5221 22.2149 16.0641C22.6712 16.6061 22.9209 17.2921 22.9198 18.0006C22.9198 20.0006 19.9198 21.0006 19.9198 21.0006" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 25H20.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
 
+                <q-tooltip >
+                  Some text as content of Tooltip
+                </q-tooltip>
+              </q-btn>
+            </div>
 
-        <p style="margin-left: -6px" class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_game')}}</p>
-        <!--      $user.loggedIn-->
-        <div v-if="false" class="">
-          <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">
-            {{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
-          <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
-          <p style="max-width: 800px; margin: 0 auto 20px" class="text-grey-6 text-center">{{$t('we_give')}}</p>
-        </div>
-        <div v-if="can_play" class="flex items-center justify-center full-width">
-          <div @click="selectGame(type)" class="game-type flex column items-center justify-between q-mr-md cursor-pointer"
-               v-for="type in gameTypes" :key="type.id">
-            <img :src="type.img" alt="">
+          </div>
+          <!--      $user.loggedIn-->
+          <div v-if="false" class="">
+            <p v-if="can_play" class="text-bold text-body1 text-center text-grey-9 text-uppercase q-mb-md">
+              {{$t('you_have')}} {{$user.user.games_count}} {{$t('games_today')}}</p>
+            <p v-else class="text-bold text-h5text-uppercase q-mb-md text-center">{{$t('game_limit')}}</p>
+            <p style="max-width: 800px; margin: 0 auto 20px" class="text-grey-6 text-center">{{$t('we_give')}}</p>
+          </div>
+          <div v-if="can_play" class="game-grid">
+            <div @click="selectGame(type)" class="game-type cursor-pointer"
+                 v-for="type in gameTypes" :key="type.id">
+              <img :src="type.img" alt="">
+              <p class="text-mira game-type__name q-mb-none">{{type.name}}</p>
+              <p class="text-mira game-type__price q-mb-none">0.1 – 0.3 SOL</p>
+            </div>
           </div>
         </div>
+
       </div>
       <div style="height: 90vh" v-if="gameType && !gameReady" class="flex column items-center justify-center ">
         <p class="text-bold text-h4 text-uppercase q-mb-md">{{$t('choose_difficult')}}</p>
@@ -88,16 +115,31 @@
               transition-hide="scale"
               @before-show="getAd"
               @before-hide="closeAd">
-      <q-card style="width: 700px; max-width: 80vw;">
+      <q-card class="adModal" style="width: 380px; max-width: 80vw;">
         <q-card-section class="row items-center q-pb-none relative-position">
-          <div v-if="gameWin" class="text-h6 text-positive text-uppercase text-center full-width">You WIN!</div>
-          <div v-else class="text-h6 text-red text-uppercase text-center full-width">TRY AGAIN!</div>
+          <div v-if="gameWin" class="text-h4 text-bold text-dark  text-center full-width">Cheers! You win</div>
+          <div v-else class="text-h4 text-bold text-red  text-center full-width">Try Again!</div>
           <q-space/>
-          <q-btn v-if="showClose" icon="close" flat round dense v-close-popup class="absolute-top-right" />
-          <span v-else id="time_to_close" class="text-weight-bold absolute-top-right">00:{{counter | correct_seconds}}</span>
+          <q-btn v-if="showClose" icon="close" flat round dense color="dark" v-close-popup class="absolute-top-right" />
+
         </q-card-section>
         <q-card-section>
-          <p v-if="$user.loggedIn" style="max-width: 350px;margin: 0 auto 20px" class="text-center">If you close this window before you look ads - we will subtract your rating for the game</p>
+          <p v-if="$user.loggedIn" style="max-width: 350px;margin: 0 auto 20px" class="text-center text-dark text-body1">
+            If you close this window before you look<br>
+            ads - <span class="text-bold">we will subtract your rating<br> for the game</span></p>
+          <div v-if="!showClose" style="max-width: 155px;margin: 0 auto; padding: 10px" class="box ">
+             <div  id="time_to_close" class="text-weight-bold text-white flex justify-center items-center">
+               <svg class="q-mr-sm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM13 12V7H11V14H17V12H13Z" fill="white"/>
+</svg>
+
+               <p class="no-margin " style="letter-spacing: 0.04em">
+                 <span class="text-mira text-h6">{{counter | correct_seconds}} </span> sec
+               </p>
+
+             </div>
+          </div>
+
           <div v-show="currentAd.image" class="">
             <q-img :src="currentAd.image"/>
           </div>
@@ -363,10 +405,10 @@ export default {
 
       let autoStart;
       let that=this
-       let mycoeff1 = 0; //добавил новый коэффициент, по умолчанию он равен нулю
+      let mycoeff1 = 0; //добавил новый коэффициент, по умолчанию он равен нулю
 
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { //если пользователь с телефона
-    mycoeff1 = 0.001; //то меняем коэффициент
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { //если пользователь с телефона
+        mycoeff1 = 0.001; //то меняем коэффициент
       }
 //-----------------------------------------------------------------------------
 
@@ -1940,6 +1982,17 @@ export default {
 }
 </script>
 <style lang="sass">
+.adModal
+  background: #DCF34E
+.q-tooltip
+  background: rgba(0, 0, 0, 0.5)
+  border-radius: 10px
+  padding: 20px
+.tooltip
+  & .q-btn__wrapper
+    padding: 0
+  & .q-focus-helper
+    border-radius: 9px !important
 //slider
 .slider-area
   position: relative
@@ -1965,19 +2018,44 @@ export default {
   outline: none
 
 //slider
+.timer
+  background: #DCF34E
+  display: flex
+  align-items: center
+  padding: 5px 15px
 #timer
-  border: 2px solid #05113D
-  box-sizing: border-box
-  box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25)
+
+  color: #0F1549
+  font-family: 'Miratrix', sans-serif
+  letter-spacing: 0.04em
+.game-grid
+  display: grid
+  grid-gap: 30px
+  grid-template-columns: repeat(3,1fr)
 .game-type
-  height: 170px
-  width: 170px
+  background: #352072
   transition: all .2s linear
+  padding: 30px 30px
+  text-align: center
   img
-    max-width: 100%
-    height: auto
+    width: 100px
+    height: 100px
+    object-fit: contain
+    margin-bottom: 20px
   &:hover
-    transform: scale(1.05)
+    background: #DCF34E
+    & .game-type__name
+      color: #0F1549
+    & .game-type__price
+      color: #0F1549
+  &__name
+    color: #ffffff
+    font-size: 16px
+    transition: all .2s linear
+  &__price
+    transition: all .2s linear
+    font-size: 16px
+    color: #DCF34E
 .game-level
   height: 160px
   width: 160px

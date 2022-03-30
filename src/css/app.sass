@@ -2,6 +2,33 @@
   font-family: msyh
   src: url(../assets/chinese.msyh.ttf)
 
+@font-face
+  font-family: 'VelaSans'
+  src: url(/fonts/VelaSans-Regular.ttf) format('truetype')
+  font-style: normal
+  font-display: swap
+
+
+@font-face
+  font-family: 'Miratrix'
+  src: url(/fonts/Miratrix-Normal.otf)
+  font-style: normal
+  font-display: swap
+$color-lime: #DCF34E
+
+.text-vela
+  font-family: 'VelaSans', sans-serif
+
+.section-title
+  font-size: 88px
+
+.text-mira
+  font-family: 'Miratrix', sans-serif !important
+
+.text-lime
+  color: $color-lime !important
+
+.bg-lime
 
 
 .font-msyh
@@ -10,14 +37,30 @@
 
 body
   overscroll-behavior: contain
-  font-family: 'msyh', sans-serif
+  font-family: 'VelaSans', sans-serif
+  background: #0E0E2D
+  color: #ffffff
+.box
+  background: #352072
+  padding: 20px 30px
+.container-inner
+  max-width: 720px
+  margin: 0 auto
+.bg-main
+  background: #2B1861
+  margin-top: 40px
+  min-height: unset !important
+  height: calc(100vh - 81px - 80px)
+
 .container
   max-width: 1200px
   margin: 0 auto
   padding: 0 10px
 .static-page-wrapper
+  background: #2B1861
   padding: 60px 90px
   user-select: text
+  margin-top: 40px
   p
     font-size: 14px
 .user-card
@@ -28,3 +71,23 @@ body
     padding: 0
   .fullscreen
     overflow-y: auto
+
+.header
+  background: transparent
+  border-bottom: 1px solid #36345a
+.user-stats
+  position: relative
+  &::before
+    position: absolute
+    content: ''
+    height: 81px
+    width: 1px
+    left: -60px
+    background: #36345a
+  &::after
+    position: absolute
+    content: ''
+    height: 81px
+    width: 1px
+    right: -60px
+    background: #36345a
