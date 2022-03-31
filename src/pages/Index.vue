@@ -120,7 +120,7 @@
           <div class="col-12 col-md-4">
             <div class="">
 <!--              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">-->
-              <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Golden.webm"></video>
+              <video class="video q-mb-lg" autoplay loop muted src="/Golden.webm"></video>
               <p class="text-red-5 text-mira text-h4">250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">20 tasks per day</p>
             </div>
@@ -128,7 +128,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="">
-                  <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Silver.webm"></video>
+                  <video class="video q-mb-lg" autoplay loop muted src="/Silver.webm"></video>
               <p class="text-orange-5 text-mira text-h4">750 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">10 tasks per day</p>
             </div>
@@ -136,7 +136,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="">
-                   <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Bronze.webm"></video>
+                   <video class="video q-mb-lg" autoplay loop muted src="/Bronze.webm"></video>
               <p class="text-lime text-mira text-h4">5250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">5 tasks per day</p>
             </div>
