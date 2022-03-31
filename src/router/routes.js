@@ -20,6 +20,7 @@ const routes = [
       { path: 'feedback', component: () => import('pages/static/feedback.vue') },
       { path: 'documents', component: () => import('pages/static/docs.vue') },
       { path: 'game', component: () => import('pages/game.vue') },
+      { path: 'profile', component: () => import('pages/profile.vue') },
 
     ]
   },

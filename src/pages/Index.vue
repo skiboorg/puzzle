@@ -23,7 +23,7 @@
             </p>
             <p class="text-h5 mb-80">
               We present you a unique NFT game aimed at developing the logic of artificial intelligence by collecting and processing analytical data on tens of thousands of passed tests
-                          </p>
+            </p>
             <div class="q-gutter-md">
               <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="EXPLORE"/>
               <q-btn size="24px" class="text-mira no-border-radius q-px-lg" outline text-color="white"  label="Start demo"/>
@@ -105,7 +105,7 @@
     </section>
     <section class="nft">
       <div class="container">
-             <p class="section-title text-lime text-mira text-center q-mb-xl">ACCESS CARD</p>
+        <p class="section-title text-lime text-mira text-center q-mb-xl">ACCESS CARD</p>
         <p class=" text-mira text-h4 text-weight-medium q-mb-none">
           Total DROP: <span class="text-lime">6000 NFTS ON SOLANART</span>
         </p>
@@ -119,7 +119,8 @@
         <div class="row q-col-gutter-lg">
           <div class="col-12 col-md-4">
             <div class="">
-              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">
+<!--              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">-->
+              <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Golden.webm"></video>
               <p class="text-red-5 text-mira text-h4">250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">20 tasks per day</p>
             </div>
@@ -127,15 +128,15 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="">
-              <img class="img q-mb-lg" src="~assets/index/2.jpg" alt="">
+                  <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Silver.webm"></video>
               <p class="text-orange-5 text-mira text-h4">750 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">10 tasks per day</p>
             </div>
 
           </div>
-            <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4">
             <div class="">
-              <img class="img q-mb-lg" src="~assets/index/3.jpg" alt="">
+                   <video class="video q-mb-lg" autoplay loop muted src="~assets/index/Bronze.webm"></video>
               <p class="text-lime text-mira text-h4">5250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">5 tasks per day</p>
             </div>
@@ -216,7 +217,7 @@
               <div class="grid-text" >
                 <p class="text-bold text-white text-h5 q-mb-lg">Selling intelligence development data</p>
                 <p class="text-body2 q-mb-lg">The mind of our Artificial Intelligence is developed on the basis of the Singularity NET blockchain, which is an open platform for creating a decentralized AI services market.
-The famous humanoid "Sofia" works on the basis of the same blockchain.</p>
+                  The famous humanoid "Sofia" works on the basis of the same blockchain.</p>
                 <div class="grid-link">
                   <p class="q-mb-sm">Lorem ipsum.</p>
                   <div class="grid-link__bottom">
@@ -312,11 +313,11 @@ The famous humanoid "Sofia" works on the basis of the same blockchain.</p>
             <p class="section-title text-lime text-mira">OUR IDEA</p>
             <p class="mb-80 text-body1">
               The main disadvantage of all existing neural networks and artificial intelligence systems today is that they are not capable of self-learning.
-It is necessary to process terabytes of data so that the machine understands how it should act in a given situation.
-<br><br>
-Using the experience of systems neurophysiology, we have created a new model of machine interaction that recognizes graphical tasks better than deep neural networks do.
-<br><br>
-The program is based on new hybrid technologies capable of simulating the work of the cerebral cortex, thanks to which completely new horizons in the field of machine logic are opening up to us.
+              It is necessary to process terabytes of data so that the machine understands how it should act in a given situation.
+              <br><br>
+              Using the experience of systems neurophysiology, we have created a new model of machine interaction that recognizes graphical tasks better than deep neural networks do.
+              <br><br>
+              The program is based on new hybrid technologies capable of simulating the work of the cerebral cortex, thanks to which completely new horizons in the field of machine logic are opening up to us.
             </p>
             <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="See trading pairs"/>
           </div>
@@ -334,10 +335,10 @@ The program is based on new hybrid technologies capable of simulating the work o
         <p class="text-lime text-mira text-h2 q-mb-xl">WE ARE THE FUTURE</p>
         <p style="max-width: 800px; margin: 0 auto 80px" class="text-h5 ">
           "DFKI” is the leading, near-business research institution in Germany in the field of artificial intelligence with branches in Kaiserslautern, Saarbrücken and Bremen.
-<br><br>
- We launched the project with the support of Cyber Valley, whose partners include major companies such as Daimler, Bosch, Amazon, and Facebook.
-<br><br>
-Thanks to this symbiosis, we have access to the most advanced technologies in the field of machine learning, and we can truly claim that our product is the first and unique of its kind
+          <br><br>
+          We launched the project with the support of Cyber Valley, whose partners include major companies such as Daimler, Bosch, Amazon, and Facebook.
+          <br><br>
+          Thanks to this symbiosis, we have access to the most advanced technologies in the field of machine learning, and we can truly claim that our product is the first and unique of its kind
         </p>
         <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="See trading pairs"/>
       </div>
@@ -485,7 +486,7 @@ export default {
         {question:'Can I withdraw my earned funds?',answer:'3. You can easily withdraw the earned funds to your wallet on the SOL network. Withdrawal is available from 1.5 SOL, the service commission is 9.5%.'},
         {question:'I failed the test, what should I do?',answer:'4. If you have not coped with the complexity of the selected test, the payment will not be credited, but you will be asked to choose a less difficult task.'},
         {question:'Are you planning to have your own token?',answer:'5. The token is scheduled to be listed on April 23 on such exchanges as: FTX, KuCoin, Coinbase. Subsequently, the entire payment system will switch from SOL to our token, in the same equivalent.'},
-     ],
+      ],
     }
   }
 }
@@ -494,7 +495,9 @@ export default {
 $color-lime: #DCF34E
 $color-lg: #C3C4D1
 
-
+.video
+  width: 100%
+  height: auto
 @font-face
   font-family: 'VelaSans'
   src: url(/fonts/VelaSans-Regular.ttf) format('truetype')
