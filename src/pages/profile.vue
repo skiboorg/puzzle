@@ -5,7 +5,8 @@
     <div class="flex items-center q-mb-xl">
       <div class="q-mr-lg relative-position">
          <q-avatar class="" size="120px">
-        <img :src="$user.user.avatar" alt="">
+        <img v-if="$user.user.avatar" :src="$user.user.avatar">
+                <img v-else src="~assets/ava.png">
       </q-avatar>
         <q-btn class="absolute-bottom-right" size="12px" dense round  color="white" text-color="dark" icon="edit"/>
       </div>
@@ -43,7 +44,7 @@
            <p class="text-grey-4 q-mb-sm">Wallet</p>
            <div class="wallet q-mb-sm">
              <div class="wallet-bg">
-               <p class="no-margin">JshashSAahahahAHGgsagaJshashSAahahahAHgsaGg...shjs</p>
+               <p class="no-margin">{{$user.user.wallet}}</p>
              </div>
              <div class="wallet-bg text-center">
                 <q-icon size="24px" name="link"/>

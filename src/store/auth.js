@@ -28,7 +28,7 @@ const actions = {
      this._vm.$cook.set('auth_token',response.data.auth_token)
        api.defaults.headers.common['Authorization'] = 'Token ' + response.data.auth_token
        dispatch('getUser')
-       this.$router.push('/game')
+       // this.$router.push('/game')
     }catch (e){
       console.log(e)
       Notify.create({

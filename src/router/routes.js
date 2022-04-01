@@ -21,6 +21,7 @@ const routes = [
       { path: 'documents', component: () => import('pages/static/docs.vue') },
       { path: 'game', component: () => import('pages/game.vue') },
       { path: 'profile', component: () => import('pages/profile.vue') },
+      { path: 'stats', component: () => import('pages/stats.vue') },
 
     ]
   },

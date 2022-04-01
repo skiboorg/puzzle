@@ -5,10 +5,15 @@
         <div class="flex items-center justify-between">
           <img src="~assets/index/logo.png" alt="">
           <div class="flex items-center text-white">
-            <p class="q-mb-none q-mr-lg">Trade</p>
-            <p class="q-mb-none q-mr-lg">Swap</p>
-            <p class="q-mb-none q-mr-lg">Leverage</p>
-            <p class="q-mb-none ">BuyPuzpay</p>
+            <p class="q-mb-none q-mr-lg cursor-pointer" @click="scrollToElement('access')">Access</p>
+            <p class="q-mb-none q-mr-lg cursor-pointer" @click="scrollToElement('about')">About</p>
+            <p class="q-mb-none q-mr-lg cursor-pointer" @click="scrollToElement('roadmap')">Roadmap</p>
+            <p class="q-mb-none q-mr-lg cursor-pointer" @click="scrollToElement('team')">Team</p>
+            <p class="q-mb-none cursor-pointer" @click="scrollToElement('faq')">Faq</p>
+          </div>
+          <div class="">
+            <q-btn v-if="!$user.loggedIn" class="text-mira no-border-radius q-px-lg" outline text-color="white" @click="connectWallet(false)" label="Connect wallet"/>
+            <p v-else class="no-margin ellipsis" style="max-width: 100px">{{$user.user.wallet}}</p>
           </div>
         </div>
 
@@ -24,9 +29,22 @@
             <p class="text-h5 mb-80">
               We present you a unique NFT game aimed at developing the logic of artificial intelligence by collecting and processing analytical data on tens of thousands of passed tests
             </p>
-            <div class="q-gutter-md">
-              <q-btn size="24px" class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="EXPLORE"/>
-              <q-btn size="24px" class="text-mira no-border-radius q-px-lg" outline text-color="white"  label="Start demo"/>
+
+            <div v-if="!$user.loggedIn" class="q-gutter-md">
+              <q-btn size="24px"
+                     @click="connectWallet(false)"
+                     class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="EXPLORE"/>
+              <q-btn size="24px"
+                     @click="connectWallet(false)"
+                     class="text-mira no-border-radius q-px-lg" outline text-color="white"  label="Start demo"/>
+            </div>
+            <div v-else class="q-gutter-md">
+              <q-btn size="24px"
+                     to="/game"
+                     class="bg-lime text-mira no-border-radius q-px-lg" text-color="dark"  label="EXPLORE"/>
+              <q-btn size="24px"
+                     to="/game"
+                     class="text-mira no-border-radius q-px-lg" outline text-color="white"  label="Start demo"/>
             </div>
           </div>
           <div class="col-12 col-md-5">
@@ -104,7 +122,7 @@
       </div>
     </section>
     <section class="nft">
-      <div class="container">
+      <div ref="access"  class="container">
         <p class="section-title text-lime text-mira text-center q-mb-xl">ACCESS CARD</p>
         <p class=" text-mira text-h4 text-weight-medium q-mb-none">
           Total DROP: <span class="text-lime">6000 NFTS ON SOLANART</span>
@@ -119,7 +137,7 @@
         <div class="row q-col-gutter-lg">
           <div class="col-12 col-md-4">
             <div class="">
-<!--              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">-->
+              <!--              <img class="img q-mb-lg" src="~assets/index/1.jpg" alt="">-->
               <video class="video q-mb-lg" autoplay loop muted src="/Golden.webm"></video>
               <p class="text-red-5 text-mira text-h4">250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">20 tasks per day</p>
@@ -128,7 +146,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="">
-                  <video class="video q-mb-lg" autoplay loop muted src="/Silver.webm"></video>
+              <video class="video q-mb-lg" autoplay loop muted src="/Silver.webm"></video>
               <p class="text-orange-5 text-mira text-h4">750 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">10 tasks per day</p>
             </div>
@@ -136,7 +154,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="">
-                   <video class="video q-mb-lg" autoplay loop muted src="/Bronze.webm"></video>
+              <video class="video q-mb-lg" autoplay loop muted src="/Bronze.webm"></video>
               <p class="text-lime text-mira text-h4">5250 NFTS</p>
               <p class="text-vela q-mb-none text-weight-medium text-h5">5 tasks per day</p>
             </div>
@@ -145,9 +163,8 @@
         </div>
       </div>
     </section>
-
     <section class="grid">
-      <div class="container">
+      <div ref="about"  class="container">
         <p class="section-title text-lime text-mira  q-mb-xl">Our achievements</p>
         <div class="row q-col-gutter-xl">
           <div class="col-12 col-md-6">
@@ -234,9 +251,8 @@
 
       </div>
     </section>
-
     <section class="roadmap">
-      <div class="container">
+      <div ref="roadmap"  class="container">
         <p class="section-title text-lime text-mira q-mb-xl ">Roadmap</p>
         <div class="roadmap-buttons">
 
@@ -344,7 +360,7 @@
       </div>
     </section>
     <section class="team">
-      <div class="container">
+      <div ref="team"  class="container">
         <p class="section-title text-lime text-mira text-center q-mb-xl">OUR GREAT TEAM</p>
         <p style="max-width: 800px; margin: 0 auto 60px" class="text-body1 text-center">
           We are a team of computer engineers from the university "Deutsches Forschungszentrum für Künstliche Intelligenz" and our main focus is the training and development of AI.</p>
@@ -395,7 +411,7 @@
       </div>
     </section>
     <section class="faq">
-      <div class="container">
+      <div ref="faq"  class="container">
         <p class="section-title text-lime text-mira text-center mb-80">FAQ</p>
         <q-list dark separator>
           <q-expansion-item
@@ -476,10 +492,14 @@
 </template>
 
 <script>
+import { mapActions, mapGetters} from 'vuex'
+import { scroll } from 'quasar'
+const { getScrollTarget, setScrollPosition } = scroll
 export default {
   data(){
     return{
       slide:1,
+      wallet_pub_key:null,
       faqItems:[
         {question:'What is the essence of your project?',answer:'1. The goal of our project is to train neural networks to generate, interact and solve problems existing in the digital environment. Based on the data obtained, new methods of machine identification will be developed in the future, as well as their further training.\n'},
         {question:'What are the rewards and what are they given for?',answer:'2. You work - we pay. Data collection and further training occur due to the fact that the user performs a series of simple graphical tests, after which we receive valid captcha tokens and analytical data from you, and the user, in turn, receives a monetary reward. The payout amount depends on the complexity of the test selected by the user, as well as the number of tests passed (from 3 to 10, depending on the status of your game pass.\n'},
@@ -487,6 +507,46 @@ export default {
         {question:'I failed the test, what should I do?',answer:'4. If you have not coped with the complexity of the selected test, the payment will not be credited, but you will be asked to choose a less difficult task.'},
         {question:'Are you planning to have your own token?',answer:'5. The token is scheduled to be listed on April 23 on such exchanges as: FTX, KuCoin, Coinbase. Subsequently, the entire payment system will switch from SOL to our token, in the same equivalent.'},
       ],
+    }
+  },
+  async beforeMount(){
+    await this.connectWallet(true)
+  },
+  methods:{
+    ... mapActions('auth',['loginUser']),
+    scrollToElement (el) {
+      let eel = this.$refs[el]
+      const target = getScrollTarget(eel)
+      const offset = eel.offsetTop
+      const duration = 300
+      setScrollPosition(target, offset, duration)
+    },
+
+    async connectWallet(is_check) {
+      const provider = window.solana;
+      if (provider && provider.isPhantom) {
+        console.log(provider)
+        //try {
+        const resp = await window.solana.connect();
+        this.wallet_pub_key=resp.publicKey.toString()
+        const response = await this.$api.post('/api/user/user_exist',{wallet:this.wallet_pub_key})
+        if(response.data.result){
+          console.log('logging')
+          await this.loginUser({
+            wallet: this.wallet_pub_key,
+            password: this.wallet_pub_key
+          })
+        }else {
+          console.log('register')
+          await this.$api.post('/auth/users/', {
+          wallet: this.wallet_pub_key,
+          password: this.wallet_pub_key,
+        })
+        }
+        // await this.loginUser({wallet:this.wallet_pub_key,password:this.wallet_pub_key})
+      }else {
+        is_check ? null : window.open("https://phantom.app/", "_blank")
+      }
     }
   }
 }
