@@ -4,18 +4,23 @@
 
     <div class="flex items-center q-mb-xl">
       <div class="q-mr-lg relative-position">
-         <q-avatar class="" size="120px">
-        <img v-if="$user.user.avatar" :src="$user.user.avatar">
-                <img v-else src="~assets/ava.png">
-      </q-avatar>
-        <q-btn class="absolute-bottom-right" size="12px" dense round  color="white" text-color="dark" icon="edit"/>
+         <q-avatar rounded  class="relative-position" size="120px">
+            <img :src="$user.user.avatar">
+            <label class="absolute-bottom-right cursor-pointer" for="avatar_img">
+          <q-icon style="background: #fff;padding: 5px;border-radius: 100%" size="sm" color="dark" name="edit"></q-icon>
+
+            <input id="avatar_img" ref="avatar_img" @change="avatarChange($event)" style="display: none" type="file">
+          </label>
+          </q-avatar>
+
       </div>
 
       <div class="">
         <p class="text-grey-4">Nickname</p>
         <div class="flex nickname">
-          <p class="q-mb-none q-mr-lg">{{$user.user.nickname}}</p>
-          <p  class="q-mb-none">Edit</p>
+
+          <q-input dark borderless dense v-model="userData.nickname"/>
+          <p  class="q-mb-none cursor-pointer" @click="updateUser()">Save</p>
         </div>
       </div>
 
@@ -70,12 +75,65 @@
 
     </div>
 </template>
+<script>
+import { mapActions, mapGetters} from 'vuex'
+export default {
+  data () {
+    return {
+      avatar:null,
+      userData:{
+        nickname:this.$user.user.nickname,
+
+      }
+
+    }
+  },
+  methods: {
+    ... mapActions('auth',['getUser']),
+
+    onSubmit () {
+      console.log('submit')
+      this.updateUser()
+    },
+    async avatarChange(evt){
+      this.avatar = evt.target.files[0]
+      await this.updateUser()
+    },
+    async updateUser(){
+      let formData = new FormData()
+      formData.set('userData', JSON.stringify(this.userData))
+      if (this.avatar){
+        formData.set('avatar',this.avatar)
+      }
+      const response = await this.$api({
+        method: 'post',
+        headers:{
+          'content-type': 'multipart/form-data'
+        },
+        url: '/api/user/update',
+        data: formData
+      })
+      this.$q.notify({
+          message: 'Profile updated',
+          position: this.$q.screen.lt.sm ? 'bottom' : 'bottom-right',
+          color: 'positive',
+          icon: 'announcement'
+        })
+      console.log(response.data)
+      await this.getUser()
+    },
+
+  }
+}
+</script>
 <style lang="sass">
 .nickname
   border: 1px solid #878AA4
   box-sizing: border-box
   border-radius: 5px
   padding: 6px 12px
+  display: flex
+  align-items: center
 .bg-alt
   background: #311F66
   border-radius: 5px
